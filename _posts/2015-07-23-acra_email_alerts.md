@@ -2,6 +2,8 @@
 title: Email alerts with ACRA
 layout: post
 ---
+# THIS POST IS UNFINISHED!
+
 For capturing errors in an Android app, ACRA is great. 
 
 >ACRA catches the error, turns it into JSON and then persists that data on a web server using the *acra-storage* CouchDB app. The *acralyzer* CouchDB HTML app provides a nice front end to view error information. 
