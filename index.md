@@ -9,6 +9,6 @@ I write software, and occaisional blog posts.
 
 For now, there's not much here...
 
-[about](/about)
+[about](/about.html)
 
 [blog](/blog)
