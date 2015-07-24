@@ -241,12 +241,18 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
     
     
     var lastItemSendIndex = -1;
+    
+    //grab an array of all the <item> elements in the RSS feed
     var items = xChannel.getChildren("item");
     
+    //Work through it, looking for an element that has a <guid> 
+    //which matches the <guid> we saved the last time the script ran.
+    //This gives us the point in the list at which to stop including
+    //error details
     for(var index=0;index<items.length; index++)
     {
       var itemGuid = items[index].getChild("guid").getText();
-      Logger.log("index:" + index + ", guid:" + itemGuid);
+      
       if(itemGuid==lastDocumentId)
       {
         lastItemSendIndex = index;
@@ -265,6 +271,7 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
     }
     
     
+    //Now we can build our sophisticated email content
     var emailBody = "";
     
     for(var index=0; index<lastItemSendIndex;index++)
@@ -287,6 +294,11 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
       
       if(items.length>0)
       {
+        //Save the <guid> of the first <item>. New <item>
+        //elements will appear above it in the array, meaning
+        //that the next time the scripts runs we should include 
+        //items between position 0 and wherever our <guid> ends up
+        //in that future list
         lastDocumentId = items[0].getChild("guid").getText();
         userProperties.setProperty(lastNotificationKey,lastDocumentId);
       }
@@ -294,8 +306,7 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
     else
     {
       Logger.log("Nothing to send");
-    }
-  
+    }  
   }  
 }
 {% endhighlight %}
