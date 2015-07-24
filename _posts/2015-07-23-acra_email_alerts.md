@@ -2,15 +2,14 @@
 title: Email alerts with ACRA
 layout: post
 ---
-# THIS POST IS UNFINISHED!
 
-For capturing errors in an Android app, ACRA is great. 
+For capturing errors in an Android app, [ACRA](https://github.com/ACRA/acra) is great. 
 
->ACRA catches the error, turns it into JSON and then persists that data on a web server using the *acra-storage* CouchDB app. The *acralyzer* CouchDB HTML app provides a nice front end to view error information. 
+>ACRA catches the error, turns it into JSON and then persists that data on a web server using the *[acra-storage](https://github.com/ACRA/acra-storage)* CouchDB app. The *[acralyzer](https://github.com/ACRA/acralyzer)* CouchDB HTML app provides a nice front end to view error information. 
 
 One thing it lacks is a mechanism to notify about new errors via email, but what it does have is an RSS feed of the latest errors that have been uploaded. Combine this with a script executed every few minutes and you have a simple alerting system. 
 
-#### Enter....Google App Scripts. 
+#### Enter....[Google App Scripts](https://developers.google.com/apps-script/). 
 
 Think of this as a Javascript environment hosted by Google. It was designed to add scripting capabilities to Google documents and spreadsheets, but since it includes a timer based trigger for executing scripts it can be used to provide a hosted alerting system
 
@@ -81,7 +80,19 @@ var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
 The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your *acralyzer* front end in your browser. Sign in with the user you're going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details. 
 
 ##Parsing the XML
+{% highlight javascript %}
 
+//Use the XmlService to parse the XML
+var document = XmlService.parse(xml);
+
+var root = document.getRootElement();
+
+//get the <channel> element  
+var xChannel = root.getChild("channel");
+
+//There's not much more to it than that.
+
+{% endhighlight %}
 
 ###Tracking the most recently sent guid
 You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account. 
@@ -117,7 +128,7 @@ MailApp.sendEmail("bob@gmail.com", title, emailBody);
  
  3. Give the project a suitable name and save it
  
- 4. Copy the script into the code editor
+ 4. Copy the [script](#fullScript) into the code editor and save it
  
       > Now you need to manually run your function for the first time. This is important because it's how you grant any permissions your script needs
 
@@ -146,7 +157,7 @@ Execution transcripts - this is the logs, plus diagnostic information that the e
 
 I got this when my Base64 user credentials were incorrect i.e. Cloudant couldn't even begin to work out the username I was trying to use
 
-##Full script
+## <a name="fullScript">Full script</a>
 
 {% highlight javascript %}
 function sendAlerts()
