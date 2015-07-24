@@ -27,5 +27,5 @@ author:
   email:             mahoneyjames@gmail.com
 
   
-highlighter: rouge
+highlighter: pygments
 # Custom vars
