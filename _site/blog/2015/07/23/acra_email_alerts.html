@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Email alerts with ACRA &middot; boreda
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="boreda" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">boreda</a>
+          <small></small>
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">Email alerts with ACRA</h1>
+  <time datetime="2015-07-23T00:00:00+01:00" class="post-date">23 Jul 2015</time>
+  <p>For capturing errors in an Android app, <a href="https://github.com/ACRA/acra">ACRA</a> is great.</p>
+
+<blockquote>
+  <p>ACRA catches the error, turns it into JSON and then persists that data on a web server using the <em><a href="https://github.com/ACRA/acra-storage">acra-storage</a></em> CouchDB app. The <em><a href="https://github.com/ACRA/acralyzer">acralyzer</a></em> CouchDB HTML app provides a nice front end to view error information.</p>
+</blockquote>
+
+<p>One thing it lacks is a mechanism to notify about new errors via email, but what it does have is an RSS feed of the latest errors that have been uploaded. Combine this with a script executed every few minutes and you have a simple alerting system.</p>
+
+<h4 id="entergoogle-app-scriptshttpsdevelopersgooglecomapps-script">Enter….<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
+
+<p>Think of this as a Javascript environment hosted by Google. It was designed to add scripting capabilities to Google documents and spreadsheets, but since it includes a timer based trigger for executing scripts it can be used to provide a hosted alerting system</p>
+
+<p>There’s nothing much to the script</p>
+
+<ol>
+  <li>Download the RSS feed</li>
+  <li>Work through the items until we find the first one that we’ve sent already, or we reach the end</li>
+  <li>Add the details of any unset items to an email</li>
+  <li>Send the email</li>
+  <li>Make a note of the guid of the first error item we included in the email, so that next time the script runs we know where to stop including items</li>
+</ol>
+
+<h2 id="acralyzer-rss-feed">Acralyzer RSS feed</h2>
+<p>This is the structure of the URL you need</p>
+
+<blockquote>
+  <p>https://server/CouchDB/_design/acra-storage/_list/rss/recent-items?descending=true</p>
+</blockquote>
+
+<h3 id="rss-xml-example">RSS XML Example</h3>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;rss</span> <span class="na">version=</span><span class="s">&quot;0.91&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;channel&gt;</span>
+		<span class="nt">&lt;title&gt;</span> latest Crash Reports<span class="nt">&lt;/title&gt;</span>
+		<span class="nt">&lt;link&gt;</span>http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/dashboard/type<span class="nt">&lt;/link&gt;</span>
+		<span class="nt">&lt;description&gt;</span>Acralyzer latest crash reports.<span class="nt">&lt;/description&gt;</span>
+		<span class="nt">&lt;item&gt;</span>
+			<span class="nt">&lt;title&gt;</span>java.lang.NullPointerException: This is a test exception to test logging : SupportSettingsActivity.java:79<span class="nt">&lt;/title&gt;</span>
+			<span class="nt">&lt;link&gt;</span>http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/report-details/type/36242529-580c-4703-bfab-d42dac5e4a06<span class="nt">&lt;/link&gt;</span>
+			<span class="nt">&lt;description&gt;</span>
+				<span class="nt">&lt;p&gt;</span>app_version: 1.0.14<span class="nt">&lt;/p&gt;&lt;p&gt;</span>android_version: 4.2.2<span class="nt">&lt;/p&gt;</span>
+				<span class="nt">&lt;p&gt;</span>device: samsung samsung GT-S7580<span class="nt">&lt;/p&gt;</span>
+				<span class="nt">&lt;p&gt;</span>crash line: java.lang.NullPointerException: This is a test exception to test logging at ....<span class="nt">&lt;/p&gt;</span>
+			<span class="nt">&lt;/description&gt;</span>
+			<span class="nt">&lt;guid&gt;</span>36242529-580c-4703-bfab-d42dac5e4a06<span class="nt">&lt;/guid&gt;</span>
+			<span class="nt">&lt;pubDate&gt;</span>2015-07-23T15:17:32.000Z<span class="nt">&lt;/pubDate&gt;</span>
+		<span class="nt">&lt;/item&gt;</span>
+	<span class="nt">&lt;/channel&gt;</span>
+<span class="nt">&lt;/rss&gt;</span></code></pre></div>
+
+<h3 id="authentication-using-cloudant">Authentication using Cloudant</h3>
+<blockquote>
+  <p>Cloudant provides hosting of CouchDB apps. It’s a common choice when setting up <em>acra-storage</em> because their free plans are pretty generous.</p>
+</blockquote>
+
+<p>Cloudant handles authentication with a username and what they term an “API Key”. (Or, username and password…)</p>
+
+<p>When calling the RSS feed you need to supply the details of a user that has been granted <strong>read</strong> access to your <em>acra-storage</em> instance.</p>
+
+<p>See this link for information</p>
+
+<blockquote>
+  <p><a href="https://docs.cloudant.com/authentication.html" target="_blank">https://docs.cloudant.com/authentication.html</a></p>
+</blockquote>
+
+<p>You need to supply your username and API key via a HTTP Header called “Authorization”</p>
+
+<p>More usefully, here’s how to do it using our script</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="s2">&quot;headers&quot;</span><span class="o">:</span> 
+    <span class="p">{</span>
+	  <span class="s2">&quot;Authorization&quot;</span><span class="o">:</span><span class="s2">&quot;Basic c2F5c29tZljI==&quot;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">xml</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">sourceRssUrl</span><span class="p">,</span> <span class="nx">options</span><span class="p">).</span><span class="nx">getContentText</span><span class="p">();</span></code></pre></div>
+
+<h4 id="base64-encoding-your-username-and-password">Base64 encoding your username and password</h4>
+<p>The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your <em>acralyzer</em> front end in your browser. Sign in with the user you’re going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details.</p>
+
+<h2 id="parsing-the-xml">Parsing the XML</h2>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Use the XmlService to parse the XML</span>
+<span class="kd">var</span> <span class="nb">document</span> <span class="o">=</span> <span class="nx">XmlService</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xml</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getRootElement</span><span class="p">();</span>
+
+<span class="c1">//get the &lt;channel&gt; element  </span>
+<span class="kd">var</span> <span class="nx">xChannel</span> <span class="o">=</span> <span class="nx">root</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;channel&quot;</span><span class="p">);</span>
+
+<span class="c1">//There&#39;s not much more to it than that.</span></code></pre></div>
+
+<h3 id="tracking-the-most-recently-sent-guid">Tracking the most recently sent guid</h3>
+<p>You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">userProperties</span> <span class="o">=</span> <span class="nx">PropertiesService</span><span class="p">.</span><span class="nx">getUserProperties</span><span class="p">();</span>
+
+<span class="c1">//get a property</span>
+<span class="kd">var</span> <span class="nx">lastDocumentId</span> <span class="o">=</span> <span class="nx">userProperties</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="s2">&quot;somekey&quot;</span><span class="p">);</span>
+
+<span class="c1">//save a property</span>
+<span class="nx">userProperties</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s2">&quot;somekey&quot;</span><span class="p">,</span><span class="s2">&quot;somevalue&quot;</span><span class="p">);</span></code></pre></div>
+
+<h4 id="sending-an-email">Sending an email</h4>
+<p>Google makes this easy for us</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">MailApp</span><span class="p">.</span><span class="nx">sendEmail</span><span class="p">(</span><span class="s2">&quot;bob@gmail.com&quot;</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">emailBody</span><span class="p">);</span></code></pre></div>
+
+<h2 id="set-the-script-up-in-google-app-script">Set the script up in Google App Script</h2>
+
+<blockquote>
+  <p>These instructions were correct at the time of writing, but we all know Google’s penchant for releasing often…</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>In Google Drive click on the big red button labeled “New”, choose “More” and then “Google Apps Script”</p>
+  </li>
+  <li>
+    <p>From the dialog that pops up, go ahead and choose “Blank project”</p>
+  </li>
+  <li>
+    <p>Give the project a suitable name and save it</p>
+  </li>
+  <li>
+    <p>Copy the <a href="#fullScript">script</a> into the code editor and save it</p>
+
+    <blockquote>
+      <p>Now you need to manually run your function for the first time. This is important because it’s how you grant any permissions your script needs</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>There’s a drop down that says “select function” in the toolbar. This contains a list of all functions in your script. Select the function “sendAlerts” then click the play button</p>
+
+    <ul>
+      <li>
+        <p>You will be prompted that authorisation is required. Go ahead and set up any permissions the script needs</p>
+      </li>
+      <li>
+        <p>When the script starts you’ll see a little tooltip like popup near the top of the window.</p>
+      </li>
+      <li>
+        <p>If everything has gone to plan, that’s all you’ll see. Assuming you’ve got some errors in your acra-storage database you should receive an email</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>The final step is to schedule your script to run. Click on the project triggers icon in the toolbar, and away you go</p>
+  </li>
+</ol>
+
+<h3 id="if-your-script-fails-to-run">If your script fails to run…</h3>
+<p>You’ll see a red tooltip like popup inviting you to view details of the failure</p>
+
+<p>The View menu also has a couple of options to help with debugging - the Execution Transcript and Logs</p>
+
+<p>Logs - This is what you’ve explicitly written via a call to Logger.Log</p>
+
+<p>Execution transcripts - this is the logs, plus diagnostic information that the execution engine generates</p>
+
+<h3 id="errors-that-tripped-me-up">Errors that tripped me up</h3>
+
+<h4 id="bad-gateway">502 Bad Gateway</h4>
+
+<p>I got this when my Base64 user credentials were incorrect i.e. Cloudant couldn’t even begin to work out the username I was trying to use</p>
+
+<h2 id="a-namefullscriptfull-scripta"><a name="fullScript">Full script</a></h2>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sendAlerts</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">recipientEmail</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">acraServerName</span><span class="o">=</span><span class="s2">&quot;username.cloudant.com&quot;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">acraDatabaseName</span><span class="o">=</span><span class="s2">&quot;acra-storage&quot;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">cloudantCredentials</span> <span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+ 
+  
+  <span class="nx">processAcraErrors</span><span class="p">(</span><span class="nx">recipientEmail</span><span class="p">,</span><span class="nx">acraServerName</span><span class="p">,</span><span class="nx">acraDatabaseName</span><span class="p">,</span> <span class="nx">cloudantCredentials</span><span class="p">);</span>
+  
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">processAcraErrors</span><span class="p">(</span><span class="nx">recipientEmail</span><span class="p">,</span><span class="nx">acraServerName</span><span class="p">,</span><span class="nx">acraDatabaseName</span><span class="p">,</span><span class="nx">cloudantCredentials</span><span class="p">)</span>
+<span class="p">{</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nx">recipientEmail</span><span class="o">==</span><span class="kc">null</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;recipientEmail is null&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nx">cloudantCredentials</span><span class="o">==</span><span class="kc">null</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;cloudantCredentials is null&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="kd">var</span> <span class="nx">userProperties</span> <span class="o">=</span> <span class="nx">PropertiesService</span><span class="p">.</span><span class="nx">getUserProperties</span><span class="p">();</span>
+  
+  <span class="kd">var</span> <span class="nx">lastNotificationKey</span> <span class="o">=</span> <span class="nx">acraDatabaseName</span> <span class="o">+</span> <span class="s2">&quot;_lastNotificationDocumentId&quot;</span><span class="p">;</span>
+  
+  <span class="kd">var</span> <span class="nx">lastDocumentId</span> <span class="o">=</span> <span class="nx">userProperties</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="nx">lastNotificationKey</span><span class="p">);</span>
+  
+  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;last key=&quot;</span> <span class="o">+</span> <span class="nx">lastDocumentId</span><span class="p">);</span>
+  
+
+  <span class="kd">var</span> <span class="nx">sourceRssUrl</span> <span class="o">=</span> <span class="s2">&quot;https://xServerNamex/xDatabaseNamex/_design/acra-storage/_list/rss/recent-items?descending=true&quot;</span><span class="p">;</span>
+  <span class="nx">sourceRssUrl</span> <span class="o">=</span> <span class="nx">sourceRssUrl</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;xServerNamex&quot;</span><span class="p">,</span> <span class="nx">acraServerName</span><span class="p">);</span>
+  <span class="nx">sourceRssUrl</span> <span class="o">=</span> <span class="nx">sourceRssUrl</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;xDatabaseNamex&quot;</span><span class="p">,</span> <span class="nx">acraDatabaseName</span><span class="p">);</span>
+  
+  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;URL:&quot;</span> <span class="o">+</span> <span class="nx">sourceRssUrl</span><span class="p">);</span>
+   
+  <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> 
+  <span class="p">{</span>
+      <span class="s2">&quot;headers&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Authorization&quot;</span><span class="o">:</span><span class="s2">&quot;Basic &quot;</span> <span class="o">+</span> <span class="nx">cloudantCredentials</span>
+        <span class="p">}</span>
+  <span class="p">};</span>
+  
+ 
+  <span class="kd">var</span> <span class="nx">xml</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">sourceRssUrl</span><span class="p">,</span> <span class="nx">options</span><span class="p">).</span><span class="nx">getContentText</span><span class="p">();</span>
+   
+  <span class="c1">//Need to escape fake XML tags that are included in some error details</span>
+  <span class="kd">var</span> <span class="nx">regEx</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">&quot;&lt;unknown&gt;&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">);</span>
+  <span class="nx">xml</span> <span class="o">=</span> <span class="nx">xml</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">regEx</span><span class="p">,</span><span class="s2">&quot;[unknown]&quot;</span><span class="p">);</span>
+  
+  <span class="kd">var</span> <span class="nb">document</span> <span class="o">=</span> <span class="nx">XmlService</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xml</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getRootElement</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">xChannel</span> <span class="o">=</span> <span class="nx">root</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;channel&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  
+  <span class="k">if</span><span class="p">(</span><span class="nx">xChannel</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span>
+  <span class="p">{</span>
+
+    
+    <span class="nx">title</span> <span class="o">=</span> <span class="nx">xChannel</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">title</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">.</span><span class="nx">getText</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="nx">link</span> <span class="o">=</span> <span class="nx">xChannel</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;link&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">link</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="nx">link</span> <span class="o">=</span> <span class="nx">link</span><span class="p">.</span><span class="nx">getText</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;title:&quot;</span> <span class="o">+</span> <span class="nx">title</span><span class="p">);</span>
+    <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;link:&quot;</span> <span class="o">+</span> <span class="nx">link</span><span class="p">);</span>
+    
+    
+    <span class="kd">var</span> <span class="nx">lastItemSendIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    
+    <span class="c1">//grab an array of all the &lt;item&gt; elements in the RSS feed</span>
+    <span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">xChannel</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">);</span>
+    
+    <span class="c1">//Work through it, looking for an element that has a &lt;guid&gt; </span>
+    <span class="c1">//which matches the &lt;guid&gt; we saved the last time the script ran.</span>
+    <span class="c1">//This gives us the point in the list at which to stop including</span>
+    <span class="c1">//error details</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">index</span><span class="o">&lt;</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">itemGuid</span> <span class="o">=</span> <span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">).</span><span class="nx">getText</span><span class="p">();</span>
+      
+      <span class="k">if</span><span class="p">(</span><span class="nx">itemGuid</span><span class="o">==</span><span class="nx">lastDocumentId</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="nx">lastItemSendIndex</span> <span class="o">=</span> <span class="nx">index</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+    
+    <span class="p">}</span>
+    
+    
+    <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;last index:&quot;</span> <span class="o">+</span> <span class="nx">lastItemSendIndex</span><span class="p">);</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="nx">lastItemSendIndex</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="c1">//We have never sent alerts for any of our items...</span>
+      <span class="nx">lastItemSendIndex</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    
+    <span class="c1">//Now we can build our sophisticated email content</span>
+    <span class="kd">var</span> <span class="nx">emailBody</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">index</span><span class="o">&lt;</span><span class="nx">lastItemSendIndex</span><span class="p">;</span><span class="nx">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="nx">emailBody</span> <span class="o">+=</span><span class="s2">&quot;----------------------------------\n&quot;</span><span class="p">;</span>
+      <span class="nx">emailBody</span><span class="o">+=</span><span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">).</span><span class="nx">getText</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+      <span class="nx">emailBody</span><span class="o">+=</span><span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;pubDate&quot;</span><span class="p">).</span><span class="nx">getText</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+      <span class="nx">emailBody</span><span class="o">+=</span><span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;link&quot;</span><span class="p">).</span><span class="nx">getText</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+      <span class="nx">emailBody</span><span class="o">+=</span><span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">emailBody</span><span class="p">);</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="nx">emailBody</span><span class="o">!=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+    
+      <span class="nx">emailBody</span> <span class="o">=</span> <span class="s2">&quot;Recent errors:\n\n&quot;</span> <span class="o">+</span> <span class="nx">emailBody</span><span class="p">;</span>
+    
+      <span class="nx">MailApp</span><span class="p">.</span><span class="nx">sendEmail</span><span class="p">(</span><span class="nx">recipientEmail</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">emailBody</span><span class="p">);</span>
+      
+      <span class="k">if</span><span class="p">(</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="c1">//Save the &lt;guid&gt; of the first &lt;item&gt;. New &lt;item&gt;</span>
+        <span class="c1">//elements will appear above it in the array, meaning</span>
+        <span class="c1">//that the next time the scripts runs we should include </span>
+        <span class="c1">//items between position 0 and wherever our &lt;guid&gt; ends up</span>
+        <span class="c1">//in that future list</span>
+        <span class="nx">lastDocumentId</span> <span class="o">=</span> <span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getChild</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">).</span><span class="nx">getText</span><span class="p">();</span>
+        <span class="nx">userProperties</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="nx">lastNotificationKey</span><span class="p">,</span><span class="nx">lastDocumentId</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+      <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nothing to send&quot;</span><span class="p">);</span>
+    <span class="p">}</span>  
+  <span class="p">}</span>  
+<span class="p">}</span></code></pre></div>
+
+</article>
+
+
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/2015/07/26/bootcamp_day_2.html">
+            Bootcamp 2015 - Day 2
+            <small><time datetime="2015-07-26T00:00:00+01:00">26 Jul 2015</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/2015/07/25/bootcamp_day_1.html">
+            Bootcamp 2015 - Day 1
+            <small><time datetime="2015-07-25T00:00:00+01:00">25 Jul 2015</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/2015/07/21/welcome.html">
+            Welcome
+            <small><time datetime="2015-07-21T00:00:00+01:00">21 Jul 2015</time></small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="2015-08-04T17:29:51+01:00">2015</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+  </body>
+</html>

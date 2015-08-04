@@ -1,6 +1,8 @@
 ---
 title: Email alerts with ACRA
 layout: post
+tags:
+- android
 ---
 
 For capturing errors in an Android app, [ACRA](https://github.com/ACRA/acra) is great. 
