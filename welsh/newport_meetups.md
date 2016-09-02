@@ -29,6 +29,10 @@ function showMeetups(data)
 	$("#dynamic").append("<p>" + item.Where + " " + item.Postcode + "</p>");
 	$("#dynamic").append("<p>" + item.When + "</p>");
 	$("#dynamic").append("<p>" + item.Notes + "</p>");
+	if(item.Link!="")
+	{
+		$("#dynamic").append("<p><a target='_blank' href='" + item.Link + "'>" + item.Link + "</a></p>");
+	}
 	
 	});
 }
