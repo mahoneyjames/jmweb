@@ -11,6 +11,6 @@ For now, there's not much here...
 
 [about](/about.html)
 
-[blog](/blog)
-
 [contact](/contact.html)
+
+[speak more welsh](/welsh/index.html)

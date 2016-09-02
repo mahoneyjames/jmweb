@@ -1,8 +1,8 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
-relative_permalinks: true
+permalink:           true
+relative_permalinks: false
 permalink: /blog/:categories/:year/:month/:day/:title.html
 
 # Setup
@@ -12,6 +12,7 @@ url:                 http://www.jamesmahoney.co.uk
 paginate:            5
 paginate_path: "/blog/page:num/"
 baseurl:             ""
+
 
 # Assets
 #
@@ -27,5 +28,5 @@ author:
   email:             mahoneyjames@gmail.com
 
   
-highlighter: pygments
+highlighter: rouge
 # Custom vars
