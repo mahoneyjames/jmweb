@@ -9,3 +9,4 @@ title: Welsh
 
 [list of meetups](newport_meetups.html)
 
+[SaySomethinginWelsh forum](https://forum.saysomethingin.com/)
