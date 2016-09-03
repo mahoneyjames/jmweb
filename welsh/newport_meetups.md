@@ -36,7 +36,7 @@ function showMeetups(data)
 	$("#dynamic").append("<p>" + item.Notes + "</p>");
 	if(item.Link!="")
 	{
-		$("#dynamic").append("<p><a target='_blank' href='" + item.Link + "'>" + item.Link + "</a></p>");
+		$("#dynamic").append("<p><a target='_blank' href='" + item.Link + "'>More info</a></p>");
 	}
 	
 	if(item.When.Upcoming.length>0)
