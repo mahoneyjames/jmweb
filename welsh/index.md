@@ -3,7 +3,7 @@ layout: default
 title: Welsh
 ---
 
-## Speak Welsh in Newport
+## Speak Welsh in South East Wales
 
 [list of places](newport_places.html) 
 
