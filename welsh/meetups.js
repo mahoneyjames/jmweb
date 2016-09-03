@@ -49,7 +49,7 @@ function toggleAreaFilter()
 function renderFilters($json)
 {
 	var areas = {};
-	var $areaFilters = $("<div id='filterAreas'/>")
+	var $areaFilters = $("<div id='filterAreas' class='well'/>")
 	$areaFilters.prependTo($("#dynamic"));
 	
 	$.each($json.Items, function(i,item)
@@ -73,7 +73,7 @@ function renderFilters($json)
 		 
 		 
 		 $areaFilters.append($checkBox);
-		 $areaFilters.append("<label for='filter" + propertyName + "'>" + propertyName + "</label");
+		 $areaFilters.append(" <label for='filter" + propertyName + "'>" + propertyName + "</label> ");
 		$checkBox.click(toggleAreaFilter);
 		
 		if(areaFilter==null || areaFilter==propertyName)
@@ -88,25 +88,49 @@ function renderFilters($json)
 		}
 	}
 }
-function renderMeetup(item)
+function renderMeetup(item,$wrapper)
 {
-	var $wrapperDiv = $("<div/>");
-	$wrapperDiv.appendTo($("#dynamic"));
+	var $wrapperDiv = $("<div class='panel panel-primary'/>");
+	
+	if($wrapper==null)
+	{
+		$wrapperDiv.appendTo($("#dynamic"));
+	}
+	else
+	{
+		$wrapperDiv.appendTo($wrapper);
+	}
 	
 	
+	
+		  
 	$wrapperDiv.addClass("area-" + item.Area.split(' ').join('-'));
-	$wrapperDiv.append("<h3>" + item.Title + "</h3>");
-	$wrapperDiv.append("<p>" + item.Where + " " + item.Postcode + "</p>");
-	$wrapperDiv.append("<p>" + item.When.Summary + "</p>");
-	$wrapperDiv.append("<p>" + item.Notes + "</p>");
+	$wrapperDiv.append("<div class='panel-heading'><h3>" + item.Title + "</h3></div>");
+	var $details = $("<div class='panel-body'/>")
+	$details.appendTo($wrapperDiv);
+	$details.append("<p>" + item.Where + " " + item.Postcode + "</p>");
+	
+	$details.append("<p>" + item.Notes + "</p>");
 	if(item.Link!="")
 	{
-		$wrapperDiv.append("<p><a target='_blank' href='" + item.Link + "'>More info</a></p>");
+		$details.append("<p><a target='_blank' href='" + item.Link + "'>More info</a></p>");
 	}
 	
+	$footerDiv = $("<div class='panel-footer'/>");
+	$footerDiv.appendTo($wrapperDiv);
+	$footerDiv.append("<p>" + item.When.Summary + "</p>");
 	if(item.When.Upcoming.length>0)
 	{	
-		$wrapperDiv.append("<p>Next: " + moment(item.When.Upcoming[0]).format('dddd Do MMMM') + "</p>");
+
+		$footerDiv.append("<p>Next: " + moment(item.When.Upcoming[0]).format('dddd Do MMMM') + "</p>");
 	}
 	
+}
+
+function isEven(n) {
+   return n % 2 == 0;
+}
+
+function isOdd(n) {
+   return Math.abs(n % 2) == 1;
 }

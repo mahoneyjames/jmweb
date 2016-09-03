@@ -4,7 +4,6 @@ title: Meetups in Newport and the surrounding area
 ---
 
 
-<h1 id="title"><span id="titleRegion"></span> Wales meetups</h1>
 
 
 
@@ -20,15 +19,19 @@ title: Meetups in Newport and the surrounding area
 
 $( document ).ready(function() 
 {
-	$("#titleRegion").text(getParameterByName('region'));
+	var region = getParameterByName('region');
 	
-    if(getParameterByName('mode')=='day')
+	$(".areanav .active").removeClass("active");
+	log($(".region." + region).length);
+	$(".region." + region).addClass("active");
+	
+	if(getParameterByName('mode')!='all')
 	{
-		getJson(getParameterByName('region'), showMeetupsByDay);
+		getJson(region, showMeetupsByDay);
 	}
 	else
 	{
-		getJson(getParameterByName('region'), showMeetups);
+		getJson(region, showMeetups);
 	}
 });
 
@@ -72,23 +75,47 @@ function showMeetupsByDay(data)
 }
 function printDay(day, $json)
 {
+
 	if($json.Items.length>0)
 	{
+		var $row = null;
 		var isFirstForDay = true;
+		var $col1 = null;
+		var $col2 = null;
 		
 
+		var index = -1;
 		$.each($json.Items, function(i,item){
 		if(item.When.Day==day)
 		
 		{
 			if(isFirstForDay==true)
 			{
-				$("#dynamic").append("<hr/>");
-				$("#dynamic").append("<h2>" + day + "</h2>");
+				$row = $("<div class='row'/>");
+				$row.appendTo($("#dynamic"));
+				$row.append("<h2>" + day + "</h2>");
 				isFirstForDay=false;
 			}
-			renderMeetup(item);
-		
+			index++;
+			if(isOdd(index))
+			{
+				if($col1==null)
+				{
+					$col1 = $("<div class='col-sm-6'/>")
+					$col1.appendTo($row);
+				}
+			
+				renderMeetup(item);
+			}
+			else
+			{
+				if($col2==null)
+				{
+					$col2 = $("<div class='col-sm-6'/>");
+					$col2.appendTo($row);
+				}
+				renderMeetup(item);
+			}
 		}
 		
 		});
@@ -98,4 +125,6 @@ function printDay(day, $json)
 	}
 	
 }
+
+
 </script>
