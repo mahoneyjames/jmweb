@@ -23,7 +23,7 @@ function showMeetups(data)
 	$("#dynamic").empty();
 	
 	$json = $.parseJSON(data);
-	$.each($json, function(i,item){
+	$.each($json.Items, function(i,item){
 	
 	$("#dynamic").append("<h1>" + item.Title + "</h1>");
 	$("#dynamic").append("<p>" + item.Where + " " + item.Postcode + "</p>");
