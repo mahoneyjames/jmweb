@@ -7,7 +7,9 @@ title: Meetups in Newport and the surrounding area
 
 
 <div id="dynamic">Loading...</div>
-
+---
+###### Info
+<p>Feed updated: <span id="feedDate" /></p>
 <script>
 
 $( document ).ready(function() {
@@ -35,5 +37,7 @@ function showMeetups(data)
 	}
 	
 	});
+	
+	$("#feedDate").text($json.Generated);
 }
 </script>
