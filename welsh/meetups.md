@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: meetups
 title: Meetups in Newport and the surrounding area
 ---
 
@@ -83,6 +83,7 @@ function printDay(day, $json)
 		{
 			if(isFirstForDay==true)
 			{
+				$("#dynamic").append("<hr/>");
 				$("#dynamic").append("<h2>" + day + "</h2>");
 				isFirstForDay=false;
 			}
