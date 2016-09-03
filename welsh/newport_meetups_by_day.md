@@ -17,7 +17,7 @@ title: Newport meetups by day of the week
 
 $( document ).ready(function() {
     
-	$.get('https://chatdirectory.blob.core.windows.net/simpleapi/newport/meetups.json', null,showMeetups);
+	$.get('https://chatdirectory.blob.core.windows.net/simpleapi/south-east/meetups.json', null,showMeetups);
 });
 
 function showMeetups(data)
