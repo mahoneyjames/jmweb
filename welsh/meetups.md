@@ -21,17 +21,25 @@ $( document ).ready(function()
 {
 	var region = getParameterByName('region');
 	
-	$(".areanav .active").removeClass("active");
-	log($(".region." + region).length);
-	$(".region." + region).addClass("active");
-	
-	if(getParameterByName('mode')!='all')
+	if(region!=null)
 	{
-		getJson(region, showMeetupsByDay);
+		$(".areanav .active").removeClass("active");
+		log($(".region." + region).length);
+		$(".region." + region).addClass("active");
+		
+		if(getParameterByName('mode')!='all')
+		{
+			getJson(region, showMeetupsByDay);
+		}
+		else
+		{
+			getJson(region, showMeetups);
+		}
 	}
 	else
 	{
-		getJson(region, showMeetups);
+		$("#dynamic").empty();
+		$("#dynamic").append("<div class='alert alert-danger'>Please pick a region from the navigation bar</div>");
 	}
 });
 
