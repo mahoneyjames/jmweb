@@ -10,6 +10,7 @@ title: Meetups in Newport and the surrounding area
 
 ---
 
+
 ###### Info
 <p>Feed updated: <span id="feedDate" /></p>
 <script>
@@ -36,6 +37,11 @@ function showMeetups(data)
 	if(item.Link!="")
 	{
 		$("#dynamic").append("<p><a target='_blank' href='" + item.Link + "'>" + item.Link + "</a></p>");
+	}
+	
+	if(item.When.Upcoming.length>0)
+	{	
+		$("#dynamic").append("<p>Next: " + moment(item.When.Upcoming[0]).format('dddd Do MMMM') + "</p>");
 	}
 	
 	});
