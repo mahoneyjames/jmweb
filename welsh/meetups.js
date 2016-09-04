@@ -10,9 +10,16 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function getJson(region, callback)
+function getJson(region, callback,apiMode)
 {
-	$.get('https://chatdirectory.blob.core.windows.net/simpleapi/' + region + '/meetups.json', null,callback);
+	if(apiMode==null)
+	{
+		apiMode = 'simpleapi';
+	}
+	
+	var url = 'https://chatdirectory.blob.core.windows.net/' + apiMode + '/' + region + '/meetups.json';
+	log(url);
+	$.get(url, null,callback);
 }
 
 function log(message)

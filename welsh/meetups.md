@@ -20,6 +20,7 @@ title: Meetups in Newport and the surrounding area
 $( document ).ready(function() 
 {
 	var region = getParameterByName('region');
+	var apiMode = getParameterByName('apimode');
 	
 	if(region!=null)
 	{
@@ -29,11 +30,11 @@ $( document ).ready(function()
 		
 		if(getParameterByName('mode')!='all')
 		{
-			getJson(region, showMeetupsByDay);
+			getJson(region, showMeetupsByDay,apiMode);
 		}
 		else
 		{
-			getJson(region, showMeetups);
+			getJson(region, showMeetups,apiMode);
 		}
 	}
 	else
