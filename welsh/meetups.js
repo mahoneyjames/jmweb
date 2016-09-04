@@ -97,7 +97,8 @@ function renderFilters($json)
 }
 function renderMeetup(item,$wrapper)
 {
-	var $wrapperDiv = $("<div class='panel panel-primary'/>");
+	var $wrapperDiv = $("<div class='panel'/>");
+
 	
 	if($wrapper==null)
 	{
@@ -113,6 +114,18 @@ function renderMeetup(item,$wrapper)
 		  
 	$wrapperDiv.addClass("area-" + item.Area.split(' ').join('-'));
 	$wrapperDiv.append("<div class='panel-heading'><h3>" + item.Title + "</h3></div>");
+	
+	if(item.Status=='Confirmed')
+	{
+		$wrapperDiv.addClass('panel-success');
+	}
+	else
+	{
+		$wrapperDiv.addClass('panel-danger');
+//		$wrapperDiv.find('.panel-heading h3').append(' <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>');
+		$wrapperDiv.find('.panel-heading').append('<p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> These details are unconfirmed</p>');
+	}
+
 	var $details = $("<div class='panel-body'/>")
 	$details.appendTo($wrapperDiv);
 	$details.append("<p>" + item.Where + " " + item.Postcode + "</p>");
