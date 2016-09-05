@@ -123,7 +123,9 @@ function renderMeetup(item,$wrapper)
 	{
 		$wrapperDiv.addClass('panel-danger');
 //		$wrapperDiv.find('.panel-heading h3').append(' <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>');
-		$wrapperDiv.find('.panel-heading').append('<p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> These details are unconfirmed</p>');
+		$wrapperDiv.find('.panel-heading').append('<p data-toggle="popover" title="header" data-content="here" data-trigger="hover" data-placement="top"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> These details are unconfirmed</p>');
+		
+		//$wrapperDiv.find('.panel-heading p').popover();
 	}
 
 	var $details = $("<div class='panel-body'/>")

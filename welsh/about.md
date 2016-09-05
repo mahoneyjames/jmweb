@@ -11,7 +11,11 @@ Site developed by [James Mahoney](/), Welsh software developer that needs to spe
 
 Data comes from this Google spreadsheet <a href="https://docs.google.com/spreadsheets/d/1zzhf4SebQ5IIU1PfrrAzh1d0Q2ZLDaesN-cQ2Ux0bwA/edit#gid=2043427168" target="_blank">here</a>.
 
-All this information is maintained by hand based on groups I know about in real life, groups I've seen on Welsh learner's forums, information available on the various Welsh for adults websites. 
+All this information is maintained by hand based on groups known about in real life, or referenced on various Welsh learner's forums or Welsh for adults websites. 
+
+Groups hightlight in green are those known to have happened fairly recently, so there's a good chance that they are still running.
+
+Groups highlighted in red, together with the message "These details are unconfirmed" are ones that probably exist, but the information on them is too sparse. These are ones that we'd particularly like to know more about, so that the information can be updated or removed.
 
 As the site becomes a little more mature the plan is to find some volunteers to curate the list of meetups, and open it up to cover a wider area.
 
