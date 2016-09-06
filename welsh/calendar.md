@@ -24,6 +24,9 @@ title: Meetups in Newport and the surrounding area
 		max-width: 900px;
 		margin: 0 auto;
 	}
+	
+	.eventTitle
+	{ cursor: pointer; cursor: hand; }
 
 </style>
 
@@ -32,6 +35,23 @@ title: Meetups in Newport and the surrounding area
 
 
 <div id="calendar">Loading...</div>
+
+<div id="eventDetail" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body" id="eventDetailBody">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 ---
 
@@ -68,18 +88,24 @@ $("#calendar").empty();
 	}
 });
 
-function showMeetups(data)
+function showMeetups($json)
 {
-
-	$json = $.parseJSON(data);
 
 		var events = [];
 		$.each($json.Items, function(i,item){
-			if(item.When.Upcoming.length>0)
+			if(item.Status=='Confirmed')
 			{
-				events[events.length] = {title: item.Title, 
-				start: item.When.Upcoming[0] + "T" + item.When.StartTime,
-				end: item.When.Upcoming[0] + "T" + item.When.EndTime};
+				for(var index=0;index<item.When.Upcoming.length; index++)
+				{
+					log(item.When.Upcoming[index]);
+					var event = {title: item.Title + ' - ' + item.Area, 
+								start: item.When.Upcoming[index] + "T" + item.When.StartTime,
+								end: item.When.Upcoming[index] + "T" + item.When.EndTime,
+					className:['eventTitle'],
+					sourceItem: item};
+				
+					events[events.length] = event;
+				}
 			}
 		});
 		
@@ -89,68 +115,23 @@ function showMeetups(data)
 				center: 'title',
 				right: 'month,agendaWeek,agendaDay,listWeek'
 			},
-			defaultDate: '2016-09-12',
+			defaultView: 'listWeek',
+			defaultDate: '2016-09-04',
 			navLinks: true, // can click day/week names to navigate views
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
-			events: events
-			/*
-			[
-				{
-					title: 'All Day Event',
-					start: '2016-09-01'
-				},
-				{
-					title: 'Long Event',
-					start: '2016-09-07',
-					end: '2016-09-10'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2016-09-09T16:00:00'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2016-09-16T16:00:00'
-				},
-				{
-					title: 'Conference',
-					start: '2016-09-11',
-					end: '2016-09-13'
-				},
-				{
-					title: 'Meeting',
-					start: '2016-09-12T10:30:00',
-					end: '2016-09-12T12:30:00'
-				},
-				{
-					title: 'Lunch',
-					start: '2016-09-12T12:00:00'
-				},
-				{
-					title: 'Meeting',
-					start: '2016-09-12T14:30:00'
-				},
-				{
-					title: 'Happy Hour',
-					start: '2016-09-12T17:30:00'
-				},
-				{
-					title: 'Dinner',
-					start: '2016-09-12T20:00:00'
-				},
-				{
-					title: 'Birthday Party',
-					start: '2016-09-13T07:00:00'
-				},
-				{
-					title: 'Click for Google',
-					url: 'http://google.com/',
-					start: '2016-09-28'
-				}
-			]*/
+			events: events,
+			 eventClick: function(event) {
+				$("#eventDetailBody").empty();
+				var $div = $("#eventDetailBody");
+				renderMeetup(event.sourceItem, $div);
+				
+				$('#eventDetail .modal-title').text(event.sourceItem.Title);
+				$('#eventDetail').modal();
+				
+				return false;
+
+			}	
 		});
 	
 }

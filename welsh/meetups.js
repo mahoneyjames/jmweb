@@ -18,10 +18,24 @@ function getJson(region, callback,apiMode)
 	}
 	
 	var url = 'https://chatdirectory.blob.core.windows.net/' + apiMode + '/' + region + '/meetups.json';
+	//url = '/welsh/meetups.json';
 	log(url);
-	$.get(url, null,callback);
-}
+	$.get(url, null,function (data){
+		log(typeof data);
+		
+		
+		if(typeof data == "string")
+		{
+			callback($.parseJSON(data));
+		}
+		else
+		{
+			callback(data);	
+		}
 
+
+		});
+}
 function log(message)
 {
 	if(window.console)
