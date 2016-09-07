@@ -392,7 +392,7 @@ function showCalendar($json)
 				var $div = $("#eventDetailBody");
 				renderMeetup(event.sourceItem, $div);
 				
-				$('#eventDetail .modal-title').text(event.sourceItem.Title);
+				
 				$('#eventDetail').modal();
 				
 				return false;
