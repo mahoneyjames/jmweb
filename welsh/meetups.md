@@ -3,9 +3,33 @@ layout: meetups
 title: Meetups in Newport and the surrounding area
 ---
 
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.0/fullcalendar.min.js" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.0/fullcalendar.min.css"/>
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.0/fullcalendar.print.css" media="print"/>
+
+
+<style>
+
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+	
+	.eventTitle
+	{ cursor: pointer; cursor: hand; }
+
+</style>
 
 
 <div id="eventDetail" class="modal fade" tabindex="-1" role="dialog">
@@ -13,7 +37,7 @@ title: Meetups in Newport and the surrounding area
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title">Meetup details</h4>
       </div>
       <div class="modal-body" id="eventDetailBody">
         
@@ -26,9 +50,16 @@ title: Meetups in Newport and the surrounding area
 </div><!-- /.modal -->
 
 
-<div id="dynamic">Loading...</div>
 
-<div id="calendar" class="fc fc-unthemed fc-ltr">
+ <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="tabStrip" role="tablist">
+    <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab">List</a></li>
+    <li role="presentation"><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Calendar</a></li>    
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">    
+    <div role="tabpanel" class="tab-pane active" id="list"><div id="listContent" class="fc fc-unthemed fc-ltr">
 	<!--div class="fc-toolbar">
 		<div class="fc-left">
 			<div class="fc-button-group">
@@ -67,6 +98,9 @@ title: Meetups in Newport and the surrounding area
 		</div>
 	</div>
 </div>
+</div>
+	<div role="tabpanel" class="tab-pane" id="calendar"><div id="calendarContent"><span class="loading">Loading...</span></div></div>
+</div>
 
 ---
 
@@ -104,8 +138,31 @@ $( document ).ready(function()
 		$("#dynamic").empty();
 		$("#dynamic").append("<div class='alert alert-danger'>Please pick a region from the navigation bar</div>");
 	}
+	
+	setupTabs();
 });
 
+var $jsonData;
+function setupTabs()
+{
+
+	$('#tabStrip a[href="#list"]').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	  
+	});
+	$('#tabStrip a[href="#calendar"]').click(function (e) {
+	  e.preventDefault()
+	  log("calendar");
+	  $(this).tab('show')
+	  showCalendar($jsonData);
+	  
+	  
+ 
+	  
+	});
+	
+}
 function showMeetups(data)
 {
 
@@ -144,6 +201,7 @@ function printTableVersion($json)
 
 function printTableDay($tableBody, day, $json)
 {
+	var isHeaderRowAppended = false;
 	var $row = $(
 					 '	<tr class="fc-list-heading" data-date="2016-09-06">'
 					+ '		<td class="fc-widget-header" colspan="3">'
@@ -151,7 +209,7 @@ function printTableDay($tableBody, day, $json)
 					+ '		</td>'
 					+ '	</tr>');
 	$row.find("a").text(day);
-	$row.appendTo($tableBody);
+	
 	
 	for(var index=0;index<$json.Items.length;index++)
 	{
@@ -159,25 +217,33 @@ function printTableDay($tableBody, day, $json)
 		
 		if(item.When.Day==day)
 		{
+			if(!isHeaderRowAppended)
+			{
+				$row.appendTo($tableBody);
+				isHeaderRowAppended=true;
+			}
+		
 			$row = $('<tr class="fc-list-item eventTitle">'
 					+ '		<td class="fc-list-item-time fc-widget-content">11:30am</td>'
 					+ '		<td class="fc-list-item-marker fc-widget-content">'
 					+ '			<span class="fc-event-dot"/>'
 					+ '		</td>'
 					+ '		<td class="fc-list-item-title fc-widget-content">'
-					+ '			<a></a>'
+					+ '			<a></a><span class="fc-list-heading-alt"/>'
 					+ '		</td>'
 					+ '	</tr>');
-			log($row);
+			//log($row);
 			
 			$row.find(".fc-list-item-time").text(item.When.StartTime);
 			var titleText = item.Title + " - " + item.Area;
 			
+
+			$row.find(".fc-list-item-title a").text(titleText);
 			if(item.When.Repeats!='Weekly')
 			{
-				titleText+= " - " + item.When.Summary;
+				$row.find(".fc-list-item-title span").text(item.When.Summary);
 			}
-			$row.find(".fc-list-item-title a").text(titleText);
+			
 			$row.appendTo($tableBody);
 			$row.data("item",item);
 			$row.click(function(){
@@ -187,7 +253,7 @@ function printTableDay($tableBody, day, $json)
 				var $div = $("#eventDetailBody");
 				renderMeetup(item, $div);
 				
-				$('#eventDetail .modal-title').text(item.Title);
+				//$('#eventDetail .modal-title').text(item.Title);
 				$('#eventDetail').modal();
 				
 				return false;
@@ -201,7 +267,13 @@ function printTableDay($tableBody, day, $json)
 
 function showMeetupsByDay($json)
 {
+	$jsonData = $json;
 	printTableVersion($json);
+	//showCalendar($json);
+	
+	//renderFilters($json);
+	
+	$("#feedDate").text($json.Generated);
 return;
 //log($json);
 	
@@ -270,6 +342,65 @@ function printDay(day, $json)
 		
 	
 	}
+	
+}
+
+
+function showCalendar($json)
+{
+	if($("#calendarContent .loading").length==0)
+	{
+		log("calendar already initialised");
+		return;
+	}
+
+		var events = [];
+		$.each($json.Items, function(i,item){
+			if(item.Status=='Confirmed')
+			{
+				for(var index=0;index<item.When.Upcoming.length; index++)
+				{
+					//log(item.When.Upcoming[index]);
+					var event = {title: item.Title + ' - ' + item.Area, 
+								start: item.When.Upcoming[index] + "T" + item.When.StartTime,
+								end: item.When.Upcoming[index] + "T" + item.When.EndTime,
+					className:['eventTitle'],
+					sourceItem: item};
+				
+					events[events.length] = event;
+				}
+			}
+		});
+		
+		log($('#calendarContent').html());
+		$('#calendarContent').empty();
+		log($('#calendarContent').html());
+		$('#calendarContent').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay,listWeek'
+			},
+			defaultView: 'listWeek',
+			defaultDate: '2016-09-04',
+			navLinks: true, // can click day/week names to navigate views
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			events: events,
+			 eventClick: function(event) {
+				$("#eventDetailBody").empty();
+				var $div = $("#eventDetailBody");
+				renderMeetup(event.sourceItem, $div);
+				
+				$('#eventDetail .modal-title').text(event.sourceItem.Title);
+				$('#eventDetail').modal();
+				
+				return false;
+
+			}	
+		});
+		
+		log($('#calendarContent').html());
 	
 }
 

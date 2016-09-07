@@ -111,7 +111,7 @@ function renderFilters($json)
 }
 function renderMeetup(item,$wrapper)
 {
-	var $wrapperDiv = $("<div class='panel'/>");
+	var $wrapperDiv = $("<div class=''></div>");
 
 	
 	if($wrapper==null)
@@ -127,20 +127,9 @@ function renderMeetup(item,$wrapper)
 	
 		  
 	$wrapperDiv.addClass("area-" + item.Area.split(' ').join('-'));
-	$wrapperDiv.append("<div class='panel-heading'><h3>" + item.Title + "</h3></div>");
+	$wrapperDiv.append("<div class=''><h3>" + item.Title + "</h3></div>");
 	
-	if(item.Status=='Confirmed')
-	{
-		$wrapperDiv.addClass('panel-success');
-	}
-	else
-	{
-		$wrapperDiv.addClass('panel-danger');
-//		$wrapperDiv.find('.panel-heading h3').append(' <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>');
-		$wrapperDiv.find('.panel-heading').append('<p data-toggle="popover" title="header" data-content="here" data-trigger="hover" data-placement="top"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> These details are unconfirmed</p>');
-		
-		//$wrapperDiv.find('.panel-heading p').popover();
-	}
+
 
 	var $details = $("<div class='panel-body'/>")
 	$details.appendTo($wrapperDiv);
@@ -152,13 +141,16 @@ function renderMeetup(item,$wrapper)
 		$details.append("<p><a target='_blank' href='" + item.Link + "'>More info</a></p>");
 	}
 	
-	$footerDiv = $("<div class='panel-footer'/>");
-	$footerDiv.appendTo($wrapperDiv);
-	$footerDiv.append("<p>" + item.When.Summary + "</p>");
+	
+	$wrapperDiv.append("<div class=''><h3>When</h3></div>");
+	var $whenDiv = $("<div class='panel-body'/>");
+	$whenDiv.appendTo($wrapperDiv);
+	
+	$whenDiv.append("<p>" + item.When.Summary + "</p>");
 	if(item.When.Upcoming.length>0)
 	{	
 
-		$footerDiv.append("<p>Next: " + moment(item.When.Upcoming[0]).format('dddd Do MMMM') + "</p>");
+		$whenDiv.append("<p>Next: " + moment(item.When.Upcoming[0]).format('dddd Do MMMM') + "</p>");
 	}
 	
 }

@@ -74,11 +74,11 @@ $("#calendar").empty();
 		
 		if(getParameterByName('mode')!='all')
 		{
-			getJson(region, showMeetups,apiMode);
+			getJson(region, showCalendar,apiMode);
 		}
 		else
 		{
-			getJson(region, showMeetups,apiMode);
+			getJson(region, showCalendar,apiMode);
 		}
 	}
 	else
@@ -88,7 +88,7 @@ $("#calendar").empty();
 	}
 });
 
-function showMeetups($json)
+function showCalendar($json)
 {
 
 		var events = [];
