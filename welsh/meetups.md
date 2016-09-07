@@ -49,7 +49,10 @@ title: Meetups in Newport and the surrounding area
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-  {% include workinprogress.html %}
+<div class="alert alert-warning" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	<strong>Work in progress!</strong> This site is a work in progress. <a href="about.html">Learn more</a>
+</div>
 
 
  <!-- Nav tabs -->
