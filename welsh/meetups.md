@@ -49,6 +49,7 @@ title: Meetups in Newport and the surrounding area
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+  {% include workinprogress.html %}
 
 
  <!-- Nav tabs -->
