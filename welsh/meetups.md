@@ -366,8 +366,8 @@ function showCalendar($json)
 				{
 					//log(item.When.Upcoming[index]);
 					var event = {title: item.Title + ' - ' + item.Area, 
-								start: item.When.Upcoming[index] + "T" + item.When.StartTime,
-								end: item.When.Upcoming[index] + "T" + item.When.EndTime,
+								start: item.When.Upcoming[index].Date + "T" + item.When.StartTime,
+								end: item.When.Upcoming[index].Date + "T" + item.When.EndTime,
 					className:['eventTitle'],
 					sourceItem: item};
 				
