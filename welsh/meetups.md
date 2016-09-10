@@ -193,13 +193,14 @@ function printTableVersion($json)
 	var $tableBody = $table.find("tbody");
 	//$table.appendTo($("#dynamic"));
 	
-	printTableDay($tableBody, "Saturday",$json);
-	printTableDay($tableBody, "Sunday",$json);
+	
 	printTableDay($tableBody, "Monday",$json);
 	printTableDay($tableBody, "Tuesday",$json);
 	printTableDay($tableBody, "Wednesday",$json);
 	printTableDay($tableBody, "Thursday",$json);
 	printTableDay($tableBody, "Friday",$json);
+	printTableDay($tableBody, "Saturday",$json);
+	printTableDay($tableBody, "Sunday",$json);
 	
 }
 
@@ -228,7 +229,7 @@ function printTableDay($tableBody, day, $json)
 			}
 		
 			$row = $('<tr class="fc-list-item eventTitle">'
-					+ '		<td class="fc-list-item-time fc-widget-content">11:30am</td>'
+					+ '		<td class="fc-list-item-time fc-widget-content"></td>'
 					+ '		<td class="fc-list-item-marker fc-widget-content">'
 					+ '			<span class="fc-event-dot"/>'
 					+ '		</td>'
@@ -238,7 +239,10 @@ function printTableDay($tableBody, day, $json)
 					+ '	</tr>');
 			//log($row);
 			
-			$row.find(".fc-list-item-time").text(item.When.StartTime);
+			if(item.When.StartTime!=undefined && item.When.StartTime!="")
+			{
+				$row.find(".fc-list-item-time").text(moment("1963-09-23T" + item.When.StartTime).format("h:mma"));
+			}
 			var titleText = item.Title + " - " + item.Area;
 			
 
