@@ -364,12 +364,19 @@ function showCalendar($json)
 			{
 				for(var index=0;index<item.When.Upcoming.length; index++)
 				{
-					//log(item.When.Upcoming[index]);
+				var upcomingItem = item.When.Upcoming[index];
+					log(upcomingItem);
 					var event = {title: item.Title + ' - ' + item.Area, 
-								start: item.When.Upcoming[index].Date + "T" + item.When.StartTime,
-								end: item.When.Upcoming[index].Date + "T" + item.When.EndTime,
+								start: upcomingItem.When + "T" + item.When.StartTime,
+								end: upcomingItem.When + "T" + item.When.EndTime,
 					className:['eventTitle'],
 					sourceItem: item};
+					
+					//log(item.When.Upcoming[index].IsCancelled);
+					if(upcomingItem.IsCancelled==true)
+					{
+						event.title += " (CANCELLED)";
+					}
 				
 					events[events.length] = event;
 				}
