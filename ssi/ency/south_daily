@@ -1,0 +1,258 @@
+{
+    "title":  "South: Daily practices",
+    "lessons":  [
+                    {
+                        "title":  "C1 Speaking - L 1-6",
+                        "content_type":  "practice",
+                        "identifier":  "c1speaking16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C116 Speaking South1",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2770534",
+                                                "identifier":  "welshc116speakingsouth1-76475450",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking South2",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2769071",
+                                                "identifier":  "welshc116speakingsouth2-76475547",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking South3",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2687778",
+                                                "identifier":  "welshc116speakingsouth3-76475624",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking South4",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2775758",
+                                                "identifier":  "welshc116speakingsouth4-76475706",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking South5",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2721006",
+                                                "identifier":  "welshc116speakingsouth5-76475780",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Listening - L 1-6",
+                        "content_type":  "practice",
+                        "identifier":  "c1listening16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C116 Listening South1",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2763431",
+                                                "identifier":  "welshc116listeningsouth1-76475123",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening South2",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2742533",
+                                                "identifier":  "welshc116listeningsouth2-76475182",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening South3",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2842007",
+                                                "identifier":  "welshc116listeningsouth3-76475270",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening South4",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2737726",
+                                                "identifier":  "welshc116listeningsouth4-76475332",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening South5",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2727486",
+                                                "identifier":  "welshc116listeningsouth5-76475391",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Speaking",
+                        "content_type":  "practice",
+                        "identifier":  "c1speaking",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Speaking South1",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2951714",
+                                                "identifier":  "welshc1speakingsouth1-76474117",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking South2",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2923293",
+                                                "identifier":  "welshc1speakingsouth2-76474181",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking South3",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2872093",
+                                                "identifier":  "welshc1speakingsouth3-76474246",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking South4",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2835731",
+                                                "identifier":  "welshc1speakingsouth4-76474340",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking South5",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2698640",
+                                                "identifier":  "welshc1speakingsouth5-76474400",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Listening",
+                        "content_type":  "practice",
+                        "identifier":  "c1listening",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Listening South1",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2870005",
+                                                "identifier":  "welshc1listeningsouth1-76473777",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening South2",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2872931",
+                                                "identifier":  "welshc1listeningsouth2-76473840",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening South3",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2835315",
+                                                "identifier":  "welshc1listeningsouth3-76473901",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening South4",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2780353",
+                                                "identifier":  "welshc1listeningsouth4-76473960",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening South5",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2908249",
+                                                "identifier":  "welshc1listeningsouth5-76474052",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C2 Speaking",
+                        "content_type":  "practice",
+                        "identifier":  "c2speaking",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Speaking South1",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2762982",
+                                                "identifier":  "welshc2speakingsouth1-76474789",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking South2",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2773640",
+                                                "identifier":  "welshc2speakingsouth2-76474849",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking South3",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2742711",
+                                                "identifier":  "welshc2speakingsouth3-76474908",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking South4",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2770296",
+                                                "identifier":  "welshc2speakingsouth4-76475002",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking South5",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2761310",
+                                                "identifier":  "welshc2speakingsouth5-76475064",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C2 Listening",
+                        "content_type":  "practice",
+                        "identifier":  "c2listening",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Listening South1",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2649508",
+                                                "identifier":  "welshc2listeningsouth1-76474459",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening South2",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2662882",
+                                                "identifier":  "welshc2listeningsouth2-76474516",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening South3",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2684198",
+                                                "identifier":  "welshc2listeningsouth3-76474573",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening South4",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2689214",
+                                                "identifier":  "welshc2listeningsouth4-76474631",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening South5",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2680855",
+                                                "identifier":  "welshc2listeningsouth5-76474727",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "south_daily"
+}

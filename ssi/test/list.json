@@ -1,0 +1,26 @@
+{
+    "identifier":  "ency",
+    "courses":  [
+                    {
+                        "identifier":  "course1"
+                    },
+                    {
+                        "identifier":  "course2"
+                    },
+                    {
+                        "identifier":  "course3"
+                    },
+                    {
+                        "identifier":  "daily"
+                    },
+                    {
+                        "identifier":  "level1"
+                    },
+                    {
+                        "identifier":  "level2"
+                    },
+                    {
+
+                    }
+                ]
+}

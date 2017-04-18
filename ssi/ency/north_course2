@@ -1,0 +1,504 @@
+{
+    "title":  "North: Course 2",
+    "lessons":  [
+                    {
+                        "title":  "Lesson 0",
+                        "content_type":  "intro",
+                        "identifier":  "lesson0",
+                        "media_items":  [
+
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 1",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson1",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson01",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15658695",
+                                                "identifier":  "welshc2lesson01-63530556",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 2",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson2",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson2020",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20706596",
+                                                "identifier":  "lesson2020-17867985",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 3",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson3",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson2030 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21585361",
+                                                "identifier":  "lesson2030-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 4",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson4",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson2040 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20876711",
+                                                "identifier":  "lesson2040-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 5",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson05",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16113068",
+                                                "identifier":  "welshc2lesson05-63530596",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 6",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson6",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson06 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22084404",
+                                                "identifier":  "welshc2lesson06north-5446342",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 7",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson7",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson07 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19506432",
+                                                "identifier":  "welshc2lesson07north-5455342",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 8",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson8",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson08 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22955222",
+                                                "identifier":  "welshc2lesson08north-5455854",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 9",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson9",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson09",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15715433",
+                                                "identifier":  "welshc2lesson09-63530653",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 10",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson10",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15568888",
+                                                "identifier":  "welshc2lesson10-63530690",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 11",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson11",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson11",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14760450",
+                                                "identifier":  "welshc2lesson11-63530723",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 12",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson12",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson12",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16172943",
+                                                "identifier":  "welshc2lesson12-63530760",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 13",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson13",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson2130",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20647253",
+                                                "identifier":  "lesson2130-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 14",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson14",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson2140",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20301392",
+                                                "identifier":  "lesson2140-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 15",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson15",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson2150",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20534195",
+                                                "identifier":  "lesson2150-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 16",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson16",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16349113",
+                                                "identifier":  "welshc2lesson16-63530800",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 17",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson17",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson17",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14401371",
+                                                "identifier":  "welshc2lesson17-63530836",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 18",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson18",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson18",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15346951",
+                                                "identifier":  "welshc2lesson18-63530872",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 19",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson19",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson19",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14914207",
+                                                "identifier":  "welshc2lesson19-63530909",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 20",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson20",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15521867",
+                                                "identifier":  "welshc2lesson20-63530944",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 21",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson21",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson21",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19759503",
+                                                "identifier":  "welshc2lesson21-63530991",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 22",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson22",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson22",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16568698",
+                                                "identifier":  "welshc2lesson22-63531035",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 23",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson23",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson23",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14271438",
+                                                "identifier":  "welshc2lesson23-63531073",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 24",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson24",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson24",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15372499",
+                                                "identifier":  "welshc2lesson24-63531107",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 25",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson25",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Lesson25",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15868094",
+                                                "identifier":  "welshc2lesson25-63531146",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 1",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab1",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab01 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14444920",
+                                                "identifier":  "welshc2vocab01north-3379898",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 2",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab2",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab02 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12740903",
+                                                "identifier":  "welshc2vocab02north-3380178",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 3",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab3",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab03 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12759705",
+                                                "identifier":  "welshc2vocab03north-3380462",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 4",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab4",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab04 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11470407",
+                                                "identifier":  "welshc2vocab04north-3380736",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 5",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab05 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12176965",
+                                                "identifier":  "welshc2vocab05north-3381000",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 6",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab6",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab06 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12103617",
+                                                "identifier":  "welshc2vocab06north-3381264",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 7",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab7",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab07 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12123995",
+                                                "identifier":  "welshc2vocab07north-3381529",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 8",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab8",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab08 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13340720",
+                                                "identifier":  "welshc2vocab08north-3381819",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 9",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab9",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab09 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13484446",
+                                                "identifier":  "welshc2vocab09north-3382113",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 10",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Vocab10 North",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11999702",
+                                                "identifier":  "welshc2vocab10north-3382382",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "north_course2"
+}

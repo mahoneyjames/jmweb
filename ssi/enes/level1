@@ -1,0 +1,391 @@
+{
+    "title":  "Level 1",
+    "lessons":  [
+                    {
+                        "title":  "Challenge 1",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge1",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "31306170",
+                                                "identifier":  "c1spanish01-73849488",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 2",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge2",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "53731762",
+                                                "identifier":  "c1spanish02-59187423",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 3",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge3",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "48137587",
+                                                "identifier":  "c1spanish03-59187469",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 4",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge4",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 4",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "59102119",
+                                                "identifier":  "c1spanish04-59187515",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 5",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 5",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "54153065",
+                                                "identifier":  "c1spanish05-59187564",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7594713",
+                                                "identifier":  "c1spanishl01-59950105",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 6",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge6",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 6",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "58340389",
+                                                "identifier":  "c1spanish06-59187617",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 7",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge7",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 7",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "47931951",
+                                                "identifier":  "c1spanish07-59187669",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 8",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge8",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 8",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "56148611",
+                                                "identifier":  "c1spanish08-59187722",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 9",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge9",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 9",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "50063543",
+                                                "identifier":  "c1spanish09-59187789",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 10",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 10",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "52214570",
+                                                "identifier":  "c1spanish10-59187835",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 2 (2X)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7438605",
+                                                "identifier":  "c1spanishl02-59950116",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 11",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge11",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 11",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "49617790",
+                                                "identifier":  "c1spanish11-59187889",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 12",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge12",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 12",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "50963200",
+                                                "identifier":  "c1spanish12-59187933",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 13",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge13",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 13",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "49002136",
+                                                "identifier":  "c1spanish13-59187979",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 14",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge14",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 14",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "48503092",
+                                                "identifier":  "c1spanish14-59188021",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 15",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge15",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 15",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "48388363",
+                                                "identifier":  "c1spanish15-59188061",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 3 (2X)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7384061",
+                                                "identifier":  "c1spanishl03-59950124",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 16",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 16",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "51311778",
+                                                "identifier":  "c1spanish16-59188103",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 17",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge17",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 17",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "46878067",
+                                                "identifier":  "c1spanish17-59188145",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 18",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge18",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 18",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "48304353",
+                                                "identifier":  "c1spanish18-59188189",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 19",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge19",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 19",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "46498142",
+                                                "identifier":  "c1spanish19-59188228",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 20",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 20",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "47043579",
+                                                "identifier":  "c1spanish20-59188269",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 4 (2X)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7390330",
+                                                "identifier":  "c1spanishl04-59950150",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 21",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge21",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 21",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "45137685",
+                                                "identifier":  "c1spanish21-59188308",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 22",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge22",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 22",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "44279406",
+                                                "identifier":  "c1spanish22-59188344",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 23",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge23",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 23",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "48178965",
+                                                "identifier":  "c1spanish23-59188385",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 24",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge24",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 24",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "48789603",
+                                                "identifier":  "c1spanish24-59188425",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 25",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge25",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 25",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "49834083",
+                                                "identifier":  "c1spanish25-59188467",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 5 (2X)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7361491",
+                                                "identifier":  "c1spanishl05-59950157",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "level1"
+}

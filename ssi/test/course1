@@ -1,0 +1,804 @@
+{
+    "title":  "Course 1",
+    "lessons":  [
+                    {
+                        "title":  "Introduction",
+                        "content_type":  "intro",
+                        "identifier":  "intro",
+                        "media_items":  [
+                                            {
+                                                "title":  "Introduction (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4401945",
+                                                "identifier":  "c1introduction-mp3-cyen-79206",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Introduction (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3530605",
+                                                "identifier":  "welshc1introduction-5468808",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 1",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson1",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 1 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15267066",
+                                                "identifier":  "welshc1lesson01south-5469133",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 1 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14553174",
+                                                "identifier":  "lesson1010-82490841",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 2",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson2",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 2 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14547606",
+                                                "identifier":  "lesson1020-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 2 (south-cyen)",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "16390540",
+                                                "identifier":  "welshc1lesson02south-13414480",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 3",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson3",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 3 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14617196",
+                                                "identifier":  "lesson1030-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 3 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16253031",
+                                                "identifier":  "welshc1lesson03south-5469896",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 4",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson4",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 4 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14531934",
+                                                "identifier":  "lesson1040-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 4 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15381795",
+                                                "identifier":  "welshc1lesson04south-5470240",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 5",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 5 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14564117",
+                                                "identifier":  "lesson1050-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 5 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16248852",
+                                                "identifier":  "welshc1lesson05south-5470591",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 6",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson6",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 6 - Part 1 (south-cyen)",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "16329313",
+                                                "identifier":  "welshc1lesson06-1south-5511453",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 6 - Part 2 (south-cyen)",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "17240882",
+                                                "identifier":  "welshc1lesson06-2south-5511832",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 6 - Bonus (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "8959478",
+                                                "identifier":  "gwers6b-685005",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 6 - Part 1 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16665391",
+                                                "identifier":  "lesson-6-63626234",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 6 - Part 2 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15862909",
+                                                "identifier":  "welshc1lesson06b-63531284",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 6 - Bonus (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "10176194",
+                                                "identifier":  "lesson1063-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 7",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson7",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 7 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14361825",
+                                                "identifier":  "lesson1070-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 7 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22125713",
+                                                "identifier":  "gwers07-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 8",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson8",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 8 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13351827",
+                                                "identifier":  "lesson1080-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 8 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17938808",
+                                                "identifier":  "gwers08-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 9",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson9",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 9 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14121916",
+                                                "identifier":  "lesson1090-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 9 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18393339",
+                                                "identifier":  "gwers09-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 10",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 10 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14291610",
+                                                "identifier":  "lesson1100-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 10 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22223412",
+                                                "identifier":  "gwers10-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 11",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson11",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 11 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14208854",
+                                                "identifier":  "lesson1110-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 11 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20798693",
+                                                "identifier":  "gwers11-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 12",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson12",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 12 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14290147",
+                                                "identifier":  "lesson1120-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 12 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21573903",
+                                                "identifier":  "gwers12-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 13",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson13",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 13 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14235185",
+                                                "identifier":  "lesson1130-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 13 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22338455",
+                                                "identifier":  "gwers13-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 14",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson14",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 14 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14251904",
+                                                "identifier":  "lesson1140-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 14 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21247582",
+                                                "identifier":  "gwers14-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 15",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson15",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 15 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14014712",
+                                                "identifier":  "lesson1150-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 15 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21649763",
+                                                "identifier":  "gwers15-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 16",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 16 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14311463",
+                                                "identifier":  "lesson1160-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 16 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20883644",
+                                                "identifier":  "gwers16-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 17",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson17",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 17 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14168939",
+                                                "identifier":  "lesson1170-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 17 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21758850",
+                                                "identifier":  "gwers17-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 18",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson18",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 18 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13724648",
+                                                "identifier":  "lesson1180-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 18 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22871666",
+                                                "identifier":  "gwers18-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 19",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson19",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 19 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14045223",
+                                                "identifier":  "lesson1190-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 19 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21810259",
+                                                "identifier":  "gwers19-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 20",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 20 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14291192",
+                                                "identifier":  "lesson1200-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 20 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21835964",
+                                                "identifier":  "gwers20-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 21",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson21",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 21 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14312088",
+                                                "identifier":  "lesson1210-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 21 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22401149",
+                                                "identifier":  "gwers21-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 22",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson22",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 22 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22509609",
+                                                "identifier":  "gwers22-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 22 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14171113",
+                                                "identifier":  "welshc1lesson22-63531318",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 23",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson23",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 23 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14292653",
+                                                "identifier":  "lesson1230-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 23 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20619389",
+                                                "identifier":  "gwers23-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 24",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson24",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 24 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19274919",
+                                                "identifier":  "gwers24-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 24 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16816481",
+                                                "identifier":  "welshc1lesson24-63531364",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 25",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson25",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 25 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14687294",
+                                                "identifier":  "gwers25-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 25 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11711789",
+                                                "identifier":  "welshc1lesson25-63531412",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 26",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson26",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 26 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11410074",
+                                                "identifier":  "welshc1lesson26-63531446",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 1",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab1",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 1 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "24686341",
+                                                "identifier":  "c1derhifaug1-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 1 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16747348",
+                                                "identifier":  "c1gogrhifaug1-63532032",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 2",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab2",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 2 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11705005",
+                                                "identifier":  "c1derhifaub1-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 2 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11977598",
+                                                "identifier":  "c1gogrhifaub1-63531993",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 3",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab3",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 3 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17344318",
+                                                "identifier":  "c1demisoedd-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 3 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16809569",
+                                                "identifier":  "c1gogmisoedd-63531964",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 4",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab4",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 4 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12287659",
+                                                "identifier":  "c1dediwrnodiau-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 4 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11786072",
+                                                "identifier":  "c1gogdiwrnodiau-63531873",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 5",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 5 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15753358",
+                                                "identifier":  "c1decyflwyno-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 5 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14655567",
+                                                "identifier":  "c1gogcyflwyno-63531845",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 6",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab6",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19078436",
+                                                "identifier":  "c1debootcamp1-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18301531",
+                                                "identifier":  "c1gogbootcamp1-63531638",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 7",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab7",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 7 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19139040",
+                                                "identifier":  "c1debootcamp2-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 7 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17968627",
+                                                "identifier":  "c1gogbootcamp2-63531707",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 8",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab8",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 8 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14763842",
+                                                "identifier":  "c1debootcamp3-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 8 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14411219",
+                                                "identifier":  "c1gogbootcamp3-63531754",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 9",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab9",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 9 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19804225",
+                                                "identifier":  "c1delliwiau-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 9 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19459483",
+                                                "identifier":  "c1goglliwiau-63531922",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 10",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Vocab 10 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20634749",
+                                                "identifier":  "c1decrynodebgg-mp3-cyen",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Vocab 10 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15237683",
+                                                "identifier":  "c1gogcrynodebgg-63531795",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "course1"
+}

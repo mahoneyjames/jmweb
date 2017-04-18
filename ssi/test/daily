@@ -1,0 +1,468 @@
+{
+    "title":  "Daily practices",
+    "lessons":  [
+                    {
+                        "title":  "C1 Speaking - L 1-6",
+                        "content_type":  "practice",
+                        "identifier":  "c1speaking16",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3762504",
+                                                "identifier":  "welshc116speakingnorth1-97637588",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3555094",
+                                                "identifier":  "welshc116speakingnorth2-97637594",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3596271",
+                                                "identifier":  "welshc116speakingnorth3-97637599",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3515342",
+                                                "identifier":  "welshc116speakingnorth4-97637602",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3602681",
+                                                "identifier":  "welshc116speakingnorth5-97637606",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3314910",
+                                                "identifier":  "welshc116speakingsouth1-97637898",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3320696",
+                                                "identifier":  "welshc116speakingsouth2-97637902",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3360107",
+                                                "identifier":  "welshc116speakingsouth3-97637907",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3382342",
+                                                "identifier":  "welshc116speakingsouth4-97637910",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3408940",
+                                                "identifier":  "welshc116speakingsouth5-97637913",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Listening - L 1-6",
+                        "content_type":  "practice",
+                        "identifier":  "c1listening16",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4317406",
+                                                "identifier":  "welshc116listeningnorth1-97637564",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4602286",
+                                                "identifier":  "welshc116listeningnorth2-97637568",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4282123",
+                                                "identifier":  "welshc116listeningnorth3-97637573",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4367853",
+                                                "identifier":  "welshc116listeningnorth4-97637580",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4416948",
+                                                "identifier":  "welshc116listeningnorth5-97637585",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3789914",
+                                                "identifier":  "welshc116listeningsouth1-97637875",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3718775",
+                                                "identifier":  "welshc116listeningsouth2-97637880",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3851874",
+                                                "identifier":  "welshc116listeningsouth3-97637884",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3754257",
+                                                "identifier":  "welshc116listeningsouth4-97637889",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening - L 1-6 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3692786",
+                                                "identifier":  "welshc116listeningsouth5-97637895",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Speaking",
+                        "content_type":  "practice",
+                        "identifier":  "c1speaking",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3534054",
+                                                "identifier":  "welshc1speakingnorth1-97637493",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3754960",
+                                                "identifier":  "welshc1speakingnorth2-97637500",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3648284",
+                                                "identifier":  "welshc1speakingnorth3-97637506",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3714781",
+                                                "identifier":  "welshc1speakingnorth4-97637509",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3605003",
+                                                "identifier":  "welshc1speakingnorth5-97637512",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3094117",
+                                                "identifier":  "welshc1speakingsouth1-97637802",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3030361",
+                                                "identifier":  "welshc1speakingsouth2-97637806",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3232811",
+                                                "identifier":  "welshc1speakingsouth3-97637809",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "2948058",
+                                                "identifier":  "welshc1speakingsouth4-97637814",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3089798",
+                                                "identifier":  "welshc1speakingsouth5-97637819",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Listening",
+                        "content_type":  "practice",
+                        "identifier":  "c1listening",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4390267",
+                                                "identifier":  "welshc1listeningnorth1-97637464",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4308395",
+                                                "identifier":  "welshc1listeningnorth2-97637468",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4550742",
+                                                "identifier":  "welshc1listeningnorth3-97637476",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4394810",
+                                                "identifier":  "welshc1listeningnorth4-97637480",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4324405",
+                                                "identifier":  "welshc1listeningnorth5-97637489",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3632278",
+                                                "identifier":  "welshc1listeningsouth1-97637772",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3708534",
+                                                "identifier":  "welshc1listeningsouth2-97637777",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3709320",
+                                                "identifier":  "welshc1listeningsouth3-97637781",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3689163",
+                                                "identifier":  "welshc1listeningsouth4-97637784",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C1 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3683468",
+                                                "identifier":  "welshc1listeningsouth5-97637795",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C2 Speaking",
+                        "content_type":  "practice",
+                        "identifier":  "c2speaking",
+                        "media_items":  [
+                                            {
+                                                "title":  "C2 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3351190",
+                                                "identifier":  "welshc2speakingnorth1-97637545",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3387813",
+                                                "identifier":  "welshc2speakingnorth2-97637549",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3270799",
+                                                "identifier":  "welshc2speakingnorth3-97637553",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3403606",
+                                                "identifier":  "welshc2speakingnorth4-97637557",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3304269",
+                                                "identifier":  "welshc2speakingnorth5-97637561",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3301506",
+                                                "identifier":  "welshc2speakingsouth1-97637847",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3370155",
+                                                "identifier":  "welshc2speakingsouth2-97637855",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3307577",
+                                                "identifier":  "welshc2speakingsouth3-97637860",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3389268",
+                                                "identifier":  "welshc2speakingsouth4-97637863",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Speaking (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3392559",
+                                                "identifier":  "welshc2speakingsouth5-97637870",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C2 Listening",
+                        "content_type":  "practice",
+                        "identifier":  "c2listening",
+                        "media_items":  [
+                                            {
+                                                "title":  "C2 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4370456",
+                                                "identifier":  "welshc2listeningnorth1-97637516",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4390916",
+                                                "identifier":  "welshc2listeningnorth2-97637521",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4399836",
+                                                "identifier":  "welshc2listeningnorth3-97637524",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4336767",
+                                                "identifier":  "welshc2listeningnorth4-97637530",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4451163",
+                                                "identifier":  "welshc2listeningnorth5-97637534",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4232780",
+                                                "identifier":  "welshc2listeningsouth1-97637824",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4187788",
+                                                "identifier":  "welshc2listeningsouth2-97637827",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4273521",
+                                                "identifier":  "welshc2listeningsouth3-97637832",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4306782",
+                                                "identifier":  "welshc2listeningsouth4-97637837",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "C2 Listening (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4240824",
+                                                "identifier":  "welshc2listeningsouth5-97637842",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "daily"
+}
