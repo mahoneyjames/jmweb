@@ -12,6 +12,10 @@ title: Meetups in Newport and the surrounding area
 <script src="common.js"></script>
 <script src="meetups.js"></script>
 
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAPhF1wOvzQ7uoAjYXKPe7FmyGQrGIZYE&callback=initMap">
+    </script>
+
 
 <style>
 
@@ -29,9 +33,12 @@ title: Meetups in Newport and the surrounding area
 	
 	.eventTitle
 	{ cursor: pointer; cursor: hand; }
+	
+      #mapdiv {
+        height: 500px;
+      }
 
 </style>
-
 
 <div id="eventDetail" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -60,28 +67,33 @@ title: Meetups in Newport and the surrounding area
 <ul class="nav nav-tabs" id="tabStrip" role="tablist">
 	<li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab">List</a></li>
 	<li role="presentation"><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Calendar</a></li>    
-</ul>
+	<li role="presentation"><a href="#map" aria-controls="map" role="tab" data-toggle="tab">Map</a></li>    
+
+	</ul>
 
   <!-- Tab panes -->
 <div class="tab-content">    
     <div role="tabpanel" class="tab-pane active" id="list">
-		<div id="listContent">
-			<!--div id="filtersMeetupList"/-->
-			<div  class="fc fc-unthemed fc-ltr">
-		
-				<div class="fc-view-container" style="">
-					<div class="fc-view fc-listWeek-view fc-list-view fc-widget-content">
-						<table id="eventsTable" class="fc-list-table">
-							<tbody>
-							</tbody>
-						</table>			
+			<div id="listContent">
+				<!--div id="filtersMeetupList"/-->
+				<div  class="fc fc-unthemed fc-ltr">
+			
+					<div class="fc-view-container" style="">
+						<div class="fc-view fc-listWeek-view fc-list-view fc-widget-content">
+							<table id="eventsTable" class="fc-list-table">
+								<tbody>
+								</tbody>
+							</table>			
+					</div>
 				</div>
 			</div>
-		</div>
 	</div>
-</div>
+	</div>
 	<div role="tabpanel" class="tab-pane" id="calendar">
 		<div id="calendarContent"><span class="loading">Loading...</span></div>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="map">
+		<div id="mapdiv"><span class="loading">Loading...</span></div>
 	</div>
 </div>
 
@@ -129,6 +141,12 @@ function setupTabs()
 	  
 	});
 	
+	// 	$('#tabStrip a[href="#map"]').click(function (e) {
+	//   e.preventDefault()
+	//   $(this).tab('show')
+	//   loadMap($jsonData);
+	  
+	// });
 }
 
 

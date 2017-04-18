@@ -341,3 +341,44 @@ function printTableDay($tableBody, day, $json)
 }
 }
 
+function loadMap($jsonData)
+{
+//alert("here");
+}
+
+function initMap()
+{
+
+	
+	
+	  var myLatLng = {lat: 51.588433, lng:-2.969394 };
+
+        var map = new google.maps.Map(document.getElementById('mapdiv'), {
+          zoom: 10,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+
+		var geocoder = new google.maps.Geocoder();
+
+		 geocoder.geocode({address: "17 Jackson Place, NP198FR"}, function(results, status) {
+
+ if (status == google.maps.GeocoderStatus.OK) {
+
+		var marker = new google.maps.Marker({
+				position: results[0].geometry.location,
+				map: map,
+				title: 'Hello World!'
+				});
+				
+      //map.setZoom(17);
+    }
+
+  }	);
+	
+}
