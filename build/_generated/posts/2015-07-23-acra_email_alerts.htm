@@ -1,0 +1,247 @@
+<html><head><title>Email alerts with ACRA | James Mahoney</title><link rel="stylesheet" href="/current.css"/><link rel="stylesheet" href="/local.css"/><link rel="stylesheet" href="/site.css"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header>           <a class="site-title" href="/index.htm">Code</a><a class="page-link" href="/about.htm">Words</a><a class="page-link" href="/about.htm">Cymraeg</a><a class="page-link" href="/about.htm">About</a></header><main class="page-content"><div class="wrapper"><h1>Email alerts with ACRA</h1><div class="body"><p>For capturing errors in an Android app, <a href="https://github.com/ACRA/acra">ACRA</a> is great. </p>
+<blockquote>
+  <p>ACRA catches the error, turns it into JSON and then persists that data on a web server using the <em><a href="https://github.com/ACRA/acra-storage">acra-storage</a></em> CouchDB app. The <em><a href="https://github.com/ACRA/acralyzer">acralyzer</a></em> CouchDB HTML app provides a nice front end to view error information. </p>
+</blockquote>
+<p>One thing it lacks is a mechanism to notify about new errors via email, but what it does have is an RSS feed of the latest errors that have been uploaded. Combine this with a script executed every few minutes and you have a simple alerting system. </p>
+<h4 id="entergoogleappscriptshttpsdevelopersgooglecomappsscript">Enter....<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
+<p>Think of this as a Javascript environment hosted by Google. It was designed to add scripting capabilities to Google documents and spreadsheets, but since it includes a timer based trigger for executing scripts it can be used to provide a hosted alerting system</p>
+<p>There's nothing much to the script</p>
+<ol>
+<li>Download the RSS feed</li>
+<li>Work through the items until we find the first one that we've sent already, or we reach the end</li>
+<li>Add the details of any unset items to an email</li>
+<li>Send the email</li>
+<li>Make a note of the guid of the first error item we included in the email, so that next time the script runs we know where to stop including items</li>
+</ol>
+<h2 id="acralyzerrssfeed">Acralyzer RSS feed</h2>
+<p>This is the structure of the URL you need</p>
+<blockquote>
+  <p>https://server/CouchDB/<em>design/acra-storage/</em>list/rss/recent-items?descending=true</p>
+</blockquote>
+<h3 id="rssxmlexample">RSS XML Example</h3>
+<p>{% highlight xml %}
+<rss version="0.91">
+    <channel>
+        <title> latest Crash Reports</title>
+        <link>http://username.cloudant.com/acralyzer/<em>design/acralyzer/index.html#/dashboard/type</link>
+        <description>Acralyzer latest crash reports.</description>
+        <item>
+            <title>java.lang.NullPointerException: This is a test exception to test logging : SupportSettingsActivity.java:79</title>
+            <link>http://username.cloudant.com/acralyzer/</em>design/acralyzer/index.html#/report-details/type/36242529-580c-4703-bfab-d42dac5e4a06</link>
+            <description>
+                <p>app<em>version: 1.0.14</p><p>android</em>version: 4.2.2</p>
+                <p>device: samsung samsung GT-S7580</p>
+                <p>crash line: java.lang.NullPointerException: This is a test exception to test logging at ....</p>
+            </description>
+            <guid>36242529-580c-4703-bfab-d42dac5e4a06</guid>
+            <pubDate>2015-07-23T15:17:32.000Z</pubDate>
+        </item>
+    </channel>
+</rss>
+{% endhighlight %}</p>
+<h3 id="authenticationusingcloudant">Authentication using Cloudant</h3>
+<blockquote>
+  <p>Cloudant provides hosting of CouchDB apps. It's a common choice when setting up <em>acra-storage</em> because their free plans are pretty generous.</p>
+</blockquote>
+<p>Cloudant handles authentication with a username and what they term an "API Key". (Or, username and password...)</p>
+<p>When calling the RSS feed you need to supply the details of a user that has been granted <strong>read</strong> access to your <em>acra-storage</em> instance. </p>
+<p>See this link for information</p>
+<blockquote>
+  <p><a href="https://docs.cloudant.com/authentication.html" target="_blank">https://docs.cloudant.com/authentication.html</a></p>
+</blockquote>
+<p>You need to supply your username and API key via a HTTP Header called "Authorization"</p>
+<p>More usefully, here's how to do it using our script</p>
+<p>{% highlight javascript %}
+var options =
+{
+    "headers": 
+    {
+      "Authorization":"Basic c2F5c29tZljI=="
+    }
+};</p>
+<p>var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();</p>
+<p>{% endhighlight %}</p>
+<h4 id="base64encodingyourusernameandpassword">Base64 encoding your username and password</h4>
+<p>The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your <em>acralyzer</em> front end in your browser. Sign in with the user you're going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details. </p>
+<h2 id="parsingthexml">Parsing the XML</h2>
+<p>{% highlight javascript %}</p>
+<p>//Use the XmlService to parse the XML
+var document = XmlService.parse(xml);</p>
+<p>var root = document.getRootElement();</p>
+<p>//get the <channel> element<br />
+var xChannel = root.getChild("channel");</p>
+<p>//There's not much more to it than that.</p>
+<p>{% endhighlight %}</p>
+<h3 id="trackingthemostrecentlysentguid">Tracking the most recently sent guid</h3>
+<p>You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account. </p>
+<p>{% highlight javascript %}</p>
+<p>var userProperties = PropertiesService.getUserProperties();</p>
+<p>//get a property
+var lastDocumentId = userProperties.getProperty("somekey");</p>
+<p>//save a property
+userProperties.setProperty("somekey","somevalue");</p>
+<p>{% endhighlight %}</p>
+<h4 id="sendinganemail">Sending an email</h4>
+<p>Google makes this easy for us</p>
+<p>{% highlight javascript %}
+MailApp.sendEmail("bob@gmail.com", title, emailBody);
+{% endhighlight %}</p>
+<h2 id="setthescriptupingoogleappscript">Set the script up in Google App Script</h2>
+<blockquote>
+  <p>These instructions were correct at the time of writing, but we all know Google's penchant for releasing often...</p>
+</blockquote>
+<ol>
+<li><p>In Google Drive click on the big red button labeled "New", choose "More" and then "Google Apps Script"</p></li>
+<li><p>From the dialog that pops up, go ahead and choose "Blank project"</p></li>
+<li><p>Give the project a suitable name and save it</p></li>
+<li><p>Copy the <a href="#fullScript">script</a> into the code editor and save it</p>
+<blockquote>
+  <p>Now you need to manually run your function for the first time. This is important because it's how you grant any permissions your script needs</p>
+</blockquote></li>
+<li><p>There's a drop down that says "select function" in the toolbar. This contains a list of all functions in your script. Select the function "sendAlerts" then click the play button</p>
+<ul>
+<li><p>You will be prompted that authorisation is required. Go ahead and set up any permissions the script needs</p></li>
+<li><p>When the script starts you'll see a little tooltip like popup near the top of the window. </p></li>
+<li><p>If everything has gone to plan, that's all you'll see. Assuming you've got some errors in your acra-storage database you should receive an email</p></li></ul></li>
+<li><p>The final step is to schedule your script to run. Click on the project triggers icon in the toolbar, and away you go</p></li>
+</ol>
+<h3 id="ifyourscriptfailstorun">If your script fails to run...</h3>
+<p>You'll see a red tooltip like popup inviting you to view details of the failure</p>
+<p>The View menu also has a couple of options to help with debugging - the Execution Transcript and Logs</p>
+<p>Logs - This is what you've explicitly written via a call to Logger.Log</p>
+<p>Execution transcripts - this is the logs, plus diagnostic information that the execution engine generates</p>
+<h3 id="errorsthattrippedmeup">Errors that tripped me up</h3>
+<h4 id="502badgateway">502 Bad Gateway</h4>
+<p>I got this when my Base64 user credentials were incorrect i.e. Cloudant couldn't even begin to work out the username I was trying to use</p>
+<h2 id="anamefullscriptfullscripta"><a name="fullScript">Full script</a></h2>
+<p>{% highlight javascript %}
+function sendAlerts()
+{
+  var recipientEmail=null;
+  var acraServerName="username.cloudant.com";
+  var acraDatabaseName="acra-storage";
+  var cloudantCredentials =null;</p>
+<p>processAcraErrors(recipientEmail,acraServerName,acraDatabaseName, cloudantCredentials);</p>
+<p>}</p>
+<p>function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,cloudantCredentials)
+{</p>
+<p>if(recipientEmail==null)
+  {
+    throw new Error("recipientEmail is null");
+  }</p>
+<p>if(cloudantCredentials==null)
+  {
+    throw new Error("cloudantCredentials is null");
+  }</p>
+<p>var userProperties = PropertiesService.getUserProperties();</p>
+<p>var lastNotificationKey = acraDatabaseName + "_lastNotificationDocumentId";</p>
+<p>var lastDocumentId = userProperties.getProperty(lastNotificationKey);</p>
+<p>Logger.log("last key=" + lastDocumentId);</p>
+<p>var sourceRssUrl = "https://xServerNamex/xDatabaseNamex/<em>design/acra-storage/</em>list/rss/recent-items?descending=true";
+  sourceRssUrl = sourceRssUrl.replace("xServerNamex", acraServerName);
+  sourceRssUrl = sourceRssUrl.replace("xDatabaseNamex", acraDatabaseName);</p>
+<p>Logger.log("URL:" + sourceRssUrl);</p>
+<p>var options = 
+  {
+      "headers": {
+        "Authorization":"Basic " + cloudantCredentials
+        }
+  };</p>
+<p>var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();</p>
+<p>//Need to escape fake XML tags that are included in some error details
+  var regEx = new RegExp("<unknown>",'g');
+  xml = xml.replace(regEx,"[unknown]");</p>
+<p>var document = XmlService.parse(xml);
+  var root = document.getRootElement();
+  var xChannel = root.getChild("channel");
+  var title = null;
+  var link = null;</p>
+<p>if(xChannel!=null)
+  {</p>
+<pre><code>title = xChannel.getChild("title");
+if(title!=null)
+{
+  title = title.getText();
+}
+
+link = xChannel.getChild("link");
+if(link!=null)
+{
+  link = link.getText();
+}
+
+Logger.log("title:" + title);
+Logger.log("link:" + link);
+
+
+var lastItemSendIndex = -1;
+
+//grab an array of all the &lt;item&gt; elements in the RSS feed
+var items = xChannel.getChildren("item");
+
+//Work through it, looking for an element that has a &lt;guid&gt; 
+//which matches the &lt;guid&gt; we saved the last time the script ran.
+//This gives us the point in the list at which to stop including
+//error details
+for(var index=0;index&lt;items.length; index++)
+{
+  var itemGuid = items[index].getChild("guid").getText();
+
+  if(itemGuid==lastDocumentId)
+  {
+    lastItemSendIndex = index;
+    break;
+  }
+
+}
+
+
+Logger.log("last index:" + lastItemSendIndex);
+
+if(lastItemSendIndex==-1)
+{
+  //We have never sent alerts for any of our items...
+  lastItemSendIndex = items.length;
+}
+
+
+//Now we can build our sophisticated email content
+var emailBody = "";
+
+for(var index=0; index&lt;lastItemSendIndex;index++)
+{
+  emailBody +="----------------------------------\n";
+  emailBody+=items[index].getChild("title").getText() + "\n";
+  emailBody+=items[index].getChild("pubDate").getText() + "\n";
+  emailBody+=items[index].getChild("link").getText() + "\n";
+  emailBody+="\n";
+}
+
+Logger.log(emailBody);
+
+if(emailBody!="")
+{
+
+  emailBody = "Recent errors:\n\n" + emailBody;
+
+  MailApp.sendEmail(recipientEmail, title, emailBody);
+
+  if(items.length&gt;0)
+  {
+    //Save the &lt;guid&gt; of the first &lt;item&gt;. New &lt;item&gt;
+    //elements will appear above it in the array, meaning
+    //that the next time the scripts runs we should include 
+    //items between position 0 and wherever our &lt;guid&gt; ends up
+    //in that future list
+    lastDocumentId = items[0].getChild("guid").getText();
+    userProperties.setProperty(lastNotificationKey,lastDocumentId);
+  }
+}
+else
+{
+  Logger.log("Nothing to send");
+}  
+</code></pre>
+<p>}<br />
+}
+{% endhighlight %}</p></div></div></main><footer class="site-footer"><div class="wrapper"><div class="footer-col-wrapper"><div class="footer-col footer-col-1"><ul class="contact-list"><li> <a href="mailto:mahoneyjames+web@gmail.com">Email me                                </a></li></ul></div><div class="footer-col footer-col-2"><ul class="social-media-list"><li> <a href="https://twitter.com/theblacksparrow">twitter: theblacksparrow                                </a></li></ul></div><div class="footer-col footer-col-3"><p> </p></div></div></div></footer></body></html>

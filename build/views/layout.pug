@@ -6,18 +6,18 @@ html
             title= `${helpers.siteName}`
         link(rel='stylesheet', href=`${siteRoot}/current.css`)
         link(rel='stylesheet', href=`${siteRoot}/local.css`)
+        link(rel='stylesheet', href=`/${siteRoot}site.css`)
         //-link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
         meta(name="viewport" content="width=device-width, initial-scale=1")        
         meta(charset="UTF-8")
 
     body
         //-pre= helpers.dump(helpers)
-        header.site-header
-            .wrapper
-                a.site-title(href=`${siteRoot}/index.htm`) Story Marmalade
-                nav.site-nav
-                    .trigger
-                        a.page-link(href=`${siteRoot}/about.htm`) About
+        header            
+            a.site-title(href=`${siteRoot}/index.htm`) Code
+            a.page-link(href=`${siteRoot}/about.htm`) Words
+            a.page-link(href=`${siteRoot}/about.htm`) Cymraeg
+            a.page-link(href=`${siteRoot}/about.htm`) About
 
         main.page-content
             .wrapper
@@ -30,12 +30,10 @@ html
                         .footer-col.footer-col-1
                             ul.contact-list
                                 li 
-                                    a(href="mailto:hello@storymarmalade.com") hello@storymarmalade.com                                
+                                    a(href="mailto:mahoneyjames+web@gmail.com") Email me                                
                         .footer-col.footer-col-2
                             ul.social-media-list
                                 li 
-                                    a(href="https://twitter.com/storymarmalade") twitter: storymarmalade
-                                li (c) Story Marmalade
+                                    a(href="https://twitter.com/theblacksparrow") twitter: theblacksparrow                                
                         .footer-col.footer-col-3
-                            p Got a minute? We have 
-                                a(href=`${siteRoot}/about.htm`) five hundred words
+                            p 
