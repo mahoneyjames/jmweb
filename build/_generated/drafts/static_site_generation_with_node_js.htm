@@ -1,0 +1,21 @@
+<html><head><title>Static site generation using node.js | James Mahoney</title><link rel="stylesheet" href="/current.css"/><link rel="stylesheet" href="/local.css"/><link rel="stylesheet" href="/site.css"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header> <div>          <a class="site-title" href="/index.htm">Home</a></div><div><a class="page-link" href="/about.htm">About</a></div><hr/></header><main class="page-content"><div class="wrapper"><h1>Static site generation using node.js</h1><div class="body"><p>Version 1 of this site was built using <a href="https://jekyllrb.com/">Jekyll</a>. This takes content written in Markdown and spits out a static HTML site. Works well for a site hosted in git pages, because that has built in support for Jekyll.</p>
+<p>There were a few things I didn't like about Jekyll, namely </p>
+<ul>
+<li>Having to fit in with other people's way of doing things.</li>
+<li>Having to learn <em>another</em> framework on top of HTML and Javascript</li>
+<li>A vague sense of disquiet that I didn't really know what was going on behind the scenes. </li>
+</ul>
+<h2 id="enternodejsandpug">Enter: node.js and pug</h2>
+<p>pug is a whitespace based HTML templating system. As such, it's close enough to the tree structure of HTML that I'm already familier with, and it includes a clean and simple way to build dynamic content. Combine that with a node.js library that allows you to generate html out of pug files, and we have a very simple - and low level - static site builder. </p>
+<p>High level workflow is</p>
+<ul>
+<li>Use node.js to run a JS file. This puts static HTML somewhere</li>
+<li>Copy this HTML to a web server</li>
+</ul>
+<p>Important things</p>
+<ul>
+<li>package.json - defines the node "app". For our purposes, this comes down to a list of dependancies, and the JS entry points that build the site.</li>
+<li>build.js - contains the logic that builds the site. </li>
+<li>previewHost/preview.js - runs the node.js express webserver against the generated content to allow for local previewing</li>
+<li>views directory - pug view templates. These are used to build the static HTML out of dynamic content   </li>
+</ul></div></div></main><hr/><footer class="site-footer"><div class="wrapper"><div class="footer-col-wrapper"><div class="footer-col footer-col-1"><ul class="contact-list"><li> <a href="mailto:mahoneyjames+web@gmail.com">Email me                                </a></li></ul></div><div class="footer-col footer-col-2"><ul class="social-media-list"><li> <a href="https://twitter.com/theblacksparrow">twitter: theblacksparrow                                </a></li></ul></div><div class="footer-col footer-col-3"><p> </p></div></div></div></footer></body></html>

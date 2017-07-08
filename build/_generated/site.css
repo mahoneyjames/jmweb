@@ -90,7 +90,7 @@ header h1 {
   font-weight: 300;
 }
 
-header a {
+header_ a {
   border: 1px solid #e81c4f;
   border-radius: 290486px;
   color: white;
@@ -105,7 +105,7 @@ header a {
   margin-left: 1em;
   }
 
-header a:hover {
+header_ a:hover {
   background:  #e81c4f;
   color: white;
 }

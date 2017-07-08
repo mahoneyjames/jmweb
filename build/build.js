@@ -13,7 +13,12 @@ const posts = [
     generateFileHtmlFromMarkdown("post",'_posts/2016-09-02-google_sheets_backend_data_store_via_json.md','posts/2016-09-02-google_sheets_backend_data_store_via_json',{} )
     ];
 
+const drafts = [
+    generateFileHtmlFromMarkdown("post",'_drafts/static_site_generation_with_node_js.md','drafts/static_site_generation_with_node_js',{} )
+];
+
 generateHtml("index", "index", {posts});
+generateHtml("index", "drafts", {posts:drafts});
 generateHtml("about","about",{title:"About"});
     
 function generateHtml(view, outputFile, options)

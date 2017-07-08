@@ -2,10 +2,13 @@ extends layout
 
 block content
     h1 Hi there, I'm James
-    p I write software, and occasional blog posts. 
+    p I write software, and occasional blog posts (Also learning how to do teh web design, but it's slow going)
     p For now, there's not much here...
 
     ul
         each post in posts
             li
                 a(href=post.path) #{post.title}
+
+
+    -//pre=helpers.dump(posts)

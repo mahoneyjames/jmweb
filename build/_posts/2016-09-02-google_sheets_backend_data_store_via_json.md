@@ -72,11 +72,7 @@ function showMeetups(data)
    - Fortunately Azure storage accounts [support CORS](https://msdn.microsoft.com/en-us/library/azure/dn535601.aspx), meaning that it's a simple matter to fix this. 
    
    - The easiest way I found to configure CORS was to use the [Azure Storage Explorer](http://storageexplorer.com/) - find the container your BLOBs will live in, right click and choose the "Configure CORS Settings" option
- 
- - See it in action 
- 
-    - [Newport meetups](/welsh/newport_meetups.html)
-	
+ 	
 ## References
 
  - Turn a CSV file into an array of .NET objects in a single line of code
@@ -89,4 +85,4 @@ function showMeetups(data)
 	
  - How to download a specific worksheet via CSV
 
-   - [https://adamlofting.com/1098/new-google-sheets-publishing-a-single-worksheet-to-the-web-as-csv/](https://adamlofting.com/1098/new-google-sheets-publishing-a-single-worksheet-to-the-web-as-csv/) 
+    - [https://adamlofting.com/1098/new-google-sheets-publishing-a-single-worksheet-to-the-web-as-csv/](https://adamlofting.com/1098/new-google-sheets-publishing-a-single-worksheet-to-the-web-as-csv/) 

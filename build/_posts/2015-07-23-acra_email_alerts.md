@@ -30,26 +30,24 @@ This is the structure of the URL you need
 > https://server/CouchDB/_design/acra-storage/_list/rss/recent-items?descending=true
 
 ###RSS XML Example
-{% highlight xml %}
-<rss version="0.91">
-	<channel>
-		<title> latest Crash Reports</title>
-		<link>http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/dashboard/type</link>
-		<description>Acralyzer latest crash reports.</description>
-		<item>
-			<title>java.lang.NullPointerException: This is a test exception to test logging : SupportSettingsActivity.java:79</title>
-			<link>http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/report-details/type/36242529-580c-4703-bfab-d42dac5e4a06</link>
-			<description>
-				<p>app_version: 1.0.14</p><p>android_version: 4.2.2</p>
-				<p>device: samsung samsung GT-S7580</p>
-				<p>crash line: java.lang.NullPointerException: This is a test exception to test logging at ....</p>
-			</description>
-			<guid>36242529-580c-4703-bfab-d42dac5e4a06</guid>
-			<pubDate>2015-07-23T15:17:32.000Z</pubDate>
-		</item>
-	</channel>
-</rss>
-{% endhighlight %}
+    <rss version="0.91">
+      <channel>
+        <title> latest Crash Reports</title>
+        <link>http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/dashboard/type</link>
+        <description>Acralyzer latest crash reports.</description>
+        <item>
+          <title>java.lang.NullPointerException: This is a test exception to test logging : SupportSettingsActivity.java:79</title>
+          <link>http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/report-details/type/36242529-580c-4703-bfab-d42dac5e4a06</link>
+          <description>
+            <p>app_version: 1.0.14</p><p>android_version: 4.2.2</p>
+            <p>device: samsung samsung GT-S7580</p>
+            <p>crash line: java.lang.NullPointerException: This is a test exception to test logging at ....</p>
+          </description>
+          <guid>36242529-580c-4703-bfab-d42dac5e4a06</guid>
+          <pubDate>2015-07-23T15:17:32.000Z</pubDate>
+        </item>
+      </channel>
+    </rss>
 ###Authentication using Cloudant
 >Cloudant provides hosting of CouchDB apps. It's a common choice when setting up *acra-storage* because their free plans are pretty generous.
 
@@ -65,59 +63,57 @@ You need to supply your username and API key via a HTTP Header called "Authoriza
 
 More usefully, here's how to do it using our script
 
-{% highlight javascript %}
-var options =
-{
-    "headers": 
+
+    var options =
     {
-	  "Authorization":"Basic c2F5c29tZljI=="
-    }
-};
+        "headers": 
+        {
+        "Authorization":"Basic c2F5c29tZljI=="
+        }
+    };
 
-var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
+    var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
 
-{% endhighlight %}
+
 
 ####Base64 encoding your username and password
 The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your *acralyzer* front end in your browser. Sign in with the user you're going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details. 
 
 ##Parsing the XML
-{% highlight javascript %}
 
-//Use the XmlService to parse the XML
-var document = XmlService.parse(xml);
+    //Use the XmlService to parse the XML
+    var document = XmlService.parse(xml);
 
-var root = document.getRootElement();
+    var root = document.getRootElement();
 
-//get the <channel> element  
-var xChannel = root.getChild("channel");
+    //get the <channel> element  
+    var xChannel = root.getChild("channel");
 
-//There's not much more to it than that.
+    //There's not much more to it than that.
 
-{% endhighlight %}
+
 
 ###Tracking the most recently sent guid
 You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account. 
 
-{% highlight javascript %}
 
-var userProperties = PropertiesService.getUserProperties();
+    var userProperties = PropertiesService.getUserProperties();
 
-//get a property
-var lastDocumentId = userProperties.getProperty("somekey");
+    //get a property
+    var lastDocumentId = userProperties.getProperty("somekey");
 
-//save a property
-userProperties.setProperty("somekey","somevalue");
+    //save a property
+    userProperties.setProperty("somekey","somevalue");
 
-{% endhighlight %}
+
 
   
 ####Sending an email
 Google makes this easy for us
 
-{% highlight javascript %}
-MailApp.sendEmail("bob@gmail.com", title, emailBody);
-{% endhighlight %}
+
+    MailApp.sendEmail("bob@gmail.com", title, emailBody);
+
 
 
 ##Set the script up in Google App Script
@@ -161,154 +157,153 @@ I got this when my Base64 user credentials were incorrect i.e. Cloudant couldn't
 
 ## <a name="fullScript">Full script</a>
 
-{% highlight javascript %}
-function sendAlerts()
-{
-  var recipientEmail=null;
-  var acraServerName="username.cloudant.com";
-  var acraDatabaseName="acra-storage";
-  var cloudantCredentials =null;
- 
-  
-  processAcraErrors(recipientEmail,acraServerName,acraDatabaseName, cloudantCredentials);
-  
-}
 
-function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,cloudantCredentials)
-{
+    function sendAlerts()
+    {
+      var recipientEmail=null;
+      var acraServerName="username.cloudant.com";
+      var acraDatabaseName="acra-storage";
+      var cloudantCredentials =null;
+    
+      
+      processAcraErrors(recipientEmail,acraServerName,acraDatabaseName, cloudantCredentials);
+      
+    }
 
-  if(recipientEmail==null)
-  {
-    throw new Error("recipientEmail is null");
-  }
+    function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,cloudantCredentials)
+    {
 
-  if(cloudantCredentials==null)
-  {
-    throw new Error("cloudantCredentials is null");
-  }
-  
-  var userProperties = PropertiesService.getUserProperties();
-  
-  var lastNotificationKey = acraDatabaseName + "_lastNotificationDocumentId";
-  
-  var lastDocumentId = userProperties.getProperty(lastNotificationKey);
-  
-  Logger.log("last key=" + lastDocumentId);
-  
+      if(recipientEmail==null)
+      {
+        throw new Error("recipientEmail is null");
+      }
 
-  var sourceRssUrl = "https://xServerNamex/xDatabaseNamex/_design/acra-storage/_list/rss/recent-items?descending=true";
-  sourceRssUrl = sourceRssUrl.replace("xServerNamex", acraServerName);
-  sourceRssUrl = sourceRssUrl.replace("xDatabaseNamex", acraDatabaseName);
-  
-  Logger.log("URL:" + sourceRssUrl);
-   
-  var options = 
-  {
-      "headers": {
-        "Authorization":"Basic " + cloudantCredentials
+      if(cloudantCredentials==null)
+      {
+        throw new Error("cloudantCredentials is null");
+      }
+      
+      var userProperties = PropertiesService.getUserProperties();
+      
+      var lastNotificationKey = acraDatabaseName + "_lastNotificationDocumentId";
+      
+      var lastDocumentId = userProperties.getProperty(lastNotificationKey);
+      
+      Logger.log("last key=" + lastDocumentId);
+      
+
+      var sourceRssUrl = "https://xServerNamex/xDatabaseNamex/_design/acra-storage/_list/rss/recent-items?descending=true";
+      sourceRssUrl = sourceRssUrl.replace("xServerNamex", acraServerName);
+      sourceRssUrl = sourceRssUrl.replace("xDatabaseNamex", acraDatabaseName);
+      
+      Logger.log("URL:" + sourceRssUrl);
+      
+      var options = 
+      {
+          "headers": {
+            "Authorization":"Basic " + cloudantCredentials
+            }
+      };
+      
+    
+      var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
+      
+      //Need to escape fake XML tags that are included in some error details
+      var regEx = new RegExp("<unknown>",'g');
+      xml = xml.replace(regEx,"[unknown]");
+      
+      var document = XmlService.parse(xml);
+      var root = document.getRootElement();
+      var xChannel = root.getChild("channel");
+      var title = null;
+      var link = null;
+      
+      if(xChannel!=null)
+      {
+
+        
+        title = xChannel.getChild("title");
+        if(title!=null)
+        {
+          title = title.getText();
         }
-  };
-  
- 
-  var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
-   
-  //Need to escape fake XML tags that are included in some error details
-  var regEx = new RegExp("<unknown>",'g');
-  xml = xml.replace(regEx,"[unknown]");
-  
-  var document = XmlService.parse(xml);
-  var root = document.getRootElement();
-  var xChannel = root.getChild("channel");
-  var title = null;
-  var link = null;
-  
-  if(xChannel!=null)
-  {
-
-    
-    title = xChannel.getChild("title");
-    if(title!=null)
-    {
-      title = title.getText();
+        
+        link = xChannel.getChild("link");
+        if(link!=null)
+        {
+          link = link.getText();
+        }
+        
+        Logger.log("title:" + title);
+        Logger.log("link:" + link);
+        
+        
+        var lastItemSendIndex = -1;
+        
+        //grab an array of all the <item> elements in the RSS feed
+        var items = xChannel.getChildren("item");
+        
+        //Work through it, looking for an element that has a <guid> 
+        //which matches the <guid> we saved the last time the script ran.
+        //This gives us the point in the list at which to stop including
+        //error details
+        for(var index=0;index<items.length; index++)
+        {
+          var itemGuid = items[index].getChild("guid").getText();
+          
+          if(itemGuid==lastDocumentId)
+          {
+            lastItemSendIndex = index;
+            break;
+          }
+        
+        }
+        
+        
+        Logger.log("last index:" + lastItemSendIndex);
+        
+        if(lastItemSendIndex==-1)
+        {
+          //We have never sent alerts for any of our items...
+          lastItemSendIndex = items.length;
+        }
+        
+        
+        //Now we can build our sophisticated email content
+        var emailBody = "";
+        
+        for(var index=0; index<lastItemSendIndex;index++)
+        {
+          emailBody +="----------------------------------\n";
+          emailBody+=items[index].getChild("title").getText() + "\n";
+          emailBody+=items[index].getChild("pubDate").getText() + "\n";
+          emailBody+=items[index].getChild("link").getText() + "\n";
+          emailBody+="\n";
+        }
+        
+        Logger.log(emailBody);
+        
+        if(emailBody!="")
+        {
+        
+          emailBody = "Recent errors:\n\n" + emailBody;
+        
+          MailApp.sendEmail(recipientEmail, title, emailBody);
+          
+          if(items.length>0)
+          {
+            //Save the <guid> of the first <item>. New <item>
+            //elements will appear above it in the array, meaning
+            //that the next time the scripts runs we should include 
+            //items between position 0 and wherever our <guid> ends up
+            //in that future list
+            lastDocumentId = items[0].getChild("guid").getText();
+            userProperties.setProperty(lastNotificationKey,lastDocumentId);
+          }
+        }
+        else
+        {
+          Logger.log("Nothing to send");
+        }  
+      }  
     }
-    
-    link = xChannel.getChild("link");
-    if(link!=null)
-    {
-      link = link.getText();
-    }
-    
-    Logger.log("title:" + title);
-    Logger.log("link:" + link);
-    
-    
-    var lastItemSendIndex = -1;
-    
-    //grab an array of all the <item> elements in the RSS feed
-    var items = xChannel.getChildren("item");
-    
-    //Work through it, looking for an element that has a <guid> 
-    //which matches the <guid> we saved the last time the script ran.
-    //This gives us the point in the list at which to stop including
-    //error details
-    for(var index=0;index<items.length; index++)
-    {
-      var itemGuid = items[index].getChild("guid").getText();
-      
-      if(itemGuid==lastDocumentId)
-      {
-        lastItemSendIndex = index;
-        break;
-      }
-    
-    }
-    
-    
-    Logger.log("last index:" + lastItemSendIndex);
-    
-    if(lastItemSendIndex==-1)
-    {
-      //We have never sent alerts for any of our items...
-      lastItemSendIndex = items.length;
-    }
-    
-    
-    //Now we can build our sophisticated email content
-    var emailBody = "";
-    
-    for(var index=0; index<lastItemSendIndex;index++)
-    {
-      emailBody +="----------------------------------\n";
-      emailBody+=items[index].getChild("title").getText() + "\n";
-      emailBody+=items[index].getChild("pubDate").getText() + "\n";
-      emailBody+=items[index].getChild("link").getText() + "\n";
-      emailBody+="\n";
-    }
-    
-    Logger.log(emailBody);
-    
-    if(emailBody!="")
-    {
-    
-      emailBody = "Recent errors:\n\n" + emailBody;
-    
-      MailApp.sendEmail(recipientEmail, title, emailBody);
-      
-      if(items.length>0)
-      {
-        //Save the <guid> of the first <item>. New <item>
-        //elements will appear above it in the array, meaning
-        //that the next time the scripts runs we should include 
-        //items between position 0 and wherever our <guid> ends up
-        //in that future list
-        lastDocumentId = items[0].getChild("guid").getText();
-        userProperties.setProperty(lastNotificationKey,lastDocumentId);
-      }
-    }
-    else
-    {
-      Logger.log("Nothing to send");
-    }  
-  }  
-}
-{% endhighlight %}

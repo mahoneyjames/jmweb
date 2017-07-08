@@ -13,17 +13,20 @@ html
 
     body
         //-pre= helpers.dump(helpers)
-        header            
-            a.site-title(href=`${siteRoot}/index.htm`) Code
-            a.page-link(href=`${siteRoot}/about.htm`) Words
-            a.page-link(href=`${siteRoot}/about.htm`) Cymraeg
-            a.page-link(href=`${siteRoot}/about.htm`) About
-
+        header 
+            div           
+                a.site-title(href=`${siteRoot}/index.htm`) Home
+            -//a.page-link(href=`${siteRoot}/about.htm`) Words
+            -//a.page-link(href=`${siteRoot}/about.htm`) Cymraeg
+            div
+                a.page-link(href=`${siteRoot}/about.htm`) About
+            hr
         main.page-content
             .wrapper
                 block content
 
         block footer
+            hr
             footer.site-footer
                 .wrapper
                     .footer-col-wrapper
