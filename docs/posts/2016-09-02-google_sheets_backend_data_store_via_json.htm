@@ -1,0 +1,71 @@
+<html><head><title>Using Google sheets as a backend data store for a dynamic web page | James Mahoney</title><link rel="stylesheet" href="/current.css"/><link rel="stylesheet" href="/local.css"/><link rel="stylesheet" href="/site.css"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header> <div>          <a class="site-title" href="/index.htm">Home</a></div><div><a class="page-link" href="/about.htm">About</a></div><hr/></header><main class="page-content"><div class="wrapper"><h1>Using Google sheets as a backend data store for a dynamic web page</h1><div class="body"><p>I was after a <em>simple</em> way to curate a list of nearby Welsh practice meeting groups and have that information displayed on a web page. A Google spreadsheet seemed an good starting point because it's a spreadsheet hosted by Google that other people can help keep up to date. </p>
+<p><a href="https://docs.google.com/spreadsheets/d/1zzhf4SebQ5IIU1PfrrAzh1d0Q2ZLDaesN-cQ2Ux0bwA">Here's the sheet (in case you're in the area, want to practise your Welsh, and you like your data tabular)</a></p>
+<p>Displaying the data on a web page can be as simple as some Javascript that downloads the data and renders it in whatever fashion makes sense e.g. a simple list, or plotting the meetings on a map. </p>
+<h2 id="gettingthedataoutofgoogle">Getting the data out of Google</h2>
+<p>There's a JSON based API you can use, but it's reported to be a somewhat clunky and fiddly JSON format. Plus, I'd one day like to have all this data accessible via a clean API, rather than being tied to whatever Google happen to be using. </p>
+<p>This is the method I picked</p>
+<ul>
+<li><p>Publish the spreadsheet as CSV. </p>
+<ul>
+<li>This provides a public URL that mirrors the spreadsheet rows and columns as CSV</li></ul></li>
+<li><p>Use an Azure web job to download the data, convert it to a simple JSON format and then save it to an Azure BLOB</p></li>
+</ul>
+<pre><code class="json language-json">[
+  {
+    "Area": "Newport",
+    "Title": "Cwtch on a Saturday",
+    "Notes": "",
+    "Where": "Stow Hill, Handpost, Newport",
+    "Postcode": "NP20 4HA",
+    "When": "Every Saturday, 1000-1200"
+  },
+  {
+    "Area": "Newport",
+    "Title": "The Upper Cock - SSiW",
+    "Notes": "",
+    "Where": "The Upper Cock, The Hwy, Cwmbran",
+    "Postcode": "NP44 2HE",
+    "When": "Every Tuesday, 1900-2100"
+  }
+]
+</code></pre>
+<ul>
+<li>Download the BLOB from my web page, parse the JSON and then render it in some way </li>
+</ul>
+<pre><code class="javascript language-javascript">$( document ).ready(function() {
+  $.get('https://chatdirectory.blob.core.windows.net/simpleapi/newport/meetups.json', null,showMeetups);
+});
+
+function showMeetups(data)
+{
+  $("#dynamic").empty();
+
+  $json = $.parseJSON(data);
+  $.each($json, function(i,item){
+
+  $("#dynamic").append("&lt;h1&gt;" + item.Title + "&lt;/h1&gt;");
+  $("#dynamic").append("&lt;p&gt;" + item.Where + " " + item.Postcode + "&lt;/p&gt;");
+  $("#dynamic").append("&lt;p&gt;" + item.When + "&lt;/p&gt;");
+  $("#dynamic").append("&lt;p&gt;" + item.Notes + "&lt;/p&gt;");
+
+  });
+}
+</code></pre>
+<ul>
+<li><p>Configure CORS for the Azure Storage account</p></li>
+<li><p>By default you can't simply download a BLOB from any old web page. You'll probably see this error: No 'Access-Control-Allow-Origin' header is present on the requested resource</p></li>
+<li><p>Fortunately Azure storage accounts <a href="https://msdn.microsoft.com/en-us/library/azure/dn535601.aspx">support CORS</a>, meaning that it's a simple matter to fix this. </p></li>
+<li><p>The easiest way I found to configure CORS was to use the <a href="http://storageexplorer.com/">Azure Storage Explorer</a> - find the container your BLOBs will live in, right click and choose the "Configure CORS Settings" option</p></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><p>Turn a CSV file into an array of .NET objects in a single line of code</p>
+<ul>
+<li><a href="https://joshclose.github.io/CsvHelper/">https://joshclose.github.io/CsvHelper/</a></li></ul></li>
+<li><p>A PHP based blog post on the same topic (with useful screenshots)</p>
+<ul>
+<li><a href="http://www.ravelrumba.com/blog/json-google-spreadsheets/">http://www.ravelrumba.com/blog/json-google-spreadsheets/</a></li></ul></li>
+<li><p>How to download a specific worksheet via CSV</p>
+<ul>
+<li><a href="https://adamlofting.com/1098/new-google-sheets-publishing-a-single-worksheet-to-the-web-as-csv/">https://adamlofting.com/1098/new-google-sheets-publishing-a-single-worksheet-to-the-web-as-csv/</a> </li></ul></li>
+</ul></div></div></main><hr/><footer class="site-footer"><div class="wrapper"><div class="footer-col-wrapper"><div class="footer-col footer-col-1"><ul class="contact-list"><li> <a href="mailto:mahoneyjames+web@gmail.com">Email me                                </a></li></ul></div><div class="footer-col footer-col-2"><ul class="social-media-list"><li> <a href="https://twitter.com/theblacksparrow">twitter: theblacksparrow                                </a></li></ul></div><div class="footer-col footer-col-3"><p> </p></div></div></div></footer></body></html>
