@@ -1,0 +1,538 @@
+{
+    "title":  "North: Course 1",
+    "lessons":  [
+                    {
+                        "title":  "Introduction",
+                        "content_type":  "intro",
+                        "identifier":  "intro",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1introduction",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4401945",
+                                                "identifier":  "c1introduction-mp3-cyen-79206",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 1",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson1",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1lesson01",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15399336",
+                                                "identifier":  "c1lesson01-mp3-cyen-79537",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 2",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson2",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1020 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14547606",
+                                                "identifier":  "lesson1020-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 3",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson3",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1030 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14617196",
+                                                "identifier":  "lesson1030-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 4",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson4",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1040 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14531934",
+                                                "identifier":  "lesson1040-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 5",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1050",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14564117",
+                                                "identifier":  "lesson1050-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 6",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson6",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson 6 - Part 1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16665391",
+                                                "identifier":  "lesson-6-63626234",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 6 - Part 2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15862909",
+                                                "identifier":  "welshc1lesson06b-63531284",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Lesson 6 - Bonus",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "10176194",
+                                                "identifier":  "lesson1063-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 7",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson7",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1070 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14361825",
+                                                "identifier":  "lesson1070-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 8",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson8",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1080 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13351827",
+                                                "identifier":  "lesson1080-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 9",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson9",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1090 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14121916",
+                                                "identifier":  "lesson1090-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 10",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1100 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14291610",
+                                                "identifier":  "lesson1100-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 11",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson11",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1110 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14208854",
+                                                "identifier":  "lesson1110-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 12",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson12",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1120 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14290147",
+                                                "identifier":  "lesson1120-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 13",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson13",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1130 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14235185",
+                                                "identifier":  "lesson1130-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 14",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson14",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1140 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14251904",
+                                                "identifier":  "lesson1140-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 15",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson15",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1150 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14014712",
+                                                "identifier":  "lesson1150-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 16",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1160 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14311463",
+                                                "identifier":  "lesson1160-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 17",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson17",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1170 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14168939",
+                                                "identifier":  "lesson1170-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 18",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson18",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1180 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13724648",
+                                                "identifier":  "lesson1180-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 19",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson19",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1190 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14045223",
+                                                "identifier":  "lesson1190-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 20",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1200 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14291192",
+                                                "identifier":  "lesson1200-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 21",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson21",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1210 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14312088",
+                                                "identifier":  "lesson1210-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 22",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson22",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Lesson22",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14171113",
+                                                "identifier":  "welshc1lesson22-63531318",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 23",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson23",
+                        "media_items":  [
+                                            {
+                                                "title":  "Lesson1230 Mp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14292653",
+                                                "identifier":  "lesson1230-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 24",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson24",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Lesson24",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16816481",
+                                                "identifier":  "welshc1lesson24-63531364",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 25",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson25",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Lesson25",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11711789",
+                                                "identifier":  "welshc1lesson25-63531412",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 26",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson26",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Lesson26",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11410074",
+                                                "identifier":  "welshc1lesson26-63531446",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 1",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab1",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Rhifau G1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16747348",
+                                                "identifier":  "c1gogrhifaug1-63532032",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 2",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab2",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Rhifau B1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11977598",
+                                                "identifier":  "c1gogrhifaub1-63531993",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 3",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab3",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Misoedd",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16809569",
+                                                "identifier":  "c1gogmisoedd-63531964",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 4",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab4",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Diwrnodiau",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11786072",
+                                                "identifier":  "c1gogdiwrnodiau-63531873",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 5",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab5",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Cyflwyno",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14655567",
+                                                "identifier":  "c1gogcyflwyno-63531845",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 6",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab6",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Bootcamp1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18301531",
+                                                "identifier":  "c1gogbootcamp1-63531638",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 7",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab7",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Bootcamp2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17968627",
+                                                "identifier":  "c1gogbootcamp2-63531707",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 8",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab8",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Bootcamp3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14411219",
+                                                "identifier":  "c1gogbootcamp3-63531754",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 9",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab9",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Lliwiau",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19459483",
+                                                "identifier":  "c1goglliwiau-63531922",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Vocab 10",
+                        "content_type":  "vocab",
+                        "identifier":  "vocab10",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Gog Crynodeb Gg",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15237683",
+                                                "identifier":  "c1gogcrynodebgg-63531795",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "north_course1"
+}

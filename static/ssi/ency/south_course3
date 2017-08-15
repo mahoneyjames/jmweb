@@ -1,0 +1,356 @@
+{
+    "title":  "South: Course 3",
+    "lessons":  [
+                    {
+                        "title":  "Lesson 1",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson1",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers01",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "11709784",
+                                                "identifier":  "c3gwers01-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 2",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson2",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers02",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13056448",
+                                                "identifier":  "c3gwers02-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 3",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson3",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers03",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12525013",
+                                                "identifier":  "c3gwers03-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 4",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson4",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers04",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13739603",
+                                                "identifier":  "c3gwers04-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 5",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson5",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers05",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13021549",
+                                                "identifier":  "c3gwers05-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 6",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson6",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers06",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14447417",
+                                                "identifier":  "c3gwers06-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 7",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson7",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers07",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13457898",
+                                                "identifier":  "c3gwers07-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 8",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson8",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers08",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13733333",
+                                                "identifier":  "c3gwers08-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 9",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson9",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers09",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13329167",
+                                                "identifier":  "c3gwers09-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 10",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson10",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers10",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14160070",
+                                                "identifier":  "c3gwers10-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 11",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson11",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers11 Mp3 Cyen",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14876034",
+                                                "identifier":  "c3gwers11-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 12",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson12",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers12 Mp3 Cyen",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14588898",
+                                                "identifier":  "c3gwers12-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 13",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson13",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers13 Mp3 Cyen",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13191867",
+                                                "identifier":  "c3gwers13-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 14",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson14",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers14 Mp3 Cyen",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13902398",
+                                                "identifier":  "c3gwers14-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 15",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson15",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers15 Mp3 Cyen",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14456612",
+                                                "identifier":  "c3gwers15-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 16",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson16",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3gwers16 Mp3 Cyen",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "12653118",
+                                                "identifier":  "c3gwers16-mp3-cyen",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 17",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson17",
+                        "media_items":  [
+                                            {
+                                                "title":  "C3 Gwers17",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13298865",
+                                                "identifier":  "c3gwers17-3378511",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 18",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson18",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson18 South",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13785578",
+                                                "identifier":  "welshc3lesson18south-5206913",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 19",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson19",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson19 South",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "13062509",
+                                                "identifier":  "welshc3lesson19south-10882391",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 20",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson20 South",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "12868994",
+                                                "identifier":  "welshc3lesson20south-13150781",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 21",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson21",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson21 South",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14148367",
+                                                "identifier":  "welshc3lesson21south-17350921",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 22",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson22",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson22 South",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "13459570",
+                                                "identifier":  "welshc3lesson22south-19502592",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 23",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson23",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson23 South",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "13033879",
+                                                "identifier":  "welshc3lesson23south-23519686",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 24",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson24",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson24 South",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "13320808",
+                                                "identifier":  "welshc3lesson24south-35102046",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Lesson 25",
+                        "content_type":  "lesson",
+                        "identifier":  "lesson25",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C3 Lesson25 South",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "13758829",
+                                                "identifier":  "welshc3lesson25south-38902125",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "south_course3"
+}

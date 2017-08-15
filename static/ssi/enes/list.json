@@ -1,0 +1,11 @@
+{
+    "identifier":  "enes",
+    "courses":  [
+                    {
+                        "identifier":  "level1"
+                    },
+                    {
+                        "identifier":  "level2"
+                    }
+                ]
+}

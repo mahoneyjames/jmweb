@@ -1,0 +1,391 @@
+{
+    "title":  "North: Level 1 (new!)",
+    "lessons":  [
+                    {
+                        "title":  "Challenge 01",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge1",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 01",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17233880",
+                                                "identifier":  "c1welsh01n-43437964",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 02",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge2",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh02n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18857259",
+                                                "identifier":  "c1welsh02n-43438387",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 03",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge3",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh03n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17829089",
+                                                "identifier":  "c1welsh03n-43438928",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 04",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge4",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh04n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18653501",
+                                                "identifier":  "c1welsh04n-43439451",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 05",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 05",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19970322",
+                                                "identifier":  "c1welsh05n-43440014",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4015068",
+                                                "identifier":  "c1welshlisten01-49354480",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 06",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge6",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh06n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "22783993",
+                                                "identifier":  "c1welsh06n-43440656",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 07",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge7",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh07n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17146977",
+                                                "identifier":  "c1welsh07n-43441138",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 08",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge8",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh08n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19645539",
+                                                "identifier":  "c1welsh08n-43441696",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 09",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge9",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh09n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "21654890",
+                                                "identifier":  "c1welsh09n-43442261",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 10",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 10",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18837416",
+                                                "identifier":  "c1welsh10n-43442696",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 2 (Double Speed)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7643169",
+                                                "identifier":  "c1welshlisten02v2-51932289",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 11",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge11",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh11n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16834596",
+                                                "identifier":  "c1welsh11n-43443070",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 12",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge12",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh12n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17462122",
+                                                "identifier":  "c1welsh12n-43443613",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 13",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge13",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh13n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17972868",
+                                                "identifier":  "c1welsh13n-43444009",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 14",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge14",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh14n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16714393",
+                                                "identifier":  "c1welsh14n-43444386",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 15",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge15",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 15",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18063814",
+                                                "identifier":  "c1welsh15n-40014493",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 3 (Double Speed)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7656793",
+                                                "identifier":  "c1welshlisten03-49354736",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 16",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge16",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh16n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18287361",
+                                                "identifier":  "c1welsh16n-40014908",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 17",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge17",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh17n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17223859",
+                                                "identifier":  "c1welsh17n-40015295",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 18",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge18",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh18n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17204707",
+                                                "identifier":  "c1welsh18n-43444772",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 19",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge19",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh19n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16429393",
+                                                "identifier":  "c1welsh19n-43445137",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 20",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 20",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16114252",
+                                                "identifier":  "c1welsh20n-47002023",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 4 (Double Speed)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7685006",
+                                                "identifier":  "c1welshlisten04-49354906",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 21",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge21",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh21n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16673911",
+                                                "identifier":  "c1welsh21n-47002406",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 22",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge22",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh22n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16771284",
+                                                "identifier":  "c1welsh22n-47002888",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 23",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge23",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh23n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16903359",
+                                                "identifier":  "c1welsh23n-47003281",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 24",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge24",
+                        "media_items":  [
+                                            {
+                                                "title":  "C1 Welsh24n",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16567529",
+                                                "identifier":  "c1welsh24n-48887784",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 25",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge25",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 25",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "18292655",
+                                                "identifier":  "c1welsh25n-49348888",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 5 (Double Speed)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "7691444",
+                                                "identifier":  "c1welshlisten05-49502953",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "north_level1"
+}

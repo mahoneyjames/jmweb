@@ -1,0 +1,258 @@
+{
+    "title":  "North: Daily practices",
+    "lessons":  [
+                    {
+                        "title":  "C1 Speaking - L 1-6",
+                        "content_type":  "practice",
+                        "identifier":  "c1speaking16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C116 Speaking North1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3536343",
+                                                "identifier":  "welshc116speakingnorth1-77175908",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking North2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3487347",
+                                                "identifier":  "welshc116speakingnorth2-77175986",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking North3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3507696",
+                                                "identifier":  "welshc116speakingnorth3-77176066",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking North4",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3451175",
+                                                "identifier":  "welshc116speakingnorth4-77176146",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Speaking North5",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3542250",
+                                                "identifier":  "welshc116speakingnorth5-77176224",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Listening - L 1-6",
+                        "content_type":  "practice",
+                        "identifier":  "c1listening16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C116 Listening North1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4463938",
+                                                "identifier":  "welshc116listeningnorth1-77175433",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening North2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4224910",
+                                                "identifier":  "welshc116listeningnorth2-77175532",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening North3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4498205",
+                                                "identifier":  "welshc116listeningnorth3-77175639",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening North4",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4253656",
+                                                "identifier":  "welshc116listeningnorth4-77175732",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C116 Listening North5",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4284972",
+                                                "identifier":  "welshc116listeningnorth5-77175827",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Speaking",
+                        "content_type":  "practice",
+                        "identifier":  "c1speaking",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Speaking North1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3508805",
+                                                "identifier":  "welshc1speakingnorth1-77174115",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking North2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3698442",
+                                                "identifier":  "welshc1speakingnorth2-77174200",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking North3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3317674",
+                                                "identifier":  "welshc1speakingnorth3-77174273",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking North4",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3557060",
+                                                "identifier":  "welshc1speakingnorth4-77174354",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Speaking North5",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3524519",
+                                                "identifier":  "welshc1speakingnorth5-77174430",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C1 Listening",
+                        "content_type":  "practice",
+                        "identifier":  "c1listening",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C1 Listening North1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4568759",
+                                                "identifier":  "welshc1listeningnorth1-77173614",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening North2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4514391",
+                                                "identifier":  "welshc1listeningnorth2-77173720",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening North3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4497952",
+                                                "identifier":  "welshc1listeningnorth3-77173823",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening North4",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4365543",
+                                                "identifier":  "welshc1listeningnorth4-77173923",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C1 Listening North5",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4520369",
+                                                "identifier":  "welshc1listeningnorth5-77174030",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C2 Speaking",
+                        "content_type":  "practice",
+                        "identifier":  "c2speaking",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Speaking North1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3290059",
+                                                "identifier":  "welshc2speakingnorth1-77175013",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking North2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3299791",
+                                                "identifier":  "welshc2speakingnorth2-77175091",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking North3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3289249",
+                                                "identifier":  "welshc2speakingnorth3-77175172",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking North4",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3215216",
+                                                "identifier":  "welshc2speakingnorth4-77175254",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Speaking North5",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "3335630",
+                                                "identifier":  "welshc2speakingnorth5-77175333",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "C2 Listening",
+                        "content_type":  "practice",
+                        "identifier":  "c2listening",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C2 Listening North1",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4356148",
+                                                "identifier":  "welshc2listeningnorth1-77174527",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening North2",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4341331",
+                                                "identifier":  "welshc2listeningnorth2-77174625",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening North3",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4336783",
+                                                "identifier":  "welshc2listeningnorth3-77174725",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening North4",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4323835",
+                                                "identifier":  "welshc2listeningnorth4-77174839",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Welsh C2 Listening North5",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "4397446",
+                                                "identifier":  "welshc2listeningnorth5-77174939",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "north_daily"
+}

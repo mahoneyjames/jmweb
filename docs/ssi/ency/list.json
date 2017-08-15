@@ -1,0 +1,38 @@
+{
+    "identifier":  "ency",
+    "courses":  [
+                    {
+                        "identifier":  "south_course1"
+                    },
+                    {
+                        "identifier":  "north_course1"
+                    },
+                    {
+                        "identifier":  "south_course2"
+                    },
+                    {
+                        "identifier":  "north_course2"
+                    },
+                    {
+                        "identifier":  "south_course3"
+                    },
+                    {
+                        "identifier":  "north_course3"
+                    },
+                    {
+                        "identifier":  "south_daily"
+                    },
+                    {
+                        "identifier":  "north_daily"
+                    },
+                    {
+                        "identifier":  "south_level1"
+                    },
+                    {
+                        "identifier":  "north_level1"
+                    },
+                    {
+
+                    }
+                ]
+}

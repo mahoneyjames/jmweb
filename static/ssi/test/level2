@@ -1,0 +1,384 @@
+{
+    "title":  "Level 2 (new!)",
+    "lessons":  [
+                    {
+                        "title":  "Challenge 01",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge01",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 01 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "23501395",
+                                                "identifier":  "l2welsh01n-71106279",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 01 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14074221",
+                                                "identifier":  "l2welsh01s-90094108",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 02",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge02",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 02 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "26628658",
+                                                "identifier":  "l2welsh02n-71106307",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 02 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15061437",
+                                                "identifier":  "l2welsh02s-89933376",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 03",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge03",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 03 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "27628182",
+                                                "identifier":  "l2welsh03n-71106339",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 03 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15978234",
+                                                "identifier":  "l2welsh03s-90446446",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 04",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge04",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 04 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "27619652",
+                                                "identifier":  "l2welsh04n-71106368",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 04 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14421127",
+                                                "identifier":  "l2welsh04s-90446476",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 05",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge05",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 05 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16947291",
+                                                "identifier":  "l2welsh05n-71106386",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 05 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14343389",
+                                                "identifier":  "l2welsh05s-90704159",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 06",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge06",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 06 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14009624",
+                                                "identifier":  "l2welsh06n-71106404",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 06 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "13084703",
+                                                "identifier":  "l2welsh06s-90798352",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 07",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge07",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 07 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "17550579",
+                                                "identifier":  "l2welsh07n-74892633",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 07 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19441852",
+                                                "identifier":  "l2welsh07s-91738078",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 08",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge08",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 08 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15039914",
+                                                "identifier":  "l2welsh08n-74974333",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 08 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20522493",
+                                                "identifier":  "l2welsh08s-92014957",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 09",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge09",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 09 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15446379",
+                                                "identifier":  "l2welsh09n-76628975",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 09 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19832186",
+                                                "identifier":  "l2welsh09s-92014982",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 10",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 10 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14489880",
+                                                "identifier":  "l2welsh10n-76628998",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 10 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "20430207",
+                                                "identifier":  "l2welsh10s-92882701",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 11",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge11",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 11 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15329967",
+                                                "identifier":  "l2welsh11n-80270197",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 11 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19537460",
+                                                "identifier":  "l2welsh11s-92964345",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 12",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge12",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 12 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14740660",
+                                                "identifier":  "l2welsh12n-90446477",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Challenge 12 (south-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "19242353",
+                                                "identifier":  "l2welsh12s-96507830",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 13",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge13",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 13 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "14831357",
+                                                "identifier":  "l2welsh13n-90446497",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 14",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge14",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 14 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "15883360",
+                                                "identifier":  "l2welsh14n-90461011",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 15",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge15",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 15 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "16751666",
+                                                "identifier":  "l2welsh15n-91061534",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 16",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 16 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "27472697",
+                                                "identifier":  "l2welsh16n-93132314",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 17",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge17",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 17 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "28501511",
+                                                "identifier":  "l2welsh17n-93251393",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 18",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge18",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 18 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "26514923",
+                                                "identifier":  "l2welsh18n-96507996",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 19",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge19",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 19 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "27588667",
+                                                "identifier":  "l2welsh19n-96508029",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 20",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 20 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "29256017",
+                                                "identifier":  "l2welsh20n-97352023",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 21",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge21",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 21 (north-cyen)",
+                                                "content_type":  "audio/mp3",
+                                                "file_size":  "30100953",
+                                                "identifier":  "l2welsh21n-97707473",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    }
+                ],
+    "identifier":  "level2"
+}

@@ -1,0 +1,351 @@
+{
+    "title":  "South: Level 1 (new!)",
+    "lessons":  [
+                    {
+                        "title":  "Challenge 01",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge1",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 01",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14782659",
+                                                "identifier":  "welshc101s-44473849",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 02",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge2",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C102s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14360410",
+                                                "identifier":  "welshc102s-44474173",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 03",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge3",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C103s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14669984",
+                                                "identifier":  "welshc103s-45438983",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 04",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge4",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C104s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "16498505",
+                                                "identifier":  "welshc104s-44474851",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 05",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge5",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 05",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "16015221",
+                                                "identifier":  "welshc105s-44475201",
+                                                "media_type":  "audio"
+                                            },
+                                            {
+                                                "title":  "Listening Practice 1",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "2977626",
+                                                "identifier":  "welshc1listen01s-49960088",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 06",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge6",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C106s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "16516332",
+                                                "identifier":  "welshc106s-45250201",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 07",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge7",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C107s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14330845",
+                                                "identifier":  "welshc107s-45250557",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 08",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge8",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C108s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "15917823",
+                                                "identifier":  "welshc108s-45250932",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 09",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge9",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C109s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "16635041",
+                                                "identifier":  "welshc109s-45251295",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 10",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge10",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 10",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "17972501",
+                                                "identifier":  "welshc110s-46891798",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 11",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge11",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C111s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "15427757",
+                                                "identifier":  "welshc111s-46892160",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 12",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge12",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C112s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "15953756",
+                                                "identifier":  "welshc112s-49960446",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 13",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge13",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C113s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14414209",
+                                                "identifier":  "welshc113s-60037645",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 14",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge14",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C114s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "13968661",
+                                                "identifier":  "welshc114s-60038043",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 15",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge15",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 15",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14504493",
+                                                "identifier":  "welshc115s-60038370",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 16",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge16",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C116s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "15736639",
+                                                "identifier":  "welshc116s-63225950",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 17",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge17",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C117s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14195005",
+                                                "identifier":  "welshc117s-66262909",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 18",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge18",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C118s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "15176164",
+                                                "identifier":  "welshc118s-66939518",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 19",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge19",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C119s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14146731",
+                                                "identifier":  "welshc119s-68448151",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 20",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge20",
+                        "media_items":  [
+                                            {
+                                                "title":  "Challenge 20",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14421957",
+                                                "identifier":  "welshc120s-70495718",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 21",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge21",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C121s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14131055",
+                                                "identifier":  "welshc121s-70757599",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 22",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge22",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C122s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14424671",
+                                                "identifier":  "welshc122s-71175428",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 23",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge23",
+                        "media_items":  [
+                                            {
+                                                "title":  "Welsh C123s",
+                                                "content_type":  "audio/mpeg",
+                                                "file_size":  "14624670",
+                                                "identifier":  "welshc123s-71175749",
+                                                "media_type":  "audio"
+                                            }
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 24",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge24",
+                        "media_items":  [
+
+                                        ]
+                    },
+                    {
+                        "title":  "Challenge 25",
+                        "content_type":  "lesson",
+                        "identifier":  "challenge25",
+                        "media_items":  [
+
+                                        ]
+                    }
+                ],
+    "identifier":  "south_level1"
+}
