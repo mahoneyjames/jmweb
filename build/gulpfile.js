@@ -16,7 +16,19 @@ gulp.task('serve', function() {
 
 gulp.task('clean:docs', function cleanDocsFolder () {
   return del([
-    '../docs/**/*',    
-    '!../docs/ssi'
-  ]);
+    '../docs/**/*'
+  ],{force:true});
 });
+
+//Rebuilds the site manually
+//TODO - how to get it moving stuff over automatically? or when building we just save into docs?
+
+/*
+move all this logic into the node project?
+use the magic of gulp for file copy though
+*/
+gulp.task('rebuild',['clean:docs'],function copyStaticContent(){
+    gulp.src(['../static/**/*']).pipe(gulp.dest('../docs'));
+    gulp.src(['../build/_generated/**/*']).pipe(gulp.dest('../docs'));
+    gulp.src(['../CNAME']).pipe(gulp.dest('../docs'));
+})
