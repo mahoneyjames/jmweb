@@ -14,6 +14,16 @@ gulp.task('serve', function() {
   gulp.watch(['**/*.htm', '*.css'], {cwd: '../docs'}, reload);
 });
 
+gulp.task('serveG', function() {
+  browserSync({
+    server: {
+      baseDir: './_generated'
+    }
+  });
+
+  gulp.watch(['**/*.htm', '*.css'], {cwd: './_generated'}, reload);
+});
+
 gulp.task('clean:docs', function cleanDocsFolder () {
   return del([
     '../docs/**/*'

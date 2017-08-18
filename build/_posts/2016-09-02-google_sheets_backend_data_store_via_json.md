@@ -1,6 +1,8 @@
 ---
-title: Using Google sheets as a backend data store for a dynamic web page
+title: Dynamic sites with Google sheets 
+summary: Use a Google spreadsheet as the data source for a dynamic web page
 layout: post
+when: 2016-09-02
 tags:
 - cymraeg
 ---

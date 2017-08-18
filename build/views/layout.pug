@@ -3,40 +3,28 @@ html
         if title
             title= `${title} | ${helpers.siteName}`
         else
-            title= `${helpers.siteName}`
-        link(rel='stylesheet', href=`${siteRoot}/current.css`)
-        link(rel='stylesheet', href=`${siteRoot}/local.css`)
-        link(rel='stylesheet', href=`/${siteRoot}site.css`)
+            title= `${helpers.siteName}`        
+        link(rel='stylesheet', href=`/${siteRoot}style.css`)
+        link(href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet")
         //-link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
         meta(name="viewport" content="width=device-width, initial-scale=1")        
         meta(charset="UTF-8")
 
     body
         //-pre= helpers.dump(helpers)
-        header 
-            div           
-                a.site-title(href=`${siteRoot}/index.htm`) Home
-            -//a.page-link(href=`${siteRoot}/about.htm`) Words
-            -//a.page-link(href=`${siteRoot}/about.htm`) Cymraeg
-            div
-                a.page-link(href=`${siteRoot}/about.htm`) About
-            hr
-        main.page-content
-            .wrapper
-                block content
-
-        block footer
-            hr
-            footer.site-footer
-                .wrapper
-                    .footer-col-wrapper
-                        .footer-col.footer-col-1
-                            ul.contact-list
-                                li 
-                                    a(href="mailto:mahoneyjames+web@gmail.com") Email me                                
-                        .footer-col.footer-col-2
-                            ul.social-media-list
-                                li 
-                                    a(href="https://twitter.com/theblacksparrow") twitter: theblacksparrow                                
-                        .footer-col.footer-col-3
-                            p 
+        header
+            .inner 
+                h1
+                    a(href="/index.htm") James Mahoney
+                nav
+                    ul
+                        li                           
+                            a(href=`${siteRoot}/about.htm`) about
+                        li
+                            a(href=`${siteRoot}/index.htm`) blog            
+        div.wrapper
+            block allContent
+                main.content
+                    block content
+                
+        block footer            

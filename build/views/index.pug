@@ -1,14 +1,22 @@
 extends layout
 
 block content
-    h1 Hi there, I'm James
-    p I write software, and occasional blog posts (Also learning how to do teh web design, but it's slow going)
-    p For now, there's not much here...
+    section.welcome.Section
+        div.Container
+            h1 Hi there, I'm James
+            p I write software, and very occasional blog posts
+            p For now, there's not much here...
 
-    ul
-        each post in posts
-            li
-                a(href=post.path) #{post.title}
+    section.blog.Section
+        div.Container
+            h2 Blog! (sort of)
+            div.posts
+                each post in posts
+                    div.postCard
+                        a.title(href=post.path) 
+                            h3 #{post.title}                        
+                        p.summary #{post.summary}
+                        p.when #{post.when.format("MMM Do YYYY")}
 
 
     -//pre=helpers.dump(posts)

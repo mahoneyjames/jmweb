@@ -6,11 +6,12 @@ const jfile = require('jfile');
 const frontmatter = require('front-matter');
            
 const helpers = require('./helpers');
-           
+const moment = require('moment');           
 const posts = [
-    generateFileHtmlFromMarkdown("post",'_posts/2015-07-21-welcome.md','posts/2015-07-21-welcome',{} ),
     generateFileHtmlFromMarkdown("post",'_posts/2015-07-23-acra_email_alerts.md','posts/2015-07-23-acra_email_alerts',{} ),
-    generateFileHtmlFromMarkdown("post",'_posts/2016-09-02-google_sheets_backend_data_store_via_json.md','posts/2016-09-02-google_sheets_backend_data_store_via_json',{} )
+    generateFileHtmlFromMarkdown("post",'_posts/2016-09-02-google_sheets_backend_data_store_via_json.md','posts/2016-09-02-google_sheets_backend_data_store_via_json',{} ),
+    generateFileHtmlFromMarkdown("post",'_posts/2017-01-01-this-site.md','posts/2017-01-01-this-site',{} ),
+    generateFileHtmlFromMarkdown("post",'_posts/2017-08-18-this-site.md','posts/2017-08-18-this-site',{} )
     ];
 
 const drafts = [
@@ -24,6 +25,7 @@ generateHtml("about","about",{title:"About"});
 function generateHtml(view, outputFile, options)
 {
     options.helpers = helpers; 
+    options.h = helpers;
     options.siteRoot = "";   
     const html = pug.renderFile(`${__dirname}/views/${view}.pug`,options);
 
@@ -39,11 +41,12 @@ function sanitisePath(path)
 
 
 
+
 function generateFileHtmlFromMarkdown(view, sourceFile, outputFile, options)
 {
-    const converter = new showdown.Converter();
+    
     const content = frontmatter(helpers.readFile(sourceFile));
-    options.body = converter.makeHtml(content.body);
+    options.body = bodyFormatterFromMarkdown(content.body);
     console.log(content.attributes);
     options.attributes = content.attributes;
     options.title = options.attributes.title;
@@ -51,18 +54,21 @@ function generateFileHtmlFromMarkdown(view, sourceFile, outputFile, options)
 
     const postDetails = {
         path: `/${outputFile}.htm`,
-        title: content.attributes.title
+        title: content.attributes.title,
+        summary: content.attributes.summary,
+        when: moment(content.attributes.when)
     };
 
     return postDetails;
 
 }
 
-function htmlFromMarkdown(sourceFile){
-
-    const filecontents = helpers.readFile(sourceFile);
-
-    return converter.makeHtml(filecontents);
+function bodyFormatterFromMarkdown(content)
+{
+    const converter = new showdown.Converter();
+    return converter.makeHtml(content)
 }
+
+
 //console.log(htmlFromMarkdown('_posts/2015-07-21-welcome.md'));
 

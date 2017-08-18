@@ -1,0 +1,25 @@
+.posts
+{
+  display:flex;
+  flex-wrap: wrap;
+}
+.postCard
+{
+  padding:20px;
+  margin: 5px;  
+  background:hsla(31,15%,50%,.1);
+  border-radius: 10px;
+}
+
+pre {
+    border-radius: 3px;
+    background: hsla(31,15%,50%,.1);
+    font-size: .85em;
+    margin-bottom: 1.76471em;
+    padding: 1.25em 1.5em;
+    overflow-x:scroll;
+}
+
+
+
+

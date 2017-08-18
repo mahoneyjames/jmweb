@@ -1,0 +1,129 @@
+html{
+  color:#404040;
+}
+
+body {
+  margin: 0 auto;
+  
+}
+
+div
+{ }
+
+
+
+.wrapper * 
+
+{
+    //border: solid 1px red;
+}
+
+.site-footer .contacts
+{
+  display:flex;
+  flex: 1;
+  border-top: solid 2px grey;
+}
+
+.contacts div{
+  padding:10px;
+}
+
+.main
+{
+    display:flex;
+    flex:column;
+}
+
+.Container
+{
+  max-width: 960px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header
+{
+      background-color: azure;
+}
+
+
+.Section:nth-child(2n) {
+    background-color: hsla(31,15%,50%,.1);
+    overflow: hidden;
+}
+
+.twitter-color {
+    color: #00aced;
+}
+
+footer a{
+  text-decoration:none;
+}
+header{
+  width: 100%;
+  display:block;
+}
+header a
+{
+      color: #575e5b;
+      text-decoration: none;
+}
+
+header{
+
+  padding: 1.2em 0;
+}
+header h1 
+{
+    font-weight: 700;
+    margin: 0;
+    font-size: 100%;
+    text-transform: uppercase;    
+    float:left;
+}
+
+header nav{
+  float:right;
+}
+
+header * 
+{
+  border:none 2px red;
+  
+}
+
+header div.inner
+{
+  width: 1000px;
+  display:block;
+  margin: 0 auto;  
+  overflow:hidden;
+}
+
+header nav ul li{
+  display:inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-size: 90%;
+  margin-bottom:0;
+
+}
+
+@media only screen and (max-width: 1000px)
+{
+  header div.inner{width:100%;}
+  header h1{float:none;text-align: center;}
+  header nav{float:none;text-align: center;}
+}
+
+span.icon-twitter
+{
+  text-decoration: none;
+}
+
+h2
+{
+  text-align: center;
+  font-size: 1.333em;
+}
