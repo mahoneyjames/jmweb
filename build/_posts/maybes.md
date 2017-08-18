@@ -1,0 +1,1 @@
+Use gulp to copy generated content into a docs folder for use with git hub pages
