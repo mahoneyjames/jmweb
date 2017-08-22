@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon ./previewHost/preview.js",
-    "run": "concurrently \"npm run assets\" \"npm run serve\" \"npm run build\"",
+    "run": "concurrently \"npm run assets\" \"npm run build\"",
     "build": "nodemon ./build.js --ignore _generated/",
     "getmetadata": "node ./download.js",
     "assets": "webpack -w --display-max-modules 0"

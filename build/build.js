@@ -10,8 +10,7 @@ const moment = require('moment');
 const posts = [
     generateFileHtmlFromMarkdown("post",'_posts/2015-07-23-acra_email_alerts.md','posts/2015-07-23-acra_email_alerts',{} ),
     generateFileHtmlFromMarkdown("post",'_posts/2016-09-02-google_sheets_backend_data_store_via_json.md','posts/2016-09-02-google_sheets_backend_data_store_via_json',{} ),
-    generateFileHtmlFromMarkdown("post",'_posts/2017-01-01-this-site.md','posts/2017-01-01-this-site',{} ),
-    generateFileHtmlFromMarkdown("post",'_posts/2017-08-18-this-site.md','posts/2017-08-18-this-site',{} )
+    generateFileHtmlFromMarkdown("post",'_drafts/static_site_generation_with_node_js.md','posts/static_site_generation_with_node_js',{} )
     ];
 
 const drafts = [
