@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon ./previewHost/preview.js",
     "run": "concurrently \"npm run assets\" \"npm run build\"",
-    "build": "nodemon ./build.js --ignore _generated/",
+    "build": "nodemon ./build.js --ignore _generated/ -e js,md,pug",
     "getmetadata": "node ./download.js",
     "assets": "webpack -w --display-max-modules 0"
   },

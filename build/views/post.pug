@@ -2,7 +2,10 @@ extends layout
 
 block content
     div.Container.blogPost
-        h1.title #{title}    
+        
+        section.info
+            h1.title #{title}
+            p.when #{post.when.format("MMM Do YYYY")}    
         .body !{body}
 
     

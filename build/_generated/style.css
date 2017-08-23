@@ -442,26 +442,36 @@ pre {
     https://gist.github.com/ryangray/1882525
    */
 .blogPost h2 {
-  margin-top: 40px; }
-
-.blogPost h1 {
+  margin-top: 40px;
   border: solid 1px black;
   padding: 5px;
-  background-color: rgba(147, 128, 108, 0.1);
+  background-color: azure; }
+
+.blogPost h1 {
   text-align: center; }
 
 .blogPost .body {
   width: 90%;
   margin: 0 auto; }
 
-.blogPost h2 {
+.blogPost section.info {
+  margin-top: 10px;
   border: solid 1px black;
   padding: 5px;
-  background-color: azure;
+  background-color: rgba(147, 128, 108, 0.1);
+  border-radius: 10px; }
+
+.blogPost .when {
+  text-align: center; }
+
+.blogPost h2 {
   text-align: center; }
 
 .blogPost blockquote {
-  font-style: italic; }
+  font-style: italic;
+  background-color: rgba(147, 128, 108, 0.1);
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px; }
 
 .blogPost p {
   line-height: 1.5; }

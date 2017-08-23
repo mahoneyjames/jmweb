@@ -49,7 +49,7 @@ function generateFileHtmlFromMarkdown(view, sourceFile, outputFile, options)
     console.log(content.attributes);
     options.attributes = content.attributes;
     options.title = options.attributes.title;
-    generateHtml(view, outputFile,options);
+
 
     const postDetails = {
         path: `/${outputFile}.htm`,
@@ -57,7 +57,8 @@ function generateFileHtmlFromMarkdown(view, sourceFile, outputFile, options)
         summary: content.attributes.summary,
         when: moment(content.attributes.when)
     };
-
+    options.post=postDetails;
+    generateHtml(view, outputFile,options);
     return postDetails;
 
 }
