@@ -1,5 +1,6 @@
 ---
 title: Email alerts for Android app crashes
+permalink: Email alerts for Android app crashes
 summary: Use a Google app script to send out email alerts for Android bugs captured using ACRA
 layout: post
 when: 2015-07-23

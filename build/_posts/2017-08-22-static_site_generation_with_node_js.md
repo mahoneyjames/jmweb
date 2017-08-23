@@ -1,6 +1,6 @@
 ---
 title: Static site generation using node.js
-layout: post
+permalink: Static site generation using node.js
 when: 2017-08-22
 summary: Jekyll is for wimps
 ---

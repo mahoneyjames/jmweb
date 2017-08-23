@@ -6,20 +6,53 @@ const jfile = require('jfile');
 const frontmatter = require('front-matter');
            
 const helpers = require('./helpers');
-const moment = require('moment');           
-const posts = [
-    generateFileHtmlFromMarkdown("post",'_posts/2015-07-23-acra_email_alerts.md','posts/2015-07-23-acra_email_alerts',{} ),
-    generateFileHtmlFromMarkdown("post",'_posts/2016-09-02-google_sheets_backend_data_store_via_json.md','posts/2016-09-02-google_sheets_backend_data_store_via_json',{} ),
-    generateFileHtmlFromMarkdown("post",'_drafts/static_site_generation_with_node_js.md','posts/static_site_generation_with_node_js',{} )
-    ];
+const moment = require('moment');   
 
-const drafts = [
-    generateFileHtmlFromMarkdown("post",'_drafts/static_site_generation_with_node_js.md','drafts/static_site_generation_with_node_js',{} )
-];
+fs.readdir(`./_posts`, function readDirResults(err, files){
+    if(err)
+        console.log(err);
+    else{
+        processPosts(`./_posts`,files);
+    }
 
-generateHtml("index", "index", {posts});
-generateHtml("index", "drafts", {posts:drafts});
-generateHtml("about","about",{title:"About"});
+})
+    
+function processPosts(sourceDirectory,files)
+{
+    
+    const posts = [];
+    const drafts = [];
+
+    files.forEach((file)=>{
+        
+        var newPost = generateFileHtmlFromMarkdown("post", sourceDirectory, file, {});
+        if(newPost)
+        {
+
+            if(newPost.isDraft==true)
+            {
+                drafts[drafts.length] = newPost;
+            }
+            else
+            {
+                posts[posts.length] = newPost;
+            }
+        }
+    });
+
+    generatePages(posts,drafts);
+}    
+
+
+
+function generatePages(posts, drafts)
+{
+    generateHtml("index", "index.htm", {posts});
+    generateHtml("index", "drafts.htm", {posts:drafts});
+    generateHtml("about","about.htm",{title:"About"});
+
+
+}
     
 function generateHtml(view, outputFile, options)
 {
@@ -28,37 +61,42 @@ function generateHtml(view, outputFile, options)
     options.siteRoot = "";   
     const html = pug.renderFile(`${__dirname}/views/${view}.pug`,options);
 
-    const fullOutputFileName =`./_generated/${outputFile}.htm`;    
+    const fullOutputFileName =`./_generated/${outputFile}`;    
     helpers.ensureDirectoryExists(fullOutputFileName);
     fs.writeFileSync(fullOutputFileName, html, 'utf-8');
 }
 
-function sanitisePath(path)
-{
-    return path.split(" ").join("-") + ".htm";
-}
 
 
 
 
-function generateFileHtmlFromMarkdown(view, sourceFile, outputFile, options)
+function generateFileHtmlFromMarkdown(view, sourceDirectory, sourceFile,  options)
 {
     
-    const content = frontmatter(helpers.readFile(sourceFile));
-    options.body = bodyFormatterFromMarkdown(content.body);
-    console.log(content.attributes);
-    options.attributes = content.attributes;
-    options.title = options.attributes.title;
+    const content = frontmatter(helpers.readFile(`${sourceDirectory}/${sourceFile}`));
+    if(content.attributes.title===undefined)
+    {
+        return null;        
+    }
 
-
-    const postDetails = {
-        path: `/${outputFile}.htm`,
+    const postDetails = {                
         title: content.attributes.title,
         summary: content.attributes.summary,
-        when: moment(content.attributes.when)
+        when: moment(content.attributes.when),
+        isDraft: content.attributes.draft ? content.attributes.draft : false,
+        body: bodyFormatterFromMarkdown(content.body),
+        attributes: content.attributes,
+        permalink: content.attributes.permalink ? content.attributes.permalink:content.attributes.title
     };
-    options.post=postDetails;
-    generateHtml(view, outputFile,options);
+
+    if(postDetails.permalink===undefined)
+    {
+        postDetails.permalink = sourceFile;
+    }
+    
+    postDetails.permalink = `posts/${sanitisePath(postDetails.permalink)}.htm`;
+        
+    generateHtml(view,postDetails.permalink ,postDetails);
     return postDetails;
 
 }
@@ -74,3 +112,7 @@ function bodyFormatterFromMarkdown(content)
 
 //console.log(htmlFromMarkdown('_posts/2015-07-21-welcome.md'));
 
+function sanitisePath (path)
+{
+    return path.split(" ").join("-").split(".").join("");
+}

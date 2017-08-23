@@ -1,8 +1,10 @@
 ---
-title: Dynamic sites with Google sheets 
+title: Dynamic sites with Google sheets
+permalink: Dynamic sites with Google sheets  
 summary: Use a Google spreadsheet as the data source for a dynamic web page
 layout: post
 when: 2016-09-02
+draft: false
 tags:
 - cymraeg
 ---
