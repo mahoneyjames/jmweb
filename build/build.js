@@ -65,6 +65,8 @@ function generateFileHtmlFromMarkdown(view, sourceFile, outputFile, options)
 function bodyFormatterFromMarkdown(content)
 {
     const converter = new showdown.Converter();
+
+    converter.setOption('prefixHeaderId','true');
     return converter.makeHtml(content)
 }
 

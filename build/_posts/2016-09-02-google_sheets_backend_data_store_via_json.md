@@ -7,7 +7,7 @@ tags:
 - cymraeg
 ---
 
-I was after a _simple_ way to curate a list of nearby Welsh practice meeting groups and have that information displayed on a web page. A Google spreadsheet seemed an good starting point because it's a spreadsheet hosted by Google that other people can help keep up to date. 
+I was after a _simple_ way to curate a list of nearby Welsh practice meeting groups and have that information displayed on a web page. A Google spreadsheet seemed a good starting point because it's a spreadsheet hosted by Google that other people can help keep up to date. 
 
 [Here's the sheet (in case you're in the area, want to practise your Welsh, and you like your data tabular)](https://docs.google.com/spreadsheets/d/1zzhf4SebQ5IIU1PfrrAzh1d0Q2ZLDaesN-cQ2Ux0bwA)
 
