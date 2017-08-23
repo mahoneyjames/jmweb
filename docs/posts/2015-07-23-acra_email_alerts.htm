@@ -1,9 +1,9 @@
-<html><head><title>Email alerts for Android app crashes | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container"><h1>Email alerts for Android app crashes</h1><div class="body"><p>For capturing errors in an Android app, <a href="https://github.com/ACRA/acra">ACRA</a> is great. </p>
+<html><head><title>Email alerts for Android app crashes | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">Email alerts for Android app crashes</h1><p class="when">Jul 23rd 2015    </p></section><div class="body"><p>For capturing errors in an Android app, <a href="https://github.com/ACRA/acra">ACRA</a> is great. </p>
 <blockquote>
   <p>ACRA catches the error, turns it into JSON and then persists that data on a web server using the <em><a href="https://github.com/ACRA/acra-storage">acra-storage</a></em> CouchDB app. The <em><a href="https://github.com/ACRA/acralyzer">acralyzer</a></em> CouchDB HTML app provides a nice front end to view error information. </p>
 </blockquote>
 <p>One thing it lacks is a mechanism to notify about new errors via email, but what it does have is an RSS feed of the latest errors that have been uploaded. Combine this with a script executed every few minutes and you have a simple alerting system. </p>
-<h4 id="entergoogleappscriptshttpsdevelopersgooglecomappsscript">Enter....<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
+<h4 id="trueentergoogleappscriptshttpsdevelopersgooglecomappsscript">Enter....<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
 <p>Think of this as a Javascript environment hosted by Google. It was designed to add scripting capabilities to Google documents and spreadsheets, but since it includes a timer based trigger for executing scripts it can be used to provide a hosted alerting system</p>
 <p>There's nothing much to the script</p>
 <ol>
@@ -13,12 +13,12 @@
 <li>Send the email</li>
 <li>Make a note of the guid of the first error item we included in the email, so that next time the script runs we know where to stop including items</li>
 </ol>
-<h2 id="acralyzerrssfeed">Acralyzer RSS feed</h2>
+<h2 id="trueacralyzerrssfeed">Acralyzer RSS feed</h2>
 <p>This is the structure of the URL you need</p>
 <blockquote>
   <p>https://server/CouchDB/<em>design/acra-storage/</em>list/rss/recent-items?descending=true</p>
 </blockquote>
-<h3 id="rssxmlexample">RSS XML Example</h3>
+<h3 id="truerssxmlexample">RSS XML Example</h3>
 <pre><code>&lt;rss version="0.91"&gt;
   &lt;channel&gt;
     &lt;title&gt; latest Crash Reports&lt;/title&gt;
@@ -38,7 +38,7 @@
   &lt;/channel&gt;
 &lt;/rss&gt;
 </code></pre>
-<h3 id="authenticationusingcloudant">Authentication using Cloudant</h3>
+<h3 id="trueauthenticationusingcloudant">Authentication using Cloudant</h3>
 <blockquote>
   <p>Cloudant provides hosting of CouchDB apps. It's a common choice when setting up <em>acra-storage</em> because their free plans are pretty generous.</p>
 </blockquote>
@@ -60,9 +60,9 @@
 
 var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
 </code></pre>
-<h4 id="base64encodingyourusernameandpassword">Base64 encoding your username and password</h4>
+<h4 id="truebase64encodingyourusernameandpassword">Base64 encoding your username and password</h4>
 <p>The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your <em>acralyzer</em> front end in your browser. Sign in with the user you're going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details. </p>
-<h2 id="parsingthexml">Parsing the XML</h2>
+<h2 id="trueparsingthexml">Parsing the XML</h2>
 <pre><code>//Use the XmlService to parse the XML
 var document = XmlService.parse(xml);
 
@@ -73,7 +73,7 @@ var xChannel = root.getChild("channel");
 
 //There's not much more to it than that.
 </code></pre>
-<h3 id="trackingthemostrecentlysentguid">Tracking the most recently sent guid</h3>
+<h3 id="truetrackingthemostrecentlysentguid">Tracking the most recently sent guid</h3>
 <p>You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account. </p>
 <pre><code>var userProperties = PropertiesService.getUserProperties();
 
@@ -83,11 +83,11 @@ var lastDocumentId = userProperties.getProperty("somekey");
 //save a property
 userProperties.setProperty("somekey","somevalue");
 </code></pre>
-<h4 id="sendinganemail">Sending an email</h4>
+<h4 id="truesendinganemail">Sending an email</h4>
 <p>Google makes this easy for us</p>
 <pre><code>MailApp.sendEmail("bob@gmail.com", title, emailBody);
 </code></pre>
-<h2 id="setthescriptupingoogleappscript">Set the script up in Google App Script</h2>
+<h2 id="truesetthescriptupingoogleappscript">Set the script up in Google App Script</h2>
 <blockquote>
   <p>These instructions were correct at the time of writing, but we all know Google's penchant for releasing often...</p>
 </blockquote>
@@ -106,15 +106,15 @@ userProperties.setProperty("somekey","somevalue");
 <li><p>If everything has gone to plan, that's all you'll see. Assuming you've got some errors in your acra-storage database you should receive an email</p></li></ul></li>
 <li><p>The final step is to schedule your script to run. Click on the project triggers icon in the toolbar, and away you go</p></li>
 </ol>
-<h3 id="ifyourscriptfailstorun">If your script fails to run...</h3>
+<h3 id="trueifyourscriptfailstorun">If your script fails to run...</h3>
 <p>You'll see a red tooltip like popup inviting you to view details of the failure</p>
 <p>The View menu also has a couple of options to help with debugging - the Execution Transcript and Logs</p>
 <p>Logs - This is what you've explicitly written via a call to Logger.Log</p>
 <p>Execution transcripts - this is the logs, plus diagnostic information that the execution engine generates</p>
-<h3 id="errorsthattrippedmeup">Errors that tripped me up</h3>
-<h4 id="502badgateway">502 Bad Gateway</h4>
+<h3 id="trueerrorsthattrippedmeup">Errors that tripped me up</h3>
+<h4 id="true502badgateway">502 Bad Gateway</h4>
 <p>I got this when my Base64 user credentials were incorrect i.e. Cloudant couldn't even begin to work out the username I was trying to use</p>
-<h2 id="anamefullscriptfullscripta"><a name="fullScript">Full script</a></h2>
+<h2 id="trueanamefullscriptfullscripta"><a name="fullScript">Full script</a></h2>
 <pre><code>function sendAlerts()
 {
   var recipientEmail=null;

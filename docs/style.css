@@ -431,6 +431,200 @@ pre {
   padding: 1.25em 1.5em;
   overflow-x: scroll; }
 
+/*
+
+    Inspiration for this CSS is Buttondown
+    A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
+    Author: Ryan Gray
+    Date: 15 Feb 2011
+    Revised: 21 Feb 2012
+
+    https://gist.github.com/ryangray/1882525
+   */
+.blogPost h2 {
+  margin-top: 40px;
+  border: solid 1px black;
+  padding: 5px;
+  background-color: azure; }
+
+.blogPost h1 {
+  text-align: center; }
+
+.blogPost .body {
+  width: 90%;
+  margin: 0 auto; }
+
+.blogPost section.info {
+  margin-top: 10px;
+  border: solid 1px black;
+  padding: 5px;
+  background-color: rgba(147, 128, 108, 0.1);
+  border-radius: 10px; }
+
+.blogPost .when {
+  text-align: center; }
+
+.blogPost h2 {
+  text-align: center; }
+
+.blogPost blockquote {
+  font-style: italic;
+  background-color: rgba(147, 128, 108, 0.1);
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px; }
+
+.blogPost p {
+  line-height: 1.5; }
+
+li > p {
+  margin-top: 1em;
+  /* IE: lack of space above a <li> when the item is inside a <p> */ }
+
+em > em {
+  font-style: normal; }
+
+.blogPost a {
+  /* Keep links clean. On screen, they are colored; in print, they do nothing anyway. */
+  text-decoration: none; }
+
+@media screen {
+  .blogPost a:hover {
+    /* On hover, we indicate a bit more that it is a link. */
+    text-decoration: underline; } }
+
+@media print {
+  a {
+    /* In print, a colored link is useless, so un-style it. */
+    color: black;
+    background: transparent; }
+  a[href^="http://"]:after, a[href^="https://"]:after {
+    /* However, links that go somewhere else, might be useful to the reader,
+           so for http and https links, print the URL after what was the link 
+           text in parens
+        */
+    content: " (" attr(href) ") ";
+    font-size: 90%; } }
+
+/* ---- Code blocks and spans ---- */
+pre, code {
+  background-color: #fdf7ee;
+  /* BEGIN word wrap */
+  /* Need all the following to word wrap instead of scroll box */
+  /* This will override the overflow:auto if present */
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap !important;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  /* END word wrap */ }
+
+pre {
+  /* Distinguish pre blocks from other text by more than the font with a background tint. */
+  padding: 0.5em;
+  /* Since we have a background color */
+  border-radius: 5px;
+  /* Softens it */
+  /* Give it a some definition */
+  border: 1px solid #aaa;
+  /* Set it off left and right, seems to look a bit nicer when we have a background */
+  margin-left: 0.5em;
+  margin-right: 0.5em; }
+
+@media screen {
+  pre {
+    /* On screen, use an auto scroll box for long lines, unless word-wrap is enabled */
+    white-space: pre;
+    overflow: auto;
+    /* Dotted looks better on screen and solid seems to print better. */
+    border: 1px dotted #777; } }
+
+p > code, li > code {
+  /* Pad a little from adjacent text */
+  padding-left: 2px;
+  padding-right: 2px; }
+
+li > p code {
+  /* We have room for some more background color above and below */
+  padding: 2px; }
+
+/* ---- Tables ---- */
+/*  A clean textbook-like style with horizontal lines above and below and under 
+    the header. Rows highlight on hover to help scanning the table on screen.
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  /* IE 6 */
+  border-bottom: 2pt solid #000;
+  border-top: 2pt solid #000;
+  /* The caption on top will not have a bottom-border */
+  /* Center */
+  margin-left: auto;
+  margin-right: auto; }
+
+thead {
+  border-bottom: 1pt solid #000;
+  background-color: #eee;
+  /* Does this BG print well? */ }
+
+/* Table body rows */
+tr.odd:hover, tr.even:hover {
+  background-color: #eee; }
+
+/* Odd and even rows */
+td, th {
+  vertical-align: top;
+  /* Word */
+  vertical-align: baseline;
+  /* Others */
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em; }
+
+/* Removes padding on left and right of table for a tight look. Good if thead has no background color*/
+/*
+tr td:last-child, tr th:last-child
+    {
+    padding-right: 0;
+    }
+tr td:first-child, tr th:first-child 
+    {
+    padding-left: 0;
+    }
+*/
+th {
+  font-weight: bold; }
+
+caption {
+  caption-side: top;
+  border: none;
+  font-size: 0.9em;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 0.3em;
+  /* Good for when on top */
+  padding-bottom: 0.2em; }
+
+@media print {
+  a[href^="#fnref"], a.reversefootnote {
+    /* Don't display these at all in print since the arrow is only something to click on */
+    display: none; } }
+
+/* You can class stuff as "noprint" to not print. 
+   Useful since you can't set this media conditional inside an HTML element's 
+   style attribute (I think), and you don't want to make another stylesheet that 
+   imports this one and adds a class just to do this.
+*/
+@media print {
+  .noprint {
+    display: none; } }
+
 html {
   color: #404040; }
 
