@@ -3,6 +3,7 @@ title: Static site generation using node.js
 permalink: Static site generation using node.js
 when: 2017-08-22
 summary: Jekyll is for wimps
+draft: false
 ---
 
 I used [Jekyll](https://jekyllrb.com/) to run this site for a while. Jekyll takes Markdown content and spits out a static HTML site. Use [GitHub Pages](https://pages.github.com/) with its built in support for Jekyll and you can host your own site - for free - in minutes. 

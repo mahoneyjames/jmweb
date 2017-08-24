@@ -1,125 +1,130 @@
 <html><head><title>Email alerts for Android app crashes | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">Email alerts for Android app crashes</h1><p class="when">Jul 23rd 2015    </p></section><div class="body"><p>For capturing errors in an Android app, <a href="https://github.com/ACRA/acra">ACRA</a> is great. </p>
 <blockquote>
-  <p>ACRA catches the error, turns it into JSON and then persists that data on a web server using the <em><a href="https://github.com/ACRA/acra-storage">acra-storage</a></em> CouchDB app. The <em><a href="https://github.com/ACRA/acralyzer">acralyzer</a></em> CouchDB HTML app provides a nice front end to view error information. </p>
+<p>ACRA catches the error, turns it into JSON and then persists that data on a web server using the <em><a href="https://github.com/ACRA/acra-storage">acra-storage</a></em> CouchDB app. The <em><a href="https://github.com/ACRA/acralyzer">acralyzer</a></em> CouchDB HTML app provides a nice front end to view error information. </p>
 </blockquote>
 <p>One thing it lacks is a mechanism to notify about new errors via email, but what it does have is an RSS feed of the latest errors that have been uploaded. Combine this with a script executed every few minutes and you have a simple alerting system. </p>
-<h4 id="trueentergoogleappscriptshttpsdevelopersgooglecomappsscript">Enter....<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
+<h4 id="enter-google-app-scripts-https-developers-google-com-apps-script-">Enter....<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
 <p>Think of this as a Javascript environment hosted by Google. It was designed to add scripting capabilities to Google documents and spreadsheets, but since it includes a timer based trigger for executing scripts it can be used to provide a hosted alerting system</p>
-<p>There's nothing much to the script</p>
+<p>There&#39;s nothing much to the script</p>
 <ol>
 <li>Download the RSS feed</li>
-<li>Work through the items until we find the first one that we've sent already, or we reach the end</li>
+<li>Work through the items until we find the first one that we&#39;ve sent already, or we reach the end</li>
 <li>Add the details of any unset items to an email</li>
 <li>Send the email</li>
 <li>Make a note of the guid of the first error item we included in the email, so that next time the script runs we know where to stop including items</li>
 </ol>
-<h2 id="trueacralyzerrssfeed">Acralyzer RSS feed</h2>
-<p>This is the structure of the URL you need</p>
+<p>##Acralyzer RSS feed
+This is the structure of the URL you need</p>
 <blockquote>
-  <p>https://server/CouchDB/<em>design/acra-storage/</em>list/rss/recent-items?descending=true</p>
+<p><a href="https://server/CouchDB/_design/acra-storage/_list/rss/recent-items?descending=true">https://server/CouchDB/_design/acra-storage/_list/rss/recent-items?descending=true</a></p>
 </blockquote>
-<h3 id="truerssxmlexample">RSS XML Example</h3>
-<pre><code>&lt;rss version="0.91"&gt;
-  &lt;channel&gt;
-    &lt;title&gt; latest Crash Reports&lt;/title&gt;
-    &lt;link&gt;http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/dashboard/type&lt;/link&gt;
-    &lt;description&gt;Acralyzer latest crash reports.&lt;/description&gt;
-    &lt;item&gt;
-      &lt;title&gt;java.lang.NullPointerException: This is a test exception to test logging : SupportSettingsActivity.java:79&lt;/title&gt;
-      &lt;link&gt;http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/report-details/type/36242529-580c-4703-bfab-d42dac5e4a06&lt;/link&gt;
-      &lt;description&gt;
-        &lt;p&gt;app_version: 1.0.14&lt;/p&gt;&lt;p&gt;android_version: 4.2.2&lt;/p&gt;
-        &lt;p&gt;device: samsung samsung GT-S7580&lt;/p&gt;
-        &lt;p&gt;crash line: java.lang.NullPointerException: This is a test exception to test logging at ....&lt;/p&gt;
-      &lt;/description&gt;
-      &lt;guid&gt;36242529-580c-4703-bfab-d42dac5e4a06&lt;/guid&gt;
-      &lt;pubDate&gt;2015-07-23T15:17:32.000Z&lt;/pubDate&gt;
-    &lt;/item&gt;
-  &lt;/channel&gt;
-&lt;/rss&gt;
-</code></pre>
-<h3 id="trueauthenticationusingcloudant">Authentication using Cloudant</h3>
+<p>###RSS XML Example
+    <rss version="0.91">
+      <channel>
+        <title> latest Crash Reports</title>
+        <link><a href="http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/dashboard/type">http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/dashboard/type</a></link>
+        <description>Acralyzer latest crash reports.</description>
+        <item>
+          <title>java.lang.NullPointerException: This is a test exception to test logging : SupportSettingsActivity.java:79</title>
+          <link><a href="http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/report-details/type/36242529-580c-4703-bfab-d42dac5e4a06">http://username.cloudant.com/acralyzer/_design/acralyzer/index.html#/report-details/type/36242529-580c-4703-bfab-d42dac5e4a06</a></link>
+          <description>
+            <p>app_version: 1.0.14</p><p>android_version: 4.2.2</p>
+            <p>device: samsung samsung GT-S7580</p>
+            <p>crash line: java.lang.NullPointerException: This is a test exception to test logging at ....</p>
+          </description>
+          <guid>36242529-580c-4703-bfab-d42dac5e4a06</guid>
+          <pubDate>2015-07-23T15:17:32.000Z</pubDate>
+        </item>
+      </channel>
+    </rss></p>
+<p>###Authentication using Cloudant</p>
 <blockquote>
-  <p>Cloudant provides hosting of CouchDB apps. It's a common choice when setting up <em>acra-storage</em> because their free plans are pretty generous.</p>
+<p>Cloudant provides hosting of CouchDB apps. It&#39;s a common choice when setting up <em>acra-storage</em> because their free plans are pretty generous.</p>
 </blockquote>
-<p>Cloudant handles authentication with a username and what they term an "API Key". (Or, username and password...)</p>
+<p>Cloudant handles authentication with a username and what they term an &quot;API Key&quot;. (Or, username and password...)</p>
 <p>When calling the RSS feed you need to supply the details of a user that has been granted <strong>read</strong> access to your <em>acra-storage</em> instance. </p>
 <p>See this link for information</p>
 <blockquote>
-  <p><a href="https://docs.cloudant.com/authentication.html" target="_blank">https://docs.cloudant.com/authentication.html</a></p>
+<p><a href="https://docs.cloudant.com/authentication.html" target="_blank">https://docs.cloudant.com/authentication.html</a></p>
 </blockquote>
-<p>You need to supply your username and API key via a HTTP Header called "Authorization"</p>
-<p>More usefully, here's how to do it using our script</p>
+<p>You need to supply your username and API key via a HTTP Header called &quot;Authorization&quot;</p>
+<p>More usefully, here&#39;s how to do it using our script</p>
 <pre><code>var options =
 {
-    "headers": 
+    &quot;headers&quot;: 
     {
-    "Authorization":"Basic c2F5c29tZljI=="
+    &quot;Authorization&quot;:&quot;Basic c2F5c29tZljI==&quot;
     }
 };
 
 var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
-</code></pre>
-<h4 id="truebase64encodingyourusernameandpassword">Base64 encoding your username and password</h4>
-<p>The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your <em>acralyzer</em> front end in your browser. Sign in with the user you're going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details. </p>
-<h2 id="trueparsingthexml">Parsing the XML</h2>
+</code></pre><p>####Base64 encoding your username and password
+The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your <em>acralyzer</em> front end in your browser. Sign in with the user you&#39;re going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details. </p>
+<p>##Parsing the XML</p>
 <pre><code>//Use the XmlService to parse the XML
 var document = XmlService.parse(xml);
 
 var root = document.getRootElement();
 
 //get the &lt;channel&gt; element  
-var xChannel = root.getChild("channel");
+var xChannel = root.getChild(&quot;channel&quot;);
 
-//There's not much more to it than that.
-</code></pre>
-<h3 id="truetrackingthemostrecentlysentguid">Tracking the most recently sent guid</h3>
-<p>You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account. </p>
+//There&#39;s not much more to it than that.
+</code></pre><p>###Tracking the most recently sent guid
+You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account. </p>
 <pre><code>var userProperties = PropertiesService.getUserProperties();
 
 //get a property
-var lastDocumentId = userProperties.getProperty("somekey");
+var lastDocumentId = userProperties.getProperty(&quot;somekey&quot;);
 
 //save a property
-userProperties.setProperty("somekey","somevalue");
-</code></pre>
-<h4 id="truesendinganemail">Sending an email</h4>
-<p>Google makes this easy for us</p>
-<pre><code>MailApp.sendEmail("bob@gmail.com", title, emailBody);
-</code></pre>
-<h2 id="truesetthescriptupingoogleappscript">Set the script up in Google App Script</h2>
+userProperties.setProperty(&quot;somekey&quot;,&quot;somevalue&quot;);
+</code></pre><p>####Sending an email
+Google makes this easy for us</p>
+<pre><code>MailApp.sendEmail(&quot;bob@gmail.com&quot;, title, emailBody);
+</code></pre><p>##Set the script up in Google App Script</p>
 <blockquote>
-  <p>These instructions were correct at the time of writing, but we all know Google's penchant for releasing often...</p>
+<p>These instructions were correct at the time of writing, but we all know Google&#39;s penchant for releasing often...</p>
 </blockquote>
 <ol>
-<li><p>In Google Drive click on the big red button labeled "New", choose "More" and then "Google Apps Script"</p></li>
-<li><p>From the dialog that pops up, go ahead and choose "Blank project"</p></li>
-<li><p>Give the project a suitable name and save it</p></li>
+<li><p>In Google Drive click on the big red button labeled &quot;New&quot;, choose &quot;More&quot; and then &quot;Google Apps Script&quot;</p>
+</li>
+<li><p>From the dialog that pops up, go ahead and choose &quot;Blank project&quot;</p>
+</li>
+<li><p>Give the project a suitable name and save it</p>
+</li>
 <li><p>Copy the <a href="#fullScript">script</a> into the code editor and save it</p>
 <blockquote>
-  <p>Now you need to manually run your function for the first time. This is important because it's how you grant any permissions your script needs</p>
-</blockquote></li>
-<li><p>There's a drop down that says "select function" in the toolbar. This contains a list of all functions in your script. Select the function "sendAlerts" then click the play button</p>
+<p>Now you need to manually run your function for the first time. This is important because it&#39;s how you grant any permissions your script needs</p>
+</blockquote>
+</li>
+<li><p>There&#39;s a drop down that says &quot;select function&quot; in the toolbar. This contains a list of all functions in your script. Select the function &quot;sendAlerts&quot; then click the play button</p>
 <ul>
-<li><p>You will be prompted that authorisation is required. Go ahead and set up any permissions the script needs</p></li>
-<li><p>When the script starts you'll see a little tooltip like popup near the top of the window. </p></li>
-<li><p>If everything has gone to plan, that's all you'll see. Assuming you've got some errors in your acra-storage database you should receive an email</p></li></ul></li>
-<li><p>The final step is to schedule your script to run. Click on the project triggers icon in the toolbar, and away you go</p></li>
+<li><p>You will be prompted that authorisation is required. Go ahead and set up any permissions the script needs</p>
+</li>
+<li><p>When the script starts you&#39;ll see a little tooltip like popup near the top of the window. </p>
+</li>
+<li><p>If everything has gone to plan, that&#39;s all you&#39;ll see. Assuming you&#39;ve got some errors in your acra-storage database you should receive an email</p>
+</li>
+</ul>
+</li>
+<li><p>The final step is to schedule your script to run. Click on the project triggers icon in the toolbar, and away you go</p>
+</li>
 </ol>
-<h3 id="trueifyourscriptfailstorun">If your script fails to run...</h3>
-<p>You'll see a red tooltip like popup inviting you to view details of the failure</p>
+<p>###If your script fails to run...
+You&#39;ll see a red tooltip like popup inviting you to view details of the failure</p>
 <p>The View menu also has a couple of options to help with debugging - the Execution Transcript and Logs</p>
-<p>Logs - This is what you've explicitly written via a call to Logger.Log</p>
+<p>Logs - This is what you&#39;ve explicitly written via a call to Logger.Log</p>
 <p>Execution transcripts - this is the logs, plus diagnostic information that the execution engine generates</p>
-<h3 id="trueerrorsthattrippedmeup">Errors that tripped me up</h3>
-<h4 id="true502badgateway">502 Bad Gateway</h4>
-<p>I got this when my Base64 user credentials were incorrect i.e. Cloudant couldn't even begin to work out the username I was trying to use</p>
-<h2 id="trueanamefullscriptfullscripta"><a name="fullScript">Full script</a></h2>
+<h3 id="errors-that-tripped-me-up">Errors that tripped me up</h3>
+<h4 id="502-bad-gateway">502 Bad Gateway</h4>
+<p>I got this when my Base64 user credentials were incorrect i.e. Cloudant couldn&#39;t even begin to work out the username I was trying to use</p>
+<h2 id="-a-name-fullscript-full-script-a-"><a name="fullScript">Full script</a></h2>
 <pre><code>function sendAlerts()
 {
   var recipientEmail=null;
-  var acraServerName="username.cloudant.com";
-  var acraDatabaseName="acra-storage";
+  var acraServerName=&quot;username.cloudant.com&quot;;
+  var acraDatabaseName=&quot;acra-storage&quot;;
   var cloudantCredentials =null;
 
 
@@ -132,33 +137,33 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
 
   if(recipientEmail==null)
   {
-    throw new Error("recipientEmail is null");
+    throw new Error(&quot;recipientEmail is null&quot;);
   }
 
   if(cloudantCredentials==null)
   {
-    throw new Error("cloudantCredentials is null");
+    throw new Error(&quot;cloudantCredentials is null&quot;);
   }
 
   var userProperties = PropertiesService.getUserProperties();
 
-  var lastNotificationKey = acraDatabaseName + "_lastNotificationDocumentId";
+  var lastNotificationKey = acraDatabaseName + &quot;_lastNotificationDocumentId&quot;;
 
   var lastDocumentId = userProperties.getProperty(lastNotificationKey);
 
-  Logger.log("last key=" + lastDocumentId);
+  Logger.log(&quot;last key=&quot; + lastDocumentId);
 
 
-  var sourceRssUrl = "https://xServerNamex/xDatabaseNamex/_design/acra-storage/_list/rss/recent-items?descending=true";
-  sourceRssUrl = sourceRssUrl.replace("xServerNamex", acraServerName);
-  sourceRssUrl = sourceRssUrl.replace("xDatabaseNamex", acraDatabaseName);
+  var sourceRssUrl = &quot;https://xServerNamex/xDatabaseNamex/_design/acra-storage/_list/rss/recent-items?descending=true&quot;;
+  sourceRssUrl = sourceRssUrl.replace(&quot;xServerNamex&quot;, acraServerName);
+  sourceRssUrl = sourceRssUrl.replace(&quot;xDatabaseNamex&quot;, acraDatabaseName);
 
-  Logger.log("URL:" + sourceRssUrl);
+  Logger.log(&quot;URL:&quot; + sourceRssUrl);
 
   var options = 
   {
-      "headers": {
-        "Authorization":"Basic " + cloudantCredentials
+      &quot;headers&quot;: {
+        &quot;Authorization&quot;:&quot;Basic &quot; + cloudantCredentials
         }
   };
 
@@ -166,12 +171,12 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
   var xml = UrlFetchApp.fetch(sourceRssUrl, options).getContentText();
 
   //Need to escape fake XML tags that are included in some error details
-  var regEx = new RegExp("&lt;unknown&gt;",'g');
-  xml = xml.replace(regEx,"[unknown]");
+  var regEx = new RegExp(&quot;&lt;unknown&gt;&quot;,&#39;g&#39;);
+  xml = xml.replace(regEx,&quot;[unknown]&quot;);
 
   var document = XmlService.parse(xml);
   var root = document.getRootElement();
-  var xChannel = root.getChild("channel");
+  var xChannel = root.getChild(&quot;channel&quot;);
   var title = null;
   var link = null;
 
@@ -179,26 +184,26 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
   {
 
 
-    title = xChannel.getChild("title");
+    title = xChannel.getChild(&quot;title&quot;);
     if(title!=null)
     {
       title = title.getText();
     }
 
-    link = xChannel.getChild("link");
+    link = xChannel.getChild(&quot;link&quot;);
     if(link!=null)
     {
       link = link.getText();
     }
 
-    Logger.log("title:" + title);
-    Logger.log("link:" + link);
+    Logger.log(&quot;title:&quot; + title);
+    Logger.log(&quot;link:&quot; + link);
 
 
     var lastItemSendIndex = -1;
 
     //grab an array of all the &lt;item&gt; elements in the RSS feed
-    var items = xChannel.getChildren("item");
+    var items = xChannel.getChildren(&quot;item&quot;);
 
     //Work through it, looking for an element that has a &lt;guid&gt; 
     //which matches the &lt;guid&gt; we saved the last time the script ran.
@@ -206,7 +211,7 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
     //error details
     for(var index=0;index&lt;items.length; index++)
     {
-      var itemGuid = items[index].getChild("guid").getText();
+      var itemGuid = items[index].getChild(&quot;guid&quot;).getText();
 
       if(itemGuid==lastDocumentId)
       {
@@ -217,7 +222,7 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
     }
 
 
-    Logger.log("last index:" + lastItemSendIndex);
+    Logger.log(&quot;last index:&quot; + lastItemSendIndex);
 
     if(lastItemSendIndex==-1)
     {
@@ -227,23 +232,23 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
 
 
     //Now we can build our sophisticated email content
-    var emailBody = "";
+    var emailBody = &quot;&quot;;
 
     for(var index=0; index&lt;lastItemSendIndex;index++)
     {
-      emailBody +="----------------------------------\n";
-      emailBody+=items[index].getChild("title").getText() + "\n";
-      emailBody+=items[index].getChild("pubDate").getText() + "\n";
-      emailBody+=items[index].getChild("link").getText() + "\n";
-      emailBody+="\n";
+      emailBody +=&quot;----------------------------------\n&quot;;
+      emailBody+=items[index].getChild(&quot;title&quot;).getText() + &quot;\n&quot;;
+      emailBody+=items[index].getChild(&quot;pubDate&quot;).getText() + &quot;\n&quot;;
+      emailBody+=items[index].getChild(&quot;link&quot;).getText() + &quot;\n&quot;;
+      emailBody+=&quot;\n&quot;;
     }
 
     Logger.log(emailBody);
 
-    if(emailBody!="")
+    if(emailBody!=&quot;&quot;)
     {
 
-      emailBody = "Recent errors:\n\n" + emailBody;
+      emailBody = &quot;Recent errors:\n\n&quot; + emailBody;
 
       MailApp.sendEmail(recipientEmail, title, emailBody);
 
@@ -254,13 +259,13 @@ function processAcraErrors(recipientEmail,acraServerName,acraDatabaseName,clouda
         //that the next time the scripts runs we should include 
         //items between position 0 and wherever our &lt;guid&gt; ends up
         //in that future list
-        lastDocumentId = items[0].getChild("guid").getText();
+        lastDocumentId = items[0].getChild(&quot;guid&quot;).getText();
         userProperties.setProperty(lastNotificationKey,lastDocumentId);
       }
     }
     else
     {
-      Logger.log("Nothing to send");
+      Logger.log(&quot;Nothing to send&quot;);
     }  
   }  
 }
