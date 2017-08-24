@@ -1,3 +1,5 @@
+const {promisify} = require('util');
+const {writeFile} = require('mz/fs');
 const fs = require('fs');
 
 const pug = require('pug');
@@ -7,11 +9,14 @@ const moment = require('moment');
 
 const postLoader = require('./buildposts');
 
-postLoader.getPosts().then((posts)=>
-{
-    
+const generatePosts = async () =>{
+
+   const posts = await postLoader.getPosts();
+        
     const published = [];
-    const drafts = [];    
+    const drafts = [];
+
+
     posts.forEach((newPost)=>{
         if(newPost.draft==true)
         {
@@ -23,25 +28,25 @@ postLoader.getPosts().then((posts)=>
         }
 
         newPost.permalink = `posts/${sanitisePath(newPost.permalink)}.htm`;
-        
-        generateHtml("post",newPost.permalink ,newPost);
+
     });
 
-    generatePages(published,drafts);
-}).catch((err)=>console.log(err));
+    await Promise.all(published.map((post)=>generateHtml("post",post.permalink ,post)),
+                    drafts.map((post)=>generateHtml("post",post.permalink ,post)));    
+    await generatePages(published,drafts);    
+}
 
-
-function generatePages(posts, drafts)
+async function generatePages(posts, drafts)
 {
     //TODO - promisify this
-    generateHtml("index", "index.htm", {posts});
-    generateHtml("index", "drafts.htm", {posts:drafts});
-    generateHtml("about","about.htm",{title:"About"});
+    await generateHtml("index", "index.htm", {posts});
+    await generateHtml("index", "drafts.htm", {posts:drafts});
+    await generateHtml("about","about.htm",{title:"About"});
 
 
 }
     
-function generateHtml(view, outputFile, options)
+async function generateHtml (view, outputFile, options)
 {
     options.helpers = helpers; 
     options.h = helpers;
@@ -49,8 +54,8 @@ function generateHtml(view, outputFile, options)
     const html = pug.renderFile(`${__dirname}/views/${view}.pug`,options);
 
     const fullOutputFileName =`./_generated/${outputFile}`;    
-    helpers.ensureDirectoryExists(fullOutputFileName);
-    fs.writeFileSync(fullOutputFileName, html, 'utf-8');
+    await helpers.ensureDirectoryExists(fullOutputFileName);
+    await writeFile(fullOutputFileName, html, 'utf-8');
 }
 
 
@@ -61,3 +66,5 @@ function sanitisePath (path)
 {
     return path.split(" ").join("-").split(".").join("");
 }
+
+generatePosts();
