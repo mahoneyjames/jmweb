@@ -3,45 +3,50 @@
 {
   display:flex;
   flex-wrap: wrap;
+  //border: 2px solid red;
 }
 
 
 .postCard
 {
   padding:10px;
-  margin: 10px;  
+  margin: 5px;  
   //background:hsla(31,15%,50%,.1);
   border: 1px solid hsla(31,15%,50%,.1);
-  max-width:500px;
+  max-width:300px;
   min-width:200px;
+
+  width: 100px;
   border-radius: 3px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
   flex: 1 1 100%;
-  /*display:flex;
+  display:flex;
   flex-wrap: wrap;
-  flex-direction: column;*/
+  
+}
 
-> *
+.postCard > *
 {
   //border: 1px solid red;
-  flex: 1;
+  flex: 1 1 100%;
+  
 }
-  .summary
+.postCard  .summary
   {
-
     font-style: italic;
     min-height: 1px;
   }
 
-  .more
+ .postCard .more
   {
 
     border: 1px solid hsla(31,15%,50%,.1);
     background-color: $accentColour;
     border-radius: 3px;
     padding: 2px;
+
   }
-  .footer
+ .postCard .footer
   {
     display:flex;
     border-top:1px solid $accentColour;
@@ -49,8 +54,9 @@
     margin-top:5px;
     justify-content: space-between;
     align-self: flex-end;
+
   }
-}
+
 
 .postCard a{
   text-decoration: none;
