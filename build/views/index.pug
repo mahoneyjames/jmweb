@@ -14,9 +14,11 @@ block content
                 each post in posts
                     div.postCard
                         a.title(href=post.permalink) 
-                            h3 #{post.title}                        
-                        p.summary #{post.summary}
-                        p.when #{post.when.format("MMM Do YYYY")}
+                            h3 #{post.title}                                            
+                        div.summary #{post.summary}
+                        div.footer
+                            span.when #{post.when.format("MMM Do YYYY")}
+                            a.more(href=post.permalink) more
 
 
     -//pre=helpers.dump(posts)

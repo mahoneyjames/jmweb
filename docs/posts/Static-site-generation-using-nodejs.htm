@@ -1,0 +1,50 @@
+<html><head><title>Static site generation using node.js | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">Static site generation using node.js</h1><p class="when">Aug 22nd 2017    </p></section><div class="body"><p>I used <a href="https://jekyllrb.com/">Jekyll</a> to run this site for a while. Jekyll takes Markdown content and spits out a static HTML site. Use <a href="https://pages.github.com/">GitHub Pages</a> with its built in support for Jekyll and you can host your own site - for free - in minutes. </p>
+<p>I was always filled with a vague sense of disquiet using Jekyll though. I didn&#39;t really know what was going on under the hood, and I had to put my content where Jekyll told me in order for things to work. There&#39;s a whole bunch of community written extensions and plugins to add features to a Jekyll site, but I always seemed to have to jump through hoops to get them to play nicely. </p>
+<h2 id="enter-node-js-and-pug">Enter...node.js and pug</h2>
+<p>pug is a whitespace based HTML templating system. As such, it&#39;s close enough to the tree structure of HTML that I&#39;m already familier with, and it includes a clean and simple way to build dynamic content. Combine that with a node.js library that allows you to generate html out of pug files, and we have a very simple - and low level - static site builder. </p>
+<h2 id="high-level-workflow">High level workflow</h2>
+<ul>
+<li>Use node.js to run a JS file. This puts static HTML somewhere</li>
+<li>Copy this HTML to a web server</li>
+</ul>
+<h3 id="a-little-more-detail">A little more detail</h3>
+<ul>
+<li>package.json - defines the node &quot;app&quot;. For our purposes, this comes down to a list of dependancies, and the JS entry points that build the site.</li>
+<li>build.js - contains the logic that builds the site. </li>
+<li>views directory - pug view templates. These are used to build the static HTML out of dynamic content   </li>
+<li>_posts directory - markdown files holding blog posts</li>
+<li><p>gulpfile.js</p>
+<ul>
+<li>gulp is used to preview changes using <a href="https://www.browsersync.io/">browsersync</a></li>
+<li>gulp is also used to &quot;publish&quot; the latest version of the site into a directory in the root called &quot;docs&quot;. </li>
+</ul>
+</li>
+</ul>
+<h2 id="generating-blog-posts">Generating blog posts</h2>
+<p>Every post is a markdown file</p>
+<p>I use <a href="https://www.npmjs.com/package/showdown">Showdown</a> to convert the markdown into a fragment of HTML.</p>
+<p>Each post becomes a Javascript object containing metadata about the post (title, date, etc) and a field to hold the body of the post. </p>
+<p>Then <a href="https://www.npmjs.com/package/pug">pug</a> is used to template these objects out as standalone HTML pages. </p>
+<p>Here&#39;s the pug template</p>
+<pre><code class="lang-html">extends layout
+
+block content
+    div.Container
+        h1 #{title}
+
+        .body !{body}
+</code></pre>
+<p>If you&#39;re new to pug - that &quot;extends layout&quot; bit is telling pug to use layout.pug and <em>insert</em> our generated content into layout.pug where it finds a block called content. </p>
+<h3 id="updating-the-site">Updating the site</h3>
+<p>Here&#39;s my current cobbbled together workflow</p>
+<ul>
+<li>Get latest on the <em>master</em> branch of my <a href="https://github.com/mahoneyjames/jmweb">github repository</a></li>
+<li>Do things e.g. tweak the css or edit one of the layout.pug files, or add a new blog post </li>
+<li>Use gulp and browsersync to provide a local preview of my changes</li>
+<li>Once I&#39;m happy, use gulp to copy over the latest version of the site into the docs folder</li>
+<li>Push all changes to github<ul>
+<li><a href="https://pages.github.com/">GitHub Pages</a> serves out any content in this directory to the web as <a href="http://www.jamesmahoney.co.uk">www.jamesmahoney.co.uk</a></li>
+</ul>
+</li>
+</ul>
+</div></div></main></div></body></html>

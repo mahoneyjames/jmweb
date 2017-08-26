@@ -1,5 +1,5 @@
 html{
-  color:#404040;
+  color:$baseColour;
 }
 
 body {
@@ -44,12 +44,12 @@ div
 
 header
 {
-      background-color: azure;
+      background-color:$bannerColour;
 }
 
 
 .Section:nth-child(2n) {
-    background-color: hsla(31,15%,50%,.1);
+    //background-color: hsla(31,15%,25 %,.1);
     overflow: hidden;
 }
 
@@ -126,4 +126,5 @@ h2
 {
   text-align: center;
   font-size: 1.333em;
+
 }

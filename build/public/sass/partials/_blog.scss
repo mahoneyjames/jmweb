@@ -1,15 +1,85 @@
+//flex container for all blog post cards
 .posts
 {
   display:flex;
   flex-wrap: wrap;
 }
+
+
 .postCard
 {
-  padding:20px;
-  margin: 5px;  
-  background:hsla(31,15%,50%,.1);
-  border-radius: 10px;
+  padding:10px;
+  margin: 10px;  
+  //background:hsla(31,15%,50%,.1);
+  border: 1px solid hsla(31,15%,50%,.1);
+  max-width:500px;
+  min-width:200px;
+  border-radius: 3px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+  flex: 1 1 100%;
+  /*display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;*/
+
+> *
+{
+  //border: 1px solid red;
+  flex: 1;
 }
+  .summary
+  {
+
+    font-style: italic;
+    min-height: 1px;
+  }
+
+  .more
+  {
+
+    border: 1px solid hsla(31,15%,50%,.1);
+    background-color: $accentColour;
+    border-radius: 3px;
+    padding: 2px;
+  }
+  .footer
+  {
+    display:flex;
+    border-top:1px solid $accentColour;
+    padding-top:10px;
+    margin-top:5px;
+    justify-content: space-between;
+    align-self: flex-end;
+  }
+}
+
+.postCard a{
+  text-decoration: none;
+  color: #404040;
+
+}
+
+
+
+.footer > *
+{
+  //border:1px solid red;
+}
+
+
+.postCard h3{
+  margin:0;
+
+}
+
+.postCard .when
+{
+  
+  font-size: 0.8em;
+  color:#888;
+
+}
+
+
 
 pre {
     border-radius: 3px;

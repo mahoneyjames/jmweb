@@ -28,12 +28,12 @@ There's nothing much to the script
 5. Make a note of the guid of the first error item we included in the email, so that next time the script runs we know where to stop including items
 
 
-##Acralyzer RSS feed
+## Acralyzer RSS feed
 This is the structure of the URL you need
 
 > https://server/CouchDB/_design/acra-storage/_list/rss/recent-items?descending=true
 
-###RSS XML Example
+### RSS XML Example
     <rss version="0.91">
       <channel>
         <title> latest Crash Reports</title>
@@ -52,7 +52,7 @@ This is the structure of the URL you need
         </item>
       </channel>
     </rss>
-###Authentication using Cloudant
+### Authentication using Cloudant
 >Cloudant provides hosting of CouchDB apps. It's a common choice when setting up *acra-storage* because their free plans are pretty generous.
 
 Cloudant handles authentication with a username and what they term an "API Key". (Or, username and password...)
@@ -80,10 +80,10 @@ More usefully, here's how to do it using our script
 
 
 
-####Base64 encoding your username and password
+#### Base64 encoding your username and password
 The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then access your *acralyzer* front end in your browser. Sign in with the user you're going to use for script. Once signed in you can inspect the headers and grab the Base64 encoded details. 
 
-##Parsing the XML
+## Parsing the XML
 
     //Use the XmlService to parse the XML
     var document = XmlService.parse(xml);
@@ -97,7 +97,7 @@ The simplest way to get this is to use a HTTP Proxy (e.g. Fiddler) and then acce
 
 
 
-###Tracking the most recently sent guid
+### Tracking the most recently sent guid
 You can use the PropertiesService to persist data across script runs. Think of this as name/value pairs linked to your Google account. 
 
 
@@ -112,7 +112,7 @@ You can use the PropertiesService to persist data across script runs. Think of t
 
 
   
-####Sending an email
+#### Sending an email
 Google makes this easy for us
 
 
@@ -120,7 +120,7 @@ Google makes this easy for us
 
 
 
-##Set the script up in Google App Script
+## Set the script up in Google App Script
 
 > These instructions were correct at the time of writing, but we all know Google's penchant for releasing often...
 
@@ -144,7 +144,7 @@ Google makes this easy for us
 
  6. The final step is to schedule your script to run. Click on the project triggers icon in the toolbar, and away you go
  
-###If your script fails to run...
+### If your script fails to run...
 You'll see a red tooltip like popup inviting you to view details of the failure
 
 The View menu also has a couple of options to help with debugging - the Execution Transcript and Logs
