@@ -64,3 +64,8 @@ Here's my current cobbbled together workflow
  - Once I'm happy, use gulp to copy over the latest version of the site into the docs folder
  - Push all changes to github
     - [GitHub Pages](https://pages.github.com/) serves out any content in this directory to the web as [www.jamesmahoney.co.uk](http://www.jamesmahoney.co.uk)
+
+
+## Update: May 2019
+
+This page comes in super useful when it's almost two years later and you can't remember how your cobbled together not a CMS sort of static site works...

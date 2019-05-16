@@ -1,0 +1,107 @@
+<html><head><title>storyclub phase 6 - https | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">storyclub phase 6 - https</h1><p class="when">May 16th 2019    </p></section><div class="body"><p>If you&#39;re hosting a website on S3 what you&#39;re doing is telling people who want www.storyclub.co.uk to hit an Amazon web server which is running a web app that knows how to load objects from S3. It returns these to the user, setting any necessary HTTP headers so that the user&#39;s browser can render it correctly.</p>
+<p>In order to use HTTPS, you need to use CloudFront. Now what&#39;s happening is that users after www.storyclub.co.uk are sent to a CloudFront web server instead, and this is running a web app that knows how to talk to that first Amazon web server to grab the content. </p>
+<p>One of the main features of CloudFront is to act as a content delivery network - a great big cache to avoid hitting S3 everytime a user loads a web page. </p>
+<p>The focus of this article is using CloudFront for its HTTPS support. </p>
+<p>This is a three step process</p>
+<ol>
+<li>Set up a certificate for www.storyclub.co.uk</li>
+<li>Create a CloudFront distribution</li>
+<li>Alter the DNS, so that we point to randomname-cloudfront.amazon.com, instead of randomname-s3.amazon.com</li>
+</ol>
+<h2 id="1-setting-up-a-site-certificate">1 - Setting up a site certificate</h2>
+<p> You need the <a href="https://console.aws.amazon.com/acm/home?region=us-east-1#/">Certificate manager</a></p>
+<p> <strong>Create certificates in the North Virgina (us-east-1) region</strong></p>
+<p> CloudFront can only use certificates from this region</p>
+<p> Two ways to verify the certificate</p>
+<ol>
+<li><p>DNS verification. This involves monkeying around with DNS settings to prove that you own the domain. </p>
+<p>A fear of DNS monkeying made me pick option 2.   </p>
+</li>
+<li><p>Email verifcation. Certificate manager sends an email to something@storyclub.co.uk. The assumption is that if you own that domain you&#39;ll receive the email, and can click on the link to verify the certificate request...</p>
+</li>
+</ol>
+<h3 id="what-if-you-haven-t-set-up-email-for-your-domain-">What if you haven&#39;t set up email for your domain?</h3>
+<p>Over to <a href="https://eu-west-1.console.aws.amazon.com/ses/home?region=eu-west-1">Simple Mail Service</a> we a go!</p>
+<ol>
+<li><p>Verify your email domain first. By monkeying around with DNS. </p>
+<p>Fortunately the SES console handled all of this seemlessly. So seemlessly that DNS monkeying was probably the way to go for certificate verification too. Ah well, I&#39;ve been wanting to play around with SES...</p>
+</li>
+<li><p>Do something with emails. </p>
+</li>
+</ol>
+<p>There&#39;s a nice feature of SES that lets you capture incoming emails and write them to S3 storage. So that&#39;s what I did. Check out the screenshot for the settings you need. </p>
+<p><img src="storyclub-https/ses.png" alt="SES screenshoot"></p>
+<p>I created a new S3 bucket - mail.storyclub.co.uk</p>
+<p><strong>The most important step is to grant SES permission to this bucket</strong></p>
+<p>Do this against the S3 bucket, <strong>not</strong> using IAM. </p>
+<p>Here&#39;s the policy JSON from the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">docs</a></p>
+<pre><code class="lang-json">{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Sid&quot;: &quot;AllowSESPuts&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Principal&quot;: {
+                &quot;Service&quot;: &quot;ses.amazonaws.com&quot;
+            },
+            &quot;Action&quot;: &quot;s3:PutObject&quot;,
+            &quot;Resource&quot;: &quot;arn:aws:s3:::BUCKET-NAME/*&quot;,
+            &quot;Condition&quot;: {
+                &quot;StringEquals&quot;: {
+                    &quot;aws:Referer&quot;: &quot;AWSACCOUNTID&quot;
+                }
+            }
+        }
+    ]
+}
+</code></pre>
+<p>Get AWSACCOUNTID by clicking on your user name at the top right, and then &quot;My Security Credentials&quot;. Then what you need is &quot;Account identifiers&quot;. </p>
+<p><strong>Remove any hypens from your AWS Account ID when adding it to the policy JSON</strong></p>
+<h2 id="2-create-cloudfront-distribution">2 - Create CloudFront distribution</h2>
+<p>Too many settings to document, but these are the important ones</p>
+<ul>
+<li><p>Origin Domain Name - choose your bucket</p>
+<p> This defaults to the REST endpoint, meaning you have to set up some permissions for CloudFront to access it.
+ The alternative is to point it to the S3 website instead</p>
+<p> Use www.storyclub.co.uk.s3-website.eu-west-2.amazonaws.com, not www.storyclub.co.uk.s3.amazonws.com </p>
+</li>
+<li><p>Viewer Protocol Policy - Redirect HTTP to HTTPS</p>
+</li>
+<li><p>Object caching - customize this</p>
+<p> Set everything to 0 to disable caching (only if you want to!)</p>
+</li>
+<li><p>Alternate domain names (CNAMEs) - set this to www.storyclub.co.uk</p>
+</li>
+<li><p>SSL Certificate. Choose &quot;Custom ssl cert&quot; and then pick the right one</p>
+<p><strong>Don&#39;t see your certificate? Sure you created one?</strong> Make sure it&#39;s in the N.Virginia region!</p>
+</li>
+</ul>
+<p>Create it!</p>
+<p>This takes a few minutes</p>
+<h2 id="3-dns">3 - DNS</h2>
+<p>Pretty straightfoward. In Route53 change the A record for www.storyclub.co.uk to point to randomnumbers23998237489237493.cloudfront.net instead of s3-website.region.amazonaws.com</p>
+<p><strong>Do not</strong> do the same for the storyclub.co.uk A record. Redirecting from a naked domain (storyclub.co.uk) to www is handled by S3. What happens in this case is</p>
+<ol>
+<li>User hits storyclub.co.uk, which is the Amazon S3 web server</li>
+<li>This sends the user a HTTP redirect, telling them to go to www.storyclub.co.uk instead</li>
+<li>User hits www.storyclub.co.uk, which is the CloudFront server</li>
+</ol>
+<h3 id="what-about-caching-">What about caching?</h3>
+<p>For the moment, caching is disabled. I need to be able to publish stories to the website and have then visible immediately. </p>
+<h4 id="some-notes">Some notes</h4>
+<p>You can specify cache durations against S3 objects themselves. If there&#39;s nothing set then CloudFront defaults to 24 hours. 
+This is a problem if you change a page: people might not see the new version for up to 24 hours. </p>
+<p>Options</p>
+<ul>
+<li><p>Alter the CloudFront behaviour to disable caching. </p>
+<p>Yay. Changes are immediately visible. 
+This is nice and simple, but nothing is cached by CloudFront. </p>
+<p>This isn&#39;t a problem for www.storyclub.co.uk at the moment</p>
+</li>
+<li><p>Set cache control headers against S3 objects e.g. give things like CSS or JS a long cache duration, and use a shorter one for content that might change more frequently. </p>
+</li>
+</ul>
+<p>In the case of our website, perhaps we&#39;ll go with 5 minutes as the cache duration for brand new stories, because frequently we&#39;ll publish a story and then notice a typo. Bit of a bummer if you have to wait 24 hours to correct a typo. </p>
+<p>Buy for old stories, we can set the cache duration to something far longer</p>
+<p>(You can also explicitly remove items from the CloudFront cache, but this is a more expensive approach).</p>
+</div></div></main></div></body></html>
