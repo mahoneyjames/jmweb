@@ -1,5 +1,5 @@
 const {promisify} = require('util');
-const {writeFile} = require('mz/fs');
+const {writeFile, copyFileSync, mkdirSync, existsSync} = require('mz/fs');
 const fs = require('fs');
 
 const pug = require('pug');
@@ -27,8 +27,31 @@ const generatePosts = async () =>{
             published[published.length] = newPost;
         }
 
-        newPost.permalink = `posts/${sanitisePath(newPost.permalink)}.htm`;
+        const santisedPath = sanitisePath(newPost.permalink);
+        newPost.permalink = `posts/${santisedPath}.htm`;
+        //Ugh, lots of code just to copy over images!
+        //Hmm, wonder if I could change the whole build process to web pack...
+        if(newPost.extraFilesPath!=null)
+        {
+            const outputDir = `_generated/posts/${santisedPath}`;
+            if(!existsSync(outputDir))
+            {
+                mkdirSync(outputDir);
+            }
+        
+            for(const file of newPost.extraFiles)
+            {
+                //post has other files e.g. images
+                //copy them from _posts into the final directory
+                //i.e. ./_generated/posts/permalink/*
+                console.log(file);
+                const filename = file.split("/").slice(-1).pop();
 
+                    copyFileSync(file, `${outputDir}/${filename}`);
+
+
+            }
+        }
     });
 
     await Promise.all(published.map((post)=>generateHtml("post",post.permalink ,post)),
