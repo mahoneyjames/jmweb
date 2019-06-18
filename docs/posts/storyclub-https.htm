@@ -86,9 +86,9 @@
 <li>This sends the user a HTTP redirect, telling them to go to <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a> instead</li>
 <li>User hits <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a>, which is the CloudFront server</li>
 </ol>
-<h3 id="what-about-caching-">What about caching?</h3>
+<h1 id="what-about-caching-">What about caching?</h1>
 <p>For the moment, caching is disabled. I need to be able to publish stories to the website and have then visible immediately. </p>
-<h4 id="some-notes">Some notes</h4>
+<h2 id="some-notes">Some notes</h2>
 <p>You can specify cache durations against S3 objects themselves. If there&#39;s nothing set then CloudFront defaults to 24 hours. 
 This is a problem if you change a page: people might not see the new version for up to 24 hours. </p>
 <p>Options</p>
