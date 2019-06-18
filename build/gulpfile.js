@@ -39,6 +39,17 @@ use the magic of gulp for file copy though
 */
 gulp.task('rebuild',['clean:docs'],function copyStaticContent(){
     gulp.src(['../static/**/*']).pipe(gulp.dest('../docs'));
+    gulp.src(['../prototypes/**/*']).pipe(gulp.dest('../docs/prototypes'));
     gulp.src(['../build/_generated/**/*']).pipe(gulp.dest('../docs'));
     gulp.src(['../CNAME']).pipe(gulp.dest('../docs'));
 })
+
+gulp.task("prototypes", function previewAudio(){
+  browserSync({
+    server: {
+      baseDir: '../prototypes'
+    }
+  });
+
+  gulp.watch(['**/*.htm', '*.css'], {cwd: '../prototypes'}, reload);
+});
