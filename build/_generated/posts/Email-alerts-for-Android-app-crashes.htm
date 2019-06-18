@@ -3,7 +3,7 @@
 <p>ACRA catches the error, turns it into JSON and then persists that data on a web server using the <em><a href="https://github.com/ACRA/acra-storage">acra-storage</a></em> CouchDB app. The <em><a href="https://github.com/ACRA/acralyzer">acralyzer</a></em> CouchDB HTML app provides a nice front end to view error information. </p>
 </blockquote>
 <p>One thing it lacks is a mechanism to notify about new errors via email, but what it does have is an RSS feed of the latest errors that have been uploaded. Combine this with a script executed every few minutes and you have a simple alerting system. </p>
-<h4 id="enter-google-app-scripts-https-developers-google-com-apps-script-">Enter....<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
+<h4 id="enter-google-app-scripts-">Enter....<a href="https://developers.google.com/apps-script/">Google App Scripts</a>.</h4>
 <p>Think of this as a Javascript environment hosted by Google. It was designed to add scripting capabilities to Google documents and spreadsheets, but since it includes a timer based trigger for executing scripts it can be used to provide a hosted alerting system</p>
 <p>There&#39;s nothing much to the script</p>
 <ol>

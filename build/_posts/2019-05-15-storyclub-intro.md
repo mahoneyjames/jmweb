@@ -3,7 +3,7 @@ title: Storyclub project overview
 permalink: storyclub-overview
 when: 2019-05-16
 summary: An overview of the storyclub project
-draft: true
+draft: false
 ---
 
 [storyclub](www.storyclub.co.uk) is a writing project I started with a friend of mine - [Jenny Allan](http://serenlas.co.uk/). We wanted a deadline, something to make us deliver, even in those times when life gets in the way. 

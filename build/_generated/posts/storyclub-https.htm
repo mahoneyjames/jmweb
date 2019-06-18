@@ -1,10 +1,10 @@
-<html><head><title>storyclub phase 6 - https | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">storyclub phase 6 - https</h1><p class="when">May 16th 2019    </p></section><div class="body"><p>If you&#39;re hosting a website on S3 what you&#39;re doing is telling people who want www.storyclub.co.uk to hit an Amazon web server which is running a web app that knows how to load objects from S3. It returns these to the user, setting any necessary HTTP headers so that the user&#39;s browser can render it correctly.</p>
-<p>In order to use HTTPS, you need to use CloudFront. Now what&#39;s happening is that users after www.storyclub.co.uk are sent to a CloudFront web server instead, and this is running a web app that knows how to talk to that first Amazon web server to grab the content. </p>
+<html><head><title>storyclub phase 6 - https | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">storyclub phase 6 - https</h1><p class="when">May 16th 2019    </p></section><div class="body"><p>If you&#39;re hosting a website on S3 what you&#39;re doing is telling people who want <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a> to hit an Amazon web server which is running a web app that knows how to load objects from S3. It returns these to the user, setting any necessary HTTP headers so that the user&#39;s browser can render it correctly.</p>
+<p>In order to use HTTPS, you need to use CloudFront. Now what&#39;s happening is that users after <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a> are sent to a CloudFront web server instead, and this is running a web app that knows how to talk to that first Amazon web server to grab the content. </p>
 <p>One of the main features of CloudFront is to act as a content delivery network - a great big cache to avoid hitting S3 everytime a user loads a web page. </p>
 <p>The focus of this article is using CloudFront for its HTTPS support. </p>
 <p>This is a three step process</p>
 <ol>
-<li>Set up a certificate for www.storyclub.co.uk</li>
+<li>Set up a certificate for <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a></li>
 <li>Create a CloudFront distribution</li>
 <li>Alter the DNS, so that we point to randomname-cloudfront.amazon.com, instead of randomname-s3.amazon.com</li>
 </ol>
@@ -17,7 +17,7 @@
 <li><p>DNS verification. This involves monkeying around with DNS settings to prove that you own the domain. </p>
 <p>A fear of DNS monkeying made me pick option 2.   </p>
 </li>
-<li><p>Email verifcation. Certificate manager sends an email to something@storyclub.co.uk. The assumption is that if you own that domain you&#39;ll receive the email, and can click on the link to verify the certificate request...</p>
+<li><p>Email verifcation. Certificate manager sends an email to <a href="mailto:something@storyclub.co.uk">something@storyclub.co.uk</a>. The assumption is that if you own that domain you&#39;ll receive the email, and can click on the link to verify the certificate request...</p>
 </li>
 </ol>
 <h3 id="what-if-you-haven-t-set-up-email-for-your-domain-">What if you haven&#39;t set up email for your domain?</h3>
@@ -63,14 +63,14 @@
 <li><p>Origin Domain Name - choose your bucket</p>
 <p> This defaults to the REST endpoint, meaning you have to set up some permissions for CloudFront to access it.
  The alternative is to point it to the S3 website instead</p>
-<p> Use www.storyclub.co.uk.s3-website.eu-west-2.amazonaws.com, not www.storyclub.co.uk.s3.amazonws.com </p>
+<p> Use <a href="http://www.storyclub.co.uk.s3-website.eu-west-2.amazonaws.com">www.storyclub.co.uk.s3-website.eu-west-2.amazonaws.com</a>, not <a href="http://www.storyclub.co.uk.s3.amazonws.com">www.storyclub.co.uk.s3.amazonws.com</a> </p>
 </li>
 <li><p>Viewer Protocol Policy - Redirect HTTP to HTTPS</p>
 </li>
 <li><p>Object caching - customize this</p>
 <p> Set everything to 0 to disable caching (only if you want to!)</p>
 </li>
-<li><p>Alternate domain names (CNAMEs) - set this to www.storyclub.co.uk</p>
+<li><p>Alternate domain names (CNAMEs) - set this to <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a></p>
 </li>
 <li><p>SSL Certificate. Choose &quot;Custom ssl cert&quot; and then pick the right one</p>
 <p><strong>Don&#39;t see your certificate? Sure you created one?</strong> Make sure it&#39;s in the N.Virginia region!</p>
@@ -79,16 +79,16 @@
 <p>Create it!</p>
 <p>This takes a few minutes</p>
 <h2 id="3-dns">3 - DNS</h2>
-<p>Pretty straightfoward. In Route53 change the A record for www.storyclub.co.uk to point to randomnumbers23998237489237493.cloudfront.net instead of s3-website.region.amazonaws.com</p>
+<p>Pretty straightfoward. In Route53 change the A record for <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a> to point to randomnumbers23998237489237493.cloudfront.net instead of s3-website.region.amazonaws.com</p>
 <p><strong>Do not</strong> do the same for the storyclub.co.uk A record. Redirecting from a naked domain (storyclub.co.uk) to www is handled by S3. What happens in this case is</p>
 <ol>
 <li>User hits storyclub.co.uk, which is the Amazon S3 web server</li>
-<li>This sends the user a HTTP redirect, telling them to go to www.storyclub.co.uk instead</li>
-<li>User hits www.storyclub.co.uk, which is the CloudFront server</li>
+<li>This sends the user a HTTP redirect, telling them to go to <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a> instead</li>
+<li>User hits <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a>, which is the CloudFront server</li>
 </ol>
-<h3 id="what-about-caching-">What about caching?</h3>
+<h1 id="what-about-caching-">What about caching?</h1>
 <p>For the moment, caching is disabled. I need to be able to publish stories to the website and have then visible immediately. </p>
-<h4 id="some-notes">Some notes</h4>
+<h2 id="some-notes">Some notes</h2>
 <p>You can specify cache durations against S3 objects themselves. If there&#39;s nothing set then CloudFront defaults to 24 hours. 
 This is a problem if you change a page: people might not see the new version for up to 24 hours. </p>
 <p>Options</p>
@@ -96,7 +96,7 @@ This is a problem if you change a page: people might not see the new version for
 <li><p>Alter the CloudFront behaviour to disable caching. </p>
 <p>Yay. Changes are immediately visible. 
 This is nice and simple, but nothing is cached by CloudFront. </p>
-<p>This isn&#39;t a problem for www.storyclub.co.uk at the moment</p>
+<p>This isn&#39;t a problem for <a href="http://www.storyclub.co.uk">www.storyclub.co.uk</a> at the moment</p>
 </li>
 <li><p>Set cache control headers against S3 objects e.g. give things like CSS or JS a long cache duration, and use a shorter one for content that might change more frequently. </p>
 </li>

@@ -25,3 +25,24 @@ draft: true
 Set draft = true to get the post visible via [/drafts.htm](/drafts.htm)
 
 permalink needs to be unique
+
+# Support for images
+Create a folder named after the blog post but without the .md extension in the posts folder
+Anything in this directory is copied into the _generated/_posts directory when the build script is run
+
+
+# Building
+Use npm run run
+
+# Previewing
+
+## Preview what's in _generated while writing posts
+gulp serveG
+
+## Preview what's in the docs directory
+gulp serve
+
+# Releasing
+gulp rebuild
+
+This copies all blog posts and static content and css into the docs directory

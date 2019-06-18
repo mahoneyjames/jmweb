@@ -10,4 +10,17 @@ draft: true
 ---
 </code></pre><p>Set draft = true to get the post visible via <a href="/drafts.htm">/drafts.htm</a></p>
 <p>permalink needs to be unique</p>
+<h1 id="support-for-images">Support for images</h1>
+<p>Create a folder named after the blog post but without the .md extension in the posts folder
+Anything in this directory is copied into the _generated/_posts directory when the build script is run</p>
+<h1 id="building">Building</h1>
+<p>Use npm run run</p>
+<h1 id="previewing">Previewing</h1>
+<h2 id="preview-what-s-in-_generated-while-writing-posts">Preview what&#39;s in _generated while writing posts</h2>
+<p>gulp serveG</p>
+<h2 id="preview-what-s-in-the-docs-directory">Preview what&#39;s in the docs directory</h2>
+<p>gulp serve</p>
+<h1 id="releasing">Releasing</h1>
+<p>gulp rebuild</p>
+<p>This copies all blog posts and static content and css into the docs directory</p>
 </div></div></main></div></body></html>
