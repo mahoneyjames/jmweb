@@ -1,6 +1,96 @@
 <html>
     <body>
-        <p>Haro!</p>
-        <input type="file" accept="audio/*" capture>
+        <div>
+            <h1>Simple version</h1>
+            <input type="file" accept="audio/*" capture id="simple_recorder">
+            <!-- <audio id="simple_player" controls></audio> -->
+            <div id="simple_send_div" style="display:none">
+                <input type="button" value="Upload" id="simple_send">
+            </div>
+            <script>
+                var recorder = document.getElementById('simple_recorder');
+                // var player = document.getElementById('simple_player');
+
+                recorder.addEventListener('change', function(e) {
+                    //alert("change");
+                    var file = e.target.files[0];
+                    // Do something with the audio file.
+                    console.log(file);
+                    //player.src = file;
+
+
+                    document.getElementById('simple_send_div').style ="display:block";
+                    document.getElementById("simple_send").addEventListener("click", function onClickUpload(){uploadFile(file)});
+                });    
+                
+                function uploadFile(file)
+                {
+                    alert("here:" + file.name);
+                }
+            </script>
+        </div>
+
+        <div>
+            <h1>Interactive version</h1>
+            <input type="button" value="start" id="interactive_record">
+            <input type="button" value="stop" id="interactive_stop">
+            <input type="button" value="play" id="interactive_play">
+            <input type="button" value="upload" id="interactive_upload">
+
+            <script>
+                document.getElementById("interactive_record").addEventListener("click", recordAudio);
+                document.getElementById("interactive_stop").addEventListener("click", stopRecording);
+                document.getElementById("interactive_play").addEventListener("click", playRecording);
+                document.getElementById("interactive_upload").addEventListener("click", uploadRecording);
+
+                var mediaRecorder = null;
+                var audioChunks = [];
+                //https://medium.com/@bryanjenningz/how-to-record-and-play-audio-in-javascript-faa1b2b3e49b
+                function recordAudio(){
+                    navigator.mediaDevices.getUserMedia({ audio: true })
+                        .then(stream => {
+                            mediaRecorder = new MediaRecorder(stream);
+                            mediaRecorder.start();
+                            audioChunks = [];
+                            
+                            mediaRecorder.addEventListener("dataavailable", event => {
+                                audioChunks.push(event.data);
+                            });
+
+                            
+
+                        });
+                }
+
+                function stopRecording()
+                {
+                    if(mediaRecorder!=null)
+                    {
+                        mediaRecorder.stop();
+                    }
+                }
+
+                function playRecording()
+                {
+                    if(audioChunks.length>0)
+                    {
+                        const audioBlob = new Blob(audioChunks);
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        const audio = new Audio(audioUrl);
+                        audio.play();
+                    }
+                }
+
+                function uploadRecording()
+                {
+                    alert("todo");
+                }
+                
+
+                
+            </script>
+
+        </div>
+        
     </body>
 </html>
