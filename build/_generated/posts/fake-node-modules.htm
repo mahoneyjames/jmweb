@@ -1,0 +1,58 @@
+<html><head><title>Fake node modules, and AWS Lambda and Claudia.js | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">Fake node modules, and AWS Lambda and Claudia.js</h1><p class="when">Jul 1st 2019    </p></section><div class="body"><p>I need to create some shared libraries to use in my various projects, but I don&#39;t want to publish them to NPM in their unfinished half implemented state. </p>
+<blockquote>
+<p>Nothing fills me with more woe than finding the perfect package on NPM only to discover it was last edited four years ago with the chirpy note that it&#39;s the <em>start</em> of a library to be the next best thing in chirpy cheery thingamajigs. </p>
+</blockquote>
+<p>This is my rough folder structure</p>
+<ul>
+<li>storyclub<ul>
+<li>lambda1</li>
+<li>lambda2</li>
+</ul>
+</li>
+<li>otherapps<ul>
+<li>app1</li>
+<li>app2</li>
+<li>app3</li>
+</ul>
+</li>
+<li>shared<ul>
+<li>/util</li>
+<li>/log</li>
+</ul>
+</li>
+</ul>
+<p>I want to reference that <strong>log</strong> library in app1 and app2, and also in lambda1 and lambda2, and so on.</p>
+<h2 id="first-go-npm-link">first go: npm link</h2>
+<p>npm link doesn&#39;t seem to play nicely with Claudia.js. Linked packages aren&#39;t picked up when packaging.</p>
+<h2 id="what-about-symbolic-links-">What about symbolic links?</h2>
+<p>Symbolic links (on windows, using mklink) doesn&#39;t work either. (This might be down to npm pack - I&#39;ve seen mention that this doesn&#39;t support symbolic links).</p>
+<h2 id="npm-install-s-to-the-rescue">npm install -S: to the rescue</h2>
+<p>What does work is </p>
+<pre><code>$ npm install -S ../shared/log
+</code></pre><p>This does the following to package.json</p>
+<pre><code>&quot;dependencies&quot;: {
+    &quot;log&quot;: &quot;file:../shared/log&quot;
+  }
+</code></pre><p>To use, it&#39;s as simple as </p>
+<pre><code>const log = require(&quot;log&quot;);
+</code></pre><p>This works with Clauda.js and AWS Lambda.</p>
+<blockquote>
+<p>It&#39;s less good if you want to use these shared packages in a project that sits outside this folder structure, because references could easily get broken. I guess in that case it&#39;s time to actually turn this stuff into real packages.</p>
+</blockquote>
+<h1 id="steps">Steps</h1>
+<ul>
+<li>Create your shared lib e.g. super-logging</li>
+<li>npm init in the super-logging directory</li>
+<li>make sure that main in package.json points to your entry point js</li>
+<li>npm init your cool-app</li>
+<li>npm install -S ../shared/super-logging</li>
+<li>use require(&quot;super-logging&quot;) </li>
+</ul>
+<p><strong>the name here is what&#39;s set in the dependencies in package.json</strong></p>
+<p>This is based on the name of the folder containing the fake package.</p>
+<ul>
+<li><p>To support more than one class in your package</p>
+<pre><code>require(&quot;super-logging/even-superer-logging&quot;);
+</code></pre></li>
+</ul>
+</div></div></main></div></body></html>

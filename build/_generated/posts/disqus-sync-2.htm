@@ -1,0 +1,8 @@
+<html><head><title>It's sync or scream time | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">It's sync or scream time</h1><p class="when">Aug 24th 2019    </p></section><div class="body"><p>Let&#39;s get our challenge and story data into DynamoDb. Let&#39;s store all the comment counts there too.</p>
+<p>And hey, at the same time, let&#39;s go for a less naive approach for grabbing comments from disqus.</p>
+<p>New syncing technique - instead of listing ALL threads (aka, stories), let&#39;s just list <em>posts</em> (aka, comments) made against those threads. We can query for posts made since a certain date, meaning that we can query for posts made since we last checked for posts. </p>
+<p>If we query once per minute that means we&#39;ll end up with 60 disqus requests per hour, which is well under the 1,000 limit. </p>
+<blockquote>
+<p>If there&#39;s a massive influx of comments we&#39;ll have to make multiple calls to diqus to page through the results - you&#39;re limited to a max of 100 items per response. But we are talking about a <em>huge</em> number of comments in a short space of time to make that a problem for us. </p>
+</blockquote>
+</div></div></main></div></body></html>

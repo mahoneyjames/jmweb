@@ -1,0 +1,43 @@
+<html><head><title>Grabbing comment data using the disqus API | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">Grabbing comment data using the disqus API</h1><p class="when">Aug 23rd 2019    </p></section><div class="body"><p>We want to grab details about comments made using disqus so we can make it more obvious that commenting is going on. </p>
+<p>On disqus, one story equals one disqus thread. Comments made are posts made against the thread.</p>
+<p>First go at this is</p>
+<ul>
+<li>Grab a list of all stories</li>
+<li>Query disqus for each story to work out a comment count</li>
+<li>Work out the total number of comments per challenge</li>
+<li>Save all this comment data somewhere e.g. a JSON file in S3</li>
+<li>Run this sync every 10 minutes or so</li>
+<li>Expose this data via a HTTP Lambda function and call it via Javascript from our HTML pages</li>
+</ul>
+<h2 id="problem-1-disqus-api-rate-limit">Problem #1: disqus API rate limit</h2>
+<p>It&#39;s 1000 requests per hour.
+Given 250 stories and querying every 10 minutes, we hit that limit in 40 minutes. </p>
+<p>Querying every 15 minutes mean we just about get away with it, but we&#39;ll have a problem in the future when we hit 300 stories. </p>
+<h3 id="quick-and-hacky-solution">Quick and hacky solution</h3>
+<p>Every 5 minutes query for only the 10 most recent stories - these are the ones people are most likely to comment on. </p>
+<p>Every hour or so, query for <strong>every</strong> story, to pick up any comments added to old stories. </p>
+<h2 id="problem-2-oh-my-goodness-how-many-s3-requests-">Problem #2: Oh my goodness, <strong>how many</strong> S3 requests?</h2>
+<p>The Google spreadsheet is still our master source of data. But rather than query this each time, challenge and story details are also stored in S3 as JSON files. 1 file per thing. To work out a list of all stories we list files in S3, and then read them. Every five minutes. </p>
+<p>250 stories means 250 files. That&#39;s 3,000 reads per hour. That&#39;s 72,000 per day. </p>
+<p>That&#39;s 2 million a month, which is a tad over the 20,000 limit. Bugger. </p>
+<p>That&#39;s four quid or so I won&#39;t see again. </p>
+<h3 id="quick-and-hacky-solution">Quick and hacky solution</h3>
+<p>Our users are all UK based, so let&#39;s turn off comment syncing overnight. We only sync comments between 0700 and 2200, which is a nice saving. </p>
+<h3 id="non-hacky-solution-hey-let-s-cache-stuff">Non hacky solution - hey, let&#39;s cache stuff</h3>
+<p>Our story data doesn&#39;t change often, so let&#39;s take advantage of Lambda functions sticking around in between invocations to cache our data.</p>
+<p>Woo hoo! S3 costs down dramatically, for the win!</p>
+<h2 id="problem-3-stale-data">Problem #3: stale data</h2>
+<p>Our Lambda that syncs comments doesn&#39;t know that new stories have been added to the website because it&#39;s caching. Luckily (!), Lambda function recycling means that this problem goes away eventually, but it does mean that sometimes there&#39;s a short delay before it starts to pick up comments for <strong>new</strong> stories. </p>
+<p>Our Lambda that provides the HTTP API for comment counts is caching those comment counts. If people are actively using the site then this Lambda instance hangs around, with its stale data.</p>
+<h3 id="quick-and-hacky-solution">Quick (and hacky?) solution</h3>
+<p>Expose another HTTP end point on our HTTP Lambda function to allow the comment sync Lambda to notify us when there&#39;s new information. Hooray! Our comment counts are correct.</p>
+<h2 id="problem-4-too-many-users">Problem #4: Too many users</h2>
+<p>How many is too many? </p>
+<p>Well...one.</p>
+<p>There are 2 AJAX calls on the home page, which means two simultaneous HTTP requests, which means 2 concurrent Lambda functions. </p>
+<p>When comment syncing runs it can only notify one of these functions that there are new comments. </p>
+<p>This means we end up with inconsistent comment counts being reported.</p>
+<h3 id="no-quick-and-hacky-solution">No quick and hacky solution</h3>
+<p>This is sticking plaster after your leg&#39;s been ripped off by a cougar. </p>
+<p>Let&#39;s do it properly. How about a database for comments?</p>
+</div></div></main></div></body></html>

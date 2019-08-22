@@ -1,0 +1,74 @@
+<html><head><title>Serverless for (almost) free | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">Serverless for (almost) free</h1><p class="when">Aug 22nd 2019    </p></section><div class="body"><p>Cloud services are super cheap. Wow! 2p a month to store a GB in cloud storage? Yes please! But those fractons of pennies for a bajillion operations can add up. </p>
+<p>Say you have an AWS queue triggering a Lambda function, that can add up to a couple of pounds a month merely to poll the queue to see if there are any messages to process. This isn&#39;t a big deal for a company with deep pockets - really, you want to spend a week of dev time to re-architecture your app to save <strong><em>two pound fifty a month???</em></strong></p>
+<p>But in the world of side projects, two pound fifty a month on lots of trivial things can soon add up to that sinking feeling: I have spent 5 million spare time hours <strong>and</strong> five hundred quid just so  two active users can argue with each other over a custom built commenting system. </p>
+<p>Is it possible to run a slick and performant app in a cloud provider, and do it for nothing? Well, almost nothing. </p>
+<h2 id="aws-free-tier">AWS free tier</h2>
+<p>Amazon offer a bunch of stuff, for free, forever. </p>
+<p>Stuff like</p>
+<ul>
+<li>S3 storage</li>
+<li>Lambda functions</li>
+<li>Emails</li>
+<li>NoSql DynamoDb</li>
+</ul>
+<p>There are usage limits, but as long as you stay within these limits then it&#39;s free. Hooray!</p>
+<h2 id="the-app">The app</h2>
+<p><a href="www.storyclub.co.uk">storyclub</a> is an informal weekly writing non-contest. The goal is to get people writing, and get them doing it regularly. </p>
+<p>The high level workflow is</p>
+<ul>
+<li>The weekly rules are posted to the website</li>
+<li>Writers write, then submit their stories</li>
+<li>Stories are published</li>
+<li>People read, and submit comments</li>
+</ul>
+<h1 id="how-it-s-been-going">How it&#39;s been going</h1>
+<h2 id="step-1-proof-of-concept">Step 1: Proof of concept</h2>
+<p>Details of the challenges, and all the submitted stories live in a Google spreadsheet.</p>
+<p>Node.js scripts to grab the data as JSON, then generate HTML out of it, before pushing files into S3 to hose a static website. </p>
+<h3 id="outcome">Outcome</h3>
+<p>Yep. Basically runs for free. </p>
+<p>20-30 stories a month, and 4 challenges means we are <strong>well below</strong> the S3 free tier limit of 2,000 writes per month.</p>
+<p>Our abyssmal readership also means we just sneak under the free 20,000 reads a month.</p>
+<p>Drawback</p>
+<ul>
+<li>You need a laptop and the node know how to get the stories published. I don&#39;t get paid enough for this. </li>
+</ul>
+<h2 id="step-2-google-apps-scripts-running-lambda-functions-for-site-building">Step 2: Google Apps Scripts running Lambda functions for site building</h2>
+<p>A couple of menu options in a Google spreadsheet</p>
+<p>These push the challenge/story data into a Lambda function, which then builds pages and writes them to S3.</p>
+<p>Essentially that laptop and npm run has been replaced by a menu click and a Lambda function.</p>
+<h3 id="outcome">Outcome</h3>
+<p>Yep, sitll bascially free.</p>
+<p>Drawbacks</p>
+<ul>
+<li>It&#39;s kind of multi admin user, but will likely explode if two people click the menu option at the same time</li>
+<li>Data is still in a spreadsheet</li>
+</ul>
+<h2 id="step-3-feedback-online-">Step 3: Feedback online!</h2>
+<p>The original method of feedback was email. It was such a pain that people tended not to bother. Since the stories are on the website, why not write comments there too?</p>
+<p>Hello, disqus.com</p>
+<p>Add this to each page, and voilà, we are into pretentious French mode, but we also have a nice commenting system for free.</p>
+<pre><code>&lt;div class=&quot;box&quot; id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    var disqus_config = function () {
+        this.page.url = &quot;http://www.storyclub.co.uk/h/last-orders/nice-little-runner&quot;;
+        this.page.identifier = &quot;1la4ic1jz1np174&quot;; 
+    };
+
+(function() { // DON&#39;T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement(&#39;script&#39;);
+    s.src = &#39;https://storyclub.disqus.com/embed.js&#39;;
+    s.setAttribute(&#39;data-timestamp&#39;, +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+&lt;/script&gt;
+</code></pre><h2 id="step-4-who-said-what-now-">Step 4: Who said what now?</h2>
+<p>Okay, so comments are buried on individual story pages, meaning that engagement is low. It would good to show commenting activity on the front page. Unfortunately disqus provides limited options for looking up posts from HTML or javascript. But it does provide a nice API...</p>
+<p>Suppose we write a Lambda function to query the API and do nice things with the data. How hard could that be?</p>
+<p><a href="disqus-sync-1.htm">Well...</a></p>
+<h2 id="step-5-dynamodb-for-comment-syncing">Step 5: DynamoDb for comment syncing</h2>
+<p>Okay, so that went well.</p>
+<p>Too many disqus requests, and too much S3 access. </p>
+<p>Can we solve both? <a href="disqus-sync-2.htm">Let&#39;s see...</a></p>
+<p>Link to a page about dynamoDb for relational guys.</p>
+</div></div></main></div></body></html>

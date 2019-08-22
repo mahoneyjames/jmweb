@@ -1,0 +1,54 @@
+<html><head><title>DynamoDB for the relational guy | James Mahoney</title><link rel="stylesheet" href="/style.css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charset="UTF-8"/></head><body><header><div class="inner"> <h1><a href="/index.htm">James Mahoney</a></h1><nav><ul><li>                          <a href="/about.htm">about</a></li><li><a href="/index.htm">blog            </a></li></ul></nav></div></header><div class="wrapper"><main class="content"><div class="Container blogPost"><section class="info"><h1 class="title">DynamoDB for the relational guy</h1><p class="when">Aug 22nd 2019    </p></section><div class="body"><p>NoSql. That&#39;s just a JSON doc keyed against something, right? </p>
+<p>Well...</p>
+<p>Kinda. Sorta. Not really. </p>
+<p>But I can just take a javascript object and whack it into the database? Yeah.</p>
+<p>Well...</p>
+<h2 id="here-s-the-rough-relational-database-design-for-storyclub">Here&#39;s the rough relational database design for storyclub</h2>
+<p>TODO!</p>
+<h2 id="initial-mapping-of-relational-design-to-dynamodb">Initial mapping of relational design to DynamoDb</h2>
+<p>Here&#39;s a rough mapping between the relational world and DynamoDb. Okay, it&#39;s not strictly true, but it helps to get your head around some of the key DynamoDb concepts</p>
+<h3 id="relational-database-dynamodb-table">Relational database == DynamoDb table</h3>
+<blockquote>
+<p>Most apps can get by with a single DynamoDb table.</p>
+</blockquote>
+<p><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html">Reference</a></p>
+<h3 id="relational-table-a-single-partition-in-a-dynamodb-table">Relational table == A single partition in a DynamoDb table</h3>
+<p>Sort of. </p>
+<p>One approach to take is to have partitions with the following keys</p>
+<ul>
+<li>Users</li>
+<li>Comments</li>
+<li>Challenges</li>
+<li>Stories</li>
+<li>Authors</li>
+<li>etc</li>
+</ul>
+<p>To do </p>
+<pre><code>select * from users
+</code></pre><p>you simply query for all data in the users partition. </p>
+<h3 id="row-in-a-relational-table-an-entry-in-a-partition-with-range-key">Row in a relational table == An entry in a partition with range key</h3>
+<ul>
+<li>users - james</li>
+<li>users - phil</li>
+<li>users - brian</li>
+<li>stories - story1</li>
+<li>stories - story2</li>
+<li>stories - story3</li>
+</ul>
+<pre><code>select * from users where name = &#39;james&#39;
+</code></pre><p>Query the users partition for the range key &#39;james&#39;</p>
+<h2 id="you-really-want-to-do-it-like-that-">You really want to do it like that...?</h2>
+<p>At least we&#39;ve avoided the relational guy&#39;s standard trap of imagining there&#39;s a users table, and a comments table, and a stories table...</p>
+<blockquote>
+<p>Time to talk about partitions</p>
+</blockquote>
+<p>A partition in DynamoDb is a big hunk of data, up to 10GB in size. </p>
+<p>If you go with a single partition key of &quot;stuff&quot;, then the max amount of stuff you can support is 10GB. </p>
+<p>If you go with &quot;users&quot; and &quot;comments&quot; and &quot;stories&quot; as partition keys, you can support 10GB per &quot;virtual table&quot;. </p>
+<p>This might be fine for your size requirements, but it does have some other drawbacks. That partition is ultimately saved on a hard disk somewhere. But putting all of the user data on the same hard disk it means that all requests for data about all users go through that single disk, which becomes a bottleneck. </p>
+<p>If each of these hypothetical disks support 100 concurrent connections, that&#39;s a max of 100 concurrent pages about users you can display on your website. That might be fine for your usage requirments, but NoSql is supposed to be <em>infintely</em> scalable. </p>
+<p>Instead, choose &quot;user-james&quot; and &quot;user-phil&quot; and &quot;user-brian&quot; for partition keys. By going with 1 partition key per user we can store 10GB of data per user, <em>and</em> we&#39;ve increased our theoretical throughput to be limited by however many of these hard disks Amazon is using. </p>
+<blockquote>
+<p>Think of a relational table as <strong>the static part of a unique partition key</strong></p>
+</blockquote>
+</div></div></main></div></body></html>
