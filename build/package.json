@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "csv": "1.1.1",
     "csvtojson": "1.1.6",
     "dotenv": "4.0.0",
