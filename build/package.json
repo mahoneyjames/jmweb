@@ -21,7 +21,7 @@
     "csvtojson": "1.1.6",
     "dotenv": "4.0.0",
     "es6-promisify": "5.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "marked": "^0.6.2",
     "meta-marked": "^0.4.2",
     "mkdirp": "0.5.1",
